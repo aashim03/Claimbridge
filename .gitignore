@@ -1,0 +1,10 @@
+.env
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+.fastembed_cache/
+node_modules/
+dist/
+.impeccable/
+notes/
