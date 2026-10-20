@@ -1,0 +1,441 @@
+{
+  "claim": {
+    "claim_id": "EV-T1-01",
+    "tenant_id": "TEN-01",
+    "source": "eval",
+    "service_date": 20260310,
+    "filed_date": 20260416,
+    "filing_lag_days": 37,
+    "amount": 9742.36,
+    "in_network": true,
+    "is_emergency": false,
+    "status": "AWAITING_REVIEW",
+    "event_seq": 9,
+    "attempt": 0,
+    "gates": [],
+    "disposition": "APPEAL_NEEDS_EVIDENCE"
+  },
+  "tenant": "Asha Varma",
+  "service": "Outpatient MRI",
+  "notice": "Lumen Health Assurance - Notice of claim denial. Claim EV-T1-01. Service: Outpatient MRI. Date of service: 2026-03-10. This service required precertification from the plan, which was not requested. See Section 4.2 (Prior authorization for outpatient MRI) of your LumenCare Silver policy. You may appeal this decision within 180 days of this notice.",
+  "notice_date": 20260506,
+  "version": {
+    "version_id": "V2026",
+    "label": "2026",
+    "effective_from": 20260101,
+    "effective_to": 99991231
+  },
+  "clause": {
+    "clause_id": "C-2026-MRI-PREAUTH",
+    "lineage_id": "L-MRI-PREAUTH",
+    "version_id": "V2026",
+    "section": "4.2",
+    "type": "CONDITION",
+    "title": "Prior authorization for outpatient MRI",
+    "text": "Outpatient magnetic resonance imaging requires prior authorization from the Plan before the date of service. No referral exception applies. Where authorization was not obtained, a retroactive authorization request supported by a letter of medical necessity may be submitted.",
+    "fingerprint": "a4528ab029298817667489158eb6ee559e3fc2a97c44122d7285a2cfca154901",
+    "params": "{\"referral_exception\": false}",
+    "referral_exception": false
+  },
+  "reason": "PREAUTH_MISSING",
+  "reason_name": "Prior authorization not obtained",
+  "evidence": [
+    {
+      "code": "ITEMIZED_BILL",
+      "name": "Itemized bill",
+      "submitted": 20260416
+    },
+    {
+      "code": "SPECIALIST_REFERRAL",
+      "name": "Specialist referral",
+      "submitted": 20260416
+    }
+  ],
+  "requirements": [
+    {
+      "code": "PHYSICIAN_NECESSITY_LETTER",
+      "name": "Physician letter of medical necessity",
+      "satisfied": false,
+      "sources": [
+        "C-2026-MRI-PREAUTH"
+      ]
+    },
+    {
+      "code": "RETRO_AUTH_REQUEST",
+      "name": "Retroactive authorization request",
+      "satisfied": false,
+      "sources": [
+        "C-2026-MRI-PREAUTH"
+      ]
+    }
+  ],
+  "verdicts": [
+    {
+      "finding_id": "F-CODING",
+      "code": "REASON_MISMATCH",
+      "source": "vector",
+      "statement": "Billing or coding error denials under L-CODING-CORRECTION were overturned when the appeal included: Itemized bill, Corrected coding submission.",
+      "status": "ACTIVE",
+      "confidence": 0.8,
+      "support": 3,
+      "learned_on": "C-2026-CODING-CORRECTION",
+      "learned_section": "9.4",
+      "governing": "C-2026-CODING-CORRECTION",
+      "contradicted_by": [],
+      "valid_in": [
+        "2024",
+        "2025",
+        "2026"
+      ]
+    },
+    {
+      "finding_id": "F-INPATIENT-RETRO",
+      "code": "LINEAGE_MISMATCH",
+      "source": "graph+vector",
+      "statement": "Prior authorization not obtained denials under L-INPATIENT-PREAUTH were overturned when the appeal included: Retroactive authorization request, Discharge summary.",
+      "status": "ACTIVE",
+      "confidence": 0.8,
+      "support": 3,
+      "learned_on": "C-2026-INPATIENT-PREAUTH",
+      "learned_section": "4.1",
+      "governing": "C-2026-INPATIENT-PREAUTH",
+      "contradicted_by": [],
+      "valid_in": [
+        "2024",
+        "2025",
+        "2026"
+      ]
+    },
+    {
+      "finding_id": "F-MRI-REFERRAL",
+      "code": "VERSION_DRIFT",
+      "source": "graph+vector",
+      "statement": "Prior authorization not obtained denials under L-MRI-PREAUTH were overturned when the appeal included: Specialist referral.",
+      "status": "STALE",
+      "confidence": 0.833,
+      "support": 4,
+      "learned_on": "C-2025-MRI-PREAUTH",
+      "learned_section": "4.2",
+      "governing": "C-2026-MRI-PREAUTH",
+      "contradicted_by": [],
+      "valid_in": [
+        "2024",
+        "2025"
+      ]
+    },
+    {
+      "finding_id": "F-SLEEP-RETRO",
+      "code": "LINEAGE_MISMATCH",
+      "source": "graph",
+      "statement": "Prior authorization not obtained denials under L-SLEEP-STUDY-PREAUTH were overturned when the appeal included: Retroactive authorization request.",
+      "status": "CONTRADICTED",
+      "confidence": 0.5,
+      "support": 2,
+      "learned_on": "C-2025-SLEEP-STUDY-PREAUTH",
+      "learned_section": "4.4",
+      "governing": "C-2026-SLEEP-STUDY-PREAUTH",
+      "contradicted_by": [
+        "R-HC-010",
+        "R-HC-011"
+      ],
+      "valid_in": [
+        "2024",
+        "2025",
+        "2026"
+      ]
+    },
+    {
+      "finding_id": "F-TIMELY-180",
+      "code": "REASON_MISMATCH",
+      "source": "vector",
+      "statement": "Filed after the deadline denials under L-TIMELY-FILING were overturned when the appeal included: Proof of timely filing.",
+      "status": "STALE",
+      "confidence": 0.75,
+      "support": 2,
+      "learned_on": "C-2025-TIMELY-FILING",
+      "learned_section": "9.1",
+      "governing": "C-2026-TIMELY-FILING",
+      "contradicted_by": [],
+      "valid_in": [
+        "2024",
+        "2025"
+      ]
+    }
+  ],
+  "recommendation": {
+    "rec_id": "REC-EV-T1-01",
+    "disposition": "APPEAL_NEEDS_EVIDENCE",
+    "summary": "A caseworker should review the missing evidence before preparing an appeal.",
+    "confidence": 0.0,
+    "uncertainty": [
+      "No verified precedent applies to this claim.",
+      "F-MRI-REFERRAL was learned under C-2025-MRI-PREAUTH; C-2026-MRI-PREAUTH governs this claim.",
+      "Support score is a smoothed count of recorded outcomes, not an approval probability."
+    ],
+    "created_at": 1792236489351,
+    "guard_dropped": 0,
+    "guard_added": 6,
+    "items": [
+      {
+        "order": 1,
+        "kind": "EVIDENCE_NEEDED",
+        "text": "Obtain and submit the physician letter of medical necessity.",
+        "origin": "graph",
+        "cites": [
+          "PHYSICIAN_NECESSITY_LETTER",
+          "C-2026-MRI-PREAUTH"
+        ]
+      },
+      {
+        "order": 2,
+        "kind": "EVIDENCE_NEEDED",
+        "text": "Obtain and submit the retroactive authorization request.",
+        "origin": "graph",
+        "cites": [
+          "RETRO_AUTH_REQUEST",
+          "C-2026-MRI-PREAUTH"
+        ]
+      },
+      {
+        "order": 3,
+        "kind": "ACTION",
+        "text": "Ask a caseworker to review the evidence and governing clause before submitting an appeal.",
+        "origin": "graph",
+        "cites": [
+          "C-2026-MRI-PREAUTH"
+        ]
+      },
+      {
+        "order": 4,
+        "kind": "REJECTED_PRECEDENT",
+        "text": "Do not rely on precedent F-INPATIENT-RETRO: it concerns a different policy clause.",
+        "origin": "graph",
+        "cites": [
+          "F-INPATIENT-RETRO"
+        ]
+      },
+      {
+        "order": 5,
+        "kind": "REJECTED_PRECEDENT",
+        "text": "Do not rely on precedent F-MRI-REFERRAL: it was learned under C-2025-MRI-PREAUTH, but C-2026-MRI-PREAUTH governs this claim.",
+        "origin": "graph",
+        "cites": [
+          "C-2026-MRI-PREAUTH",
+          "F-MRI-REFERRAL"
+        ]
+      },
+      {
+        "order": 6,
+        "kind": "REJECTED_PRECEDENT",
+        "text": "Do not rely on precedent F-SLEEP-RETRO: it concerns a different policy clause.",
+        "origin": "graph",
+        "cites": [
+          "F-SLEEP-RETRO"
+        ]
+      }
+    ]
+  },
+  "timeline": [
+    {
+      "seq": 1,
+      "type": "SUBMITTED",
+      "agent": "system",
+      "step": "NEW",
+      "ts": 1792236475771,
+      "payload": {}
+    },
+    {
+      "seq": 2,
+      "type": "CLAIMED",
+      "agent": "intake-1",
+      "step": "RECEIVED",
+      "ts": 1792236481347,
+      "payload": {
+        "attempt": 1
+      }
+    },
+    {
+      "seq": 3,
+      "type": "INTAKE_DONE",
+      "agent": "intake-1",
+      "step": "RECEIVED",
+      "ts": 1792236482864,
+      "payload": {
+        "version": "V2026",
+        "reason": "PREAUTH_MISSING",
+        "clause": "C-2026-MRI-PREAUTH",
+        "lineage": "L-MRI-PREAUTH",
+        "method": "cited_section",
+        "needs_llm_review": false,
+        "profile_top": [
+          "NOT_MED_NECESSARY",
+          "PREAUTH_MISSING",
+          "EXCLUDED_SERVICE"
+        ],
+        "history_votes": [
+          [
+            "PREAUTH_MISSING",
+            4.57
+          ],
+          [
+            "TIMELY_FILING",
+            0.849
+          ],
+          [
+            "CODING_ERROR",
+            0.846
+          ]
+        ]
+      }
+    },
+    {
+      "seq": 4,
+      "type": "CLAIMED",
+      "agent": "retrieval-1",
+      "step": "CLASSIFIED",
+      "ts": 1792236483301,
+      "payload": {
+        "attempt": 1
+      }
+    },
+    {
+      "seq": 5,
+      "type": "RETRIEVAL_DONE",
+      "agent": "retrieval-1",
+      "step": "CLASSIFIED",
+      "ts": 1792236484815,
+      "payload": {
+        "candidates": [
+          {
+            "finding_id": "F-MRI-REFERRAL",
+            "source": "graph+vector",
+            "score": 1.0
+          },
+          {
+            "finding_id": "F-INPATIENT-RETRO",
+            "source": "graph+vector",
+            "score": 0.5
+          },
+          {
+            "finding_id": "F-SLEEP-RETRO",
+            "source": "graph",
+            "score": 0.5
+          },
+          {
+            "finding_id": "F-TIMELY-180",
+            "source": "vector",
+            "score": 0.849
+          },
+          {
+            "finding_id": "F-CODING",
+            "source": "vector",
+            "score": 0.8459
+          }
+        ],
+        "written": 5
+      }
+    },
+    {
+      "seq": 6,
+      "type": "CLAIMED",
+      "agent": "verifier-2",
+      "step": "RETRIEVED",
+      "ts": 1792236485766,
+      "payload": {
+        "attempt": 1
+      }
+    },
+    {
+      "seq": 7,
+      "type": "VERIFIER_DONE",
+      "agent": "verifier-2",
+      "step": "RETRIEVED",
+      "ts": 1792236488776,
+      "payload": {
+        "accepted": [],
+        "rejected": [
+          {
+            "finding_id": "F-CODING",
+            "code": "REASON_MISMATCH",
+            "learned_on": "C-2026-CODING-CORRECTION",
+            "governing": "C-2026-CODING-CORRECTION",
+            "contradicted_by": []
+          },
+          {
+            "finding_id": "F-INPATIENT-RETRO",
+            "code": "LINEAGE_MISMATCH",
+            "learned_on": "C-2026-INPATIENT-PREAUTH",
+            "governing": "C-2026-INPATIENT-PREAUTH",
+            "contradicted_by": []
+          },
+          {
+            "finding_id": "F-MRI-REFERRAL",
+            "code": "VERSION_DRIFT",
+            "learned_on": "C-2025-MRI-PREAUTH",
+            "governing": "C-2026-MRI-PREAUTH",
+            "contradicted_by": []
+          },
+          {
+            "finding_id": "F-SLEEP-RETRO",
+            "code": "LINEAGE_MISMATCH",
+            "learned_on": "C-2025-SLEEP-STUDY-PREAUTH",
+            "governing": "C-2026-SLEEP-STUDY-PREAUTH",
+            "contradicted_by": [
+              "R-HC-010",
+              "R-HC-011"
+            ]
+          },
+          {
+            "finding_id": "F-TIMELY-180",
+            "code": "REASON_MISMATCH",
+            "learned_on": "C-2025-TIMELY-FILING",
+            "governing": "C-2026-TIMELY-FILING",
+            "contradicted_by": []
+          }
+        ],
+        "gates": [],
+        "resumed": false,
+        "notes": []
+      }
+    },
+    {
+      "seq": 8,
+      "type": "CLAIMED",
+      "agent": "planner-1",
+      "step": "VERIFIED",
+      "ts": 1792236489339,
+      "payload": {
+        "attempt": 1
+      }
+    },
+    {
+      "seq": 9,
+      "type": "PLANNER_DONE",
+      "agent": "planner-1",
+      "step": "VERIFIED",
+      "ts": 1792236490857,
+      "payload": {
+        "disposition": "APPEAL_NEEDS_EVIDENCE",
+        "confidence": 0.0,
+        "items": 6,
+        "guard": {
+          "dropped_uncited": 0,
+          "dropped_unknown_id": 0,
+          "dropped_promise": 0,
+          "dropped_moot": 0,
+          "dropped_unsupported": 0,
+          "kept_llm": 0,
+          "drafted": 0,
+          "matched_graph_statements": 0,
+          "added_required": 6
+        },
+        "llm": {
+          "mode": "graph_templates"
+        },
+        "notes": []
+      }
+    }
+  ],
+  "trap": "T1",
+  "note": "Referral exception removed in 2026; the 2025 referral precedent must be rejected"
+}

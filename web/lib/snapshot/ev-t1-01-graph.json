@@ -1,0 +1,164 @@
+{
+  "nodes": [
+    {
+      "id": "EV-T1-01",
+      "kind": "claim",
+      "label": "EV-T1-01",
+      "sub": "Outpatient MRI"
+    },
+    {
+      "id": "V2026",
+      "kind": "version",
+      "label": "Policy 2026"
+    },
+    {
+      "id": "C-2026-MRI-PREAUTH",
+      "kind": "clause",
+      "label": "Â§4.2 Prior authorization for outpatient MRI",
+      "sub": "C-2026-MRI-PREAUTH"
+    },
+    {
+      "id": "PHYSICIAN_NECESSITY_LETTER",
+      "kind": "evidence",
+      "label": "Physician letter of medical necessity",
+      "satisfied": false
+    },
+    {
+      "id": "RETRO_AUTH_REQUEST",
+      "kind": "evidence",
+      "label": "Retroactive authorization request",
+      "satisfied": false
+    },
+    {
+      "id": "F-INPATIENT-RETRO",
+      "kind": "finding",
+      "label": "F-INPATIENT-RETRO",
+      "code": "LINEAGE_MISMATCH",
+      "status": "ACTIVE"
+    },
+    {
+      "id": "C-2026-INPATIENT-PREAUTH",
+      "kind": "clause",
+      "label": "C-2026-INPATIENT-PREAUTH",
+      "sub": "learned on"
+    },
+    {
+      "id": "F-MRI-REFERRAL",
+      "kind": "finding",
+      "label": "F-MRI-REFERRAL",
+      "code": "VERSION_DRIFT",
+      "status": "STALE"
+    },
+    {
+      "id": "C-2025-MRI-PREAUTH",
+      "kind": "clause",
+      "label": "C-2025-MRI-PREAUTH",
+      "sub": "learned on"
+    },
+    {
+      "id": "F-SLEEP-RETRO",
+      "kind": "finding",
+      "label": "F-SLEEP-RETRO",
+      "code": "LINEAGE_MISMATCH",
+      "status": "CONTRADICTED"
+    },
+    {
+      "id": "C-2025-SLEEP-STUDY-PREAUTH",
+      "kind": "clause",
+      "label": "C-2025-SLEEP-STUDY-PREAUTH",
+      "sub": "learned on"
+    },
+    {
+      "id": "R-HC-010",
+      "kind": "resolution",
+      "label": "R-HC-010",
+      "sub": "upheld"
+    },
+    {
+      "id": "R-HC-011",
+      "kind": "resolution",
+      "label": "R-HC-011",
+      "sub": "upheld"
+    }
+  ],
+  "edges": [
+    {
+      "from": "EV-T1-01",
+      "to": "V2026",
+      "label": "governed by"
+    },
+    {
+      "from": "EV-T1-01",
+      "to": "C-2026-MRI-PREAUTH",
+      "label": "denial cites"
+    },
+    {
+      "from": "V2026",
+      "to": "C-2026-MRI-PREAUTH",
+      "label": "contains"
+    },
+    {
+      "from": "C-2026-MRI-PREAUTH",
+      "to": "PHYSICIAN_NECESSITY_LETTER",
+      "label": "missing",
+      "state": "missing"
+    },
+    {
+      "from": "C-2026-MRI-PREAUTH",
+      "to": "RETRO_AUTH_REQUEST",
+      "label": "missing",
+      "state": "missing"
+    },
+    {
+      "from": "EV-T1-01",
+      "to": "F-INPATIENT-RETRO",
+      "label": "lineage mismatch",
+      "code": "LINEAGE_MISMATCH"
+    },
+    {
+      "from": "F-INPATIENT-RETRO",
+      "to": "C-2026-INPATIENT-PREAUTH",
+      "label": "learned on"
+    },
+    {
+      "from": "EV-T1-01",
+      "to": "F-MRI-REFERRAL",
+      "label": "version drift",
+      "code": "VERSION_DRIFT"
+    },
+    {
+      "from": "F-MRI-REFERRAL",
+      "to": "C-2025-MRI-PREAUTH",
+      "label": "learned on"
+    },
+    {
+      "from": "C-2026-MRI-PREAUTH",
+      "to": "C-2025-MRI-PREAUTH",
+      "label": "supersedes",
+      "code": "VERSION_DRIFT"
+    },
+    {
+      "from": "EV-T1-01",
+      "to": "F-SLEEP-RETRO",
+      "label": "lineage mismatch",
+      "code": "LINEAGE_MISMATCH"
+    },
+    {
+      "from": "F-SLEEP-RETRO",
+      "to": "C-2025-SLEEP-STUDY-PREAUTH",
+      "label": "learned on"
+    },
+    {
+      "from": "F-SLEEP-RETRO",
+      "to": "R-HC-010",
+      "label": "contradicted by",
+      "code": "CONTRADICTED"
+    },
+    {
+      "from": "F-SLEEP-RETRO",
+      "to": "R-HC-011",
+      "label": "contradicted by",
+      "code": "CONTRADICTED"
+    }
+  ]
+}
