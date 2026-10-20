@@ -1,0 +1,38 @@
+# TEMPLATE for a teammate-authored generalization set (the independent check the review asked for).
+#
+# How to use it
+#   1. Copy this file to data/scenarios/generalization_<yourname>.yaml.
+#   2. Write each denial letter in your own words. Do NOT look at the rule engine (backend/claimbridge/seed/rules.py),
+#      the Cypher, or any result while writing; derive the expected answer from the policy text in data/knowledge only.
+#   3. Fill in `expected` BEFORE running anything. Note disagreements with a co-author in `because`.
+#   4. Run:  GRAPH=claimbridge_eval python -m claimbridge.cli eval generalization --file generalization_<yourname>.yaml
+#      The runner locks your expectations (a .sha256 next to the file) on first run.
+#   5. Report the result as it is, including failures. A small separately authored synthetic set remains synthetic.
+#
+# Cases worth writing: letters that contradict themselves, letters with no section number, negations ("this is NOT ..."),
+# unfamiliar wording for a known reason, boundary dates (last/first day of a policy year), boundary counts (days filed,
+# months enrolled, sessions), emergency / network variants, a precedent learned on one service reused on another,
+# and anything you think would fool a system that matches letters to past letters.
+
+registered_on: "YYYY-MM-DD"
+cases:
+  - id: TEAM-01
+    purpose: what this case probes
+    service: MRI                      # one of data/knowledge/taxonomy.yaml service_categories
+    service_date: 20260301            # YYYYMMDD
+    filing_lag_days: 20
+    in_network: true
+    is_emergency: false
+    enrolled_months: 12
+    session_number: null
+    evidence: []                      # evidence types already on file
+    notice: >
+      Lumen Health Assurance - Notice of claim denial. Claim {id}. ...
+    expected:
+      outcome: complete               # complete | escalate
+      reason: PREAUTH_MISSING
+      version: V2026
+      disposition: APPEAL_NEEDS_EVIDENCE
+      missing_evidence: []            # null = not scored
+      applicable_findings: []         # null = not scored
+      because: "your reasoning from the policy text"

@@ -1,0 +1,115 @@
+# Fictional taxonomy for ClaimBridge. All synthetic.
+
+insurer:
+  insurer_id: INS-LUMEN
+  name: Lumen Health Assurance (fictional)
+
+plan:
+  plan_id: PLAN-SILVER
+  name: LumenCare Silver
+  tier: silver
+
+versions:
+  - {version_id: V2024, label: "2024", effective_from: 20240101, effective_to: 20250101}
+  - {version_id: V2025, label: "2025", effective_from: 20250101, effective_to: 20260101}
+  - {version_id: V2026, label: "2026", effective_from: 20260101, effective_to: 99991231}
+
+# `profile` is the text embedded for the Intake vector cross-check (Q2).
+denial_reasons:
+  - code: PREAUTH_MISSING
+    name: Prior authorization not obtained
+    profile: >
+      Prior authorization was not obtained. The service required pre-approval,
+      precertification or authorization from the plan before it was performed.
+      No authorization on file. Approval was not requested in advance.
+  - code: NOT_MED_NECESSARY
+    name: Not medically necessary
+    profile: >
+      The service was not medically necessary. Clinical documentation does not
+      support medical necessity. The treatment exceeds what is clinically
+      appropriate or the number of covered sessions without justification.
+  - code: EXCLUDED_SERVICE
+    name: Service excluded by the policy
+    profile: >
+      The service is excluded from coverage under this policy. This benefit is
+      not covered. The procedure is listed as an exclusion, investigational,
+      experimental, or a non-covered service.
+  - code: WAITING_PERIOD
+    name: Waiting period not satisfied
+    profile: >
+      The waiting period has not been satisfied. Coverage for this benefit
+      begins only after the member has been enrolled for the required number
+      of months. Enrollment duration is insufficient.
+  - code: OUT_OF_NETWORK
+    name: Provider out of network
+    profile: >
+      The provider or facility is out of network. Services from non-participating,
+      non-contracted providers are not covered except in specific circumstances.
+  - code: INCOMPLETE_DOCS
+    name: Incomplete documentation
+    profile: >
+      The claim was submitted with incomplete documentation. Required records
+      such as the itemized bill or discharge summary are missing. Please
+      resubmit with complete documents.
+  - code: CODING_ERROR
+    name: Billing or coding error
+    profile: >
+      The claim contains a billing or coding error. The procedure code,
+      diagnosis code or modifier is invalid, mismatched or inconsistent with
+      the services billed.
+  - code: DUPLICATE_CLAIM
+    name: Duplicate submission
+    profile: >
+      This claim is a duplicate of a previously submitted claim for the same
+      member, provider, date of service and amount.
+  - code: TIMELY_FILING
+    name: Filed after the deadline
+    profile: >
+      The claim was not filed within the timely filing limit. It was received
+      after the deadline for submission measured from the date of service.
+
+service_categories:
+  - {code: MRI, name: Outpatient MRI}
+  - {code: PHYSIO, name: Physiotherapy}
+  - {code: ER_VISIT, name: Emergency room visit}
+  - {code: INPATIENT_SURGERY, name: Inpatient surgery}
+  - {code: BARIATRIC, name: Bariatric surgery}
+  - {code: MATERNITY, name: Maternity care}
+  - {code: GENETIC_TEST, name: Genetic testing}
+  - {code: AMBULANCE, name: Ambulance transport}
+  - {code: SLEEP_STUDY, name: Sleep study}
+  - {code: DME, name: Durable medical equipment}
+
+evidence_types:
+  - {code: PREAUTH_APPROVAL, name: Prior authorization approval}
+  - {code: RETRO_AUTH_REQUEST, name: Retroactive authorization request}
+  - {code: SPECIALIST_REFERRAL, name: Specialist referral}
+  - {code: PHYSICIAN_NECESSITY_LETTER, name: Physician letter of medical necessity}
+  - {code: PROGRESS_NOTES, name: Clinical progress notes}
+  - {code: ITEMIZED_BILL, name: Itemized bill}
+  - {code: CORRECTED_CODING_SUBMISSION, name: Corrected coding submission}
+  - {code: DISCHARGE_SUMMARY, name: Discharge summary}
+  - {code: EMERGENCY_ATTESTATION, name: Emergency attestation}
+  - {code: BMI_RECORD, name: BMI record}
+  - {code: SUPERVISED_PROGRAM_RECORD, name: Supervised weight-loss program record}
+  - {code: GENETIC_COUNSELOR_REFERRAL, name: Genetic counselor referral}
+  - {code: LAB_REPORT, name: Lab report}
+  - {code: ENROLLMENT_RECORD, name: Enrollment record}
+  - {code: PROOF_OF_TIMELY_FILING, name: Proof of timely filing}
+
+tenants:
+  - {tenant_id: TEN-01, display_name: Asha Varma}
+  - {tenant_id: TEN-02, display_name: Ben Okafor}
+  - {tenant_id: TEN-03, display_name: Carmen Ruiz}
+  - {tenant_id: TEN-04, display_name: Dev Mehta}
+  - {tenant_id: TEN-05, display_name: Elif Kaya}
+  - {tenant_id: TEN-06, display_name: Farid Haddad}
+  - {tenant_id: TEN-07, display_name: Grace Lin}
+  - {tenant_id: TEN-08, display_name: Hugo Brandt}
+  - {tenant_id: TEN-09, display_name: Ines Moreau}
+  - {tenant_id: TEN-10, display_name: Jonah Pike}
+  - {tenant_id: TEN-11, display_name: Keiko Sato}
+  - {tenant_id: TEN-12, display_name: Luca Romano}
+  - {tenant_id: TEN-13, display_name: Maya Cohen}
+  - {tenant_id: TEN-14, display_name: Nikhil Rao}
+  - {tenant_id: TEN-15, display_name: Olga Petrova}

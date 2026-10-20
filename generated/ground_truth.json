@@ -1,0 +1,1035 @@
+[
+  {
+    "claim_id": "EV-T1-01",
+    "trap": "T1",
+    "tenant_id": "TEN-01",
+    "expected_reason": "PREAUTH_MISSING",
+    "expected_version": "V2026",
+    "expected_lineage": "L-MRI-PREAUTH",
+    "expected_clause": "C-2026-MRI-PREAUTH",
+    "expected_required_evidence": [
+      "PHYSICIAN_NECESSITY_LETTER",
+      "RETRO_AUTH_REQUEST"
+    ],
+    "expected_missing_evidence": [
+      "PHYSICIAN_NECESSITY_LETTER",
+      "RETRO_AUTH_REQUEST"
+    ],
+    "expected_applicable_findings": [],
+    "expected_rejected_findings": [
+      {
+        "finding_id": "F-INPATIENT-RETRO",
+        "code": "LINEAGE_MISMATCH"
+      },
+      {
+        "finding_id": "F-MRI-REFERRAL",
+        "code": "VERSION_DRIFT"
+      },
+      {
+        "finding_id": "F-SLEEP-RETRO",
+        "code": "LINEAGE_MISMATCH"
+      }
+    ],
+    "expected_gates": [],
+    "expected_disposition": "APPEAL_NEEDS_EVIDENCE",
+    "tenant_probe": null,
+    "note": "Referral exception removed in 2026; the 2025 referral precedent must be rejected"
+  },
+  {
+    "claim_id": "EV-T1-02",
+    "trap": "T1",
+    "tenant_id": "TEN-02",
+    "expected_reason": "NOT_MED_NECESSARY",
+    "expected_version": "V2026",
+    "expected_lineage": "L-PHYSIO-LIMIT",
+    "expected_clause": "C-2026-PHYSIO-LIMIT",
+    "expected_required_evidence": [
+      "PHYSICIAN_NECESSITY_LETTER",
+      "PROGRESS_NOTES"
+    ],
+    "expected_missing_evidence": [
+      "PHYSICIAN_NECESSITY_LETTER"
+    ],
+    "expected_applicable_findings": [
+      "F-PHYSIO-NECESSITY"
+    ],
+    "expected_rejected_findings": [
+      {
+        "finding_id": "F-DME-NECESSITY",
+        "code": "LINEAGE_MISMATCH"
+      },
+      {
+        "finding_id": "F-ER-NECESSITY",
+        "code": "LINEAGE_MISMATCH"
+      },
+      {
+        "finding_id": "F-PHYSIO-NOTES",
+        "code": "VERSION_DRIFT"
+      }
+    ],
+    "expected_gates": [],
+    "expected_disposition": "APPEAL_NEEDS_EVIDENCE",
+    "tenant_probe": null,
+    "note": "2026 cut sessions to 12; progress notes alone no longer suffice"
+  },
+  {
+    "claim_id": "EV-T1-03",
+    "trap": "T1",
+    "tenant_id": "TEN-03",
+    "expected_reason": "OUT_OF_NETWORK",
+    "expected_version": "V2026",
+    "expected_lineage": "L-OON-EMERGENCY",
+    "expected_clause": "C-2026-OON-EMERGENCY",
+    "expected_required_evidence": [
+      "DISCHARGE_SUMMARY",
+      "EMERGENCY_ATTESTATION"
+    ],
+    "expected_missing_evidence": [],
+    "expected_applicable_findings": [],
+    "expected_rejected_findings": [
+      {
+        "finding_id": "F-OON-ER",
+        "code": "VERSION_DRIFT"
+      }
+    ],
+    "expected_gates": [],
+    "expected_disposition": "APPEAL_VIABLE",
+    "tenant_probe": null,
+    "note": "72h-window precedent does not carry into the 48h 2026 clause"
+  },
+  {
+    "claim_id": "EV-T1-04",
+    "trap": "T1",
+    "tenant_id": "TEN-04",
+    "expected_reason": "EXCLUDED_SERVICE",
+    "expected_version": "V2024",
+    "expected_lineage": "L-BARIATRIC",
+    "expected_clause": "C-2024-BARIATRIC",
+    "expected_required_evidence": [],
+    "expected_missing_evidence": [],
+    "expected_applicable_findings": [],
+    "expected_rejected_findings": [
+      {
+        "finding_id": "F-BARIATRIC",
+        "code": "VERSION_DRIFT"
+      },
+      {
+        "finding_id": "F-GENETIC",
+        "code": "LINEAGE_MISMATCH"
+      }
+    ],
+    "expected_gates": [
+      "EXCLUSION_NO_BASIS"
+    ],
+    "expected_disposition": "NO_BASIS_ESCALATE",
+    "tenant_probe": null,
+    "note": "Reverse drift: the 2025 coverage precedent does not apply to a 2024 service date"
+  },
+  {
+    "claim_id": "EV-T2-01",
+    "trap": "T2",
+    "tenant_id": "TEN-05",
+    "expected_reason": "PREAUTH_MISSING",
+    "expected_version": "V2025",
+    "expected_lineage": "L-INPATIENT-PREAUTH",
+    "expected_clause": "C-2025-INPATIENT-PREAUTH",
+    "expected_required_evidence": [
+      "DISCHARGE_SUMMARY",
+      "RETRO_AUTH_REQUEST"
+    ],
+    "expected_missing_evidence": [
+      "RETRO_AUTH_REQUEST"
+    ],
+    "expected_applicable_findings": [
+      "F-INPATIENT-RETRO"
+    ],
+    "expected_rejected_findings": [
+      {
+        "finding_id": "F-MRI-REFERRAL",
+        "code": "LINEAGE_MISMATCH"
+      },
+      {
+        "finding_id": "F-SLEEP-RETRO",
+        "code": "LINEAGE_MISMATCH"
+      }
+    ],
+    "expected_gates": [],
+    "expected_disposition": "APPEAL_NEEDS_EVIDENCE",
+    "tenant_probe": null,
+    "note": "MRI preauth precedents look similar but cite a different lineage"
+  },
+  {
+    "claim_id": "EV-T2-02",
+    "trap": "T2",
+    "tenant_id": "TEN-06",
+    "expected_reason": "NOT_MED_NECESSARY",
+    "expected_version": "V2025",
+    "expected_lineage": "L-DME-NECESSITY",
+    "expected_clause": "C-2025-DME-NECESSITY",
+    "expected_required_evidence": [
+      "PHYSICIAN_NECESSITY_LETTER"
+    ],
+    "expected_missing_evidence": [],
+    "expected_applicable_findings": [
+      "F-DME-NECESSITY"
+    ],
+    "expected_rejected_findings": [
+      {
+        "finding_id": "F-ER-NECESSITY",
+        "code": "LINEAGE_MISMATCH"
+      },
+      {
+        "finding_id": "F-PHYSIO-NECESSITY",
+        "code": "LINEAGE_MISMATCH"
+      },
+      {
+        "finding_id": "F-PHYSIO-NOTES",
+        "code": "LINEAGE_MISMATCH"
+      }
+    ],
+    "expected_gates": [],
+    "expected_disposition": "APPEAL_VIABLE",
+    "tenant_probe": null,
+    "note": null
+  },
+  {
+    "claim_id": "EV-T2-03",
+    "trap": "T2",
+    "tenant_id": "TEN-07",
+    "expected_reason": "NOT_MED_NECESSARY",
+    "expected_version": "V2025",
+    "expected_lineage": "L-AMBULANCE",
+    "expected_clause": "C-2025-AMBULANCE",
+    "expected_required_evidence": [
+      "EMERGENCY_ATTESTATION"
+    ],
+    "expected_missing_evidence": [
+      "EMERGENCY_ATTESTATION"
+    ],
+    "expected_applicable_findings": [],
+    "expected_rejected_findings": [
+      {
+        "finding_id": "F-DME-NECESSITY",
+        "code": "LINEAGE_MISMATCH"
+      },
+      {
+        "finding_id": "F-ER-NECESSITY",
+        "code": "LINEAGE_MISMATCH"
+      },
+      {
+        "finding_id": "F-PHYSIO-NECESSITY",
+        "code": "LINEAGE_MISMATCH"
+      },
+      {
+        "finding_id": "F-PHYSIO-NOTES",
+        "code": "LINEAGE_MISMATCH"
+      }
+    ],
+    "expected_gates": [],
+    "expected_disposition": "APPEAL_NEEDS_EVIDENCE",
+    "tenant_probe": null,
+    "note": null
+  },
+  {
+    "claim_id": "EV-T3-01",
+    "trap": "T3",
+    "tenant_id": "TEN-08",
+    "expected_reason": "NOT_MED_NECESSARY",
+    "expected_version": "V2026",
+    "expected_lineage": "L-PHYSIO-LIMIT",
+    "expected_clause": "C-2026-PHYSIO-LIMIT",
+    "expected_required_evidence": [
+      "PHYSICIAN_NECESSITY_LETTER",
+      "PROGRESS_NOTES"
+    ],
+    "expected_missing_evidence": [
+      "PHYSICIAN_NECESSITY_LETTER",
+      "PROGRESS_NOTES"
+    ],
+    "expected_applicable_findings": [
+      "F-PHYSIO-NECESSITY"
+    ],
+    "expected_rejected_findings": [
+      {
+        "finding_id": "F-DME-NECESSITY",
+        "code": "LINEAGE_MISMATCH"
+      },
+      {
+        "finding_id": "F-ER-NECESSITY",
+        "code": "LINEAGE_MISMATCH"
+      },
+      {
+        "finding_id": "F-PHYSIO-NOTES",
+        "code": "VERSION_DRIFT"
+      }
+    ],
+    "expected_gates": [],
+    "expected_disposition": "APPEAL_NEEDS_EVIDENCE",
+    "tenant_probe": null,
+    "note": null
+  },
+  {
+    "claim_id": "EV-T3-02",
+    "trap": "T3",
+    "tenant_id": "TEN-09",
+    "expected_reason": "EXCLUDED_SERVICE",
+    "expected_version": "V2025",
+    "expected_lineage": "L-BARIATRIC",
+    "expected_clause": "C-2025-BARIATRIC",
+    "expected_required_evidence": [
+      "BMI_RECORD",
+      "SUPERVISED_PROGRAM_RECORD"
+    ],
+    "expected_missing_evidence": [
+      "SUPERVISED_PROGRAM_RECORD"
+    ],
+    "expected_applicable_findings": [
+      "F-BARIATRIC"
+    ],
+    "expected_rejected_findings": [
+      {
+        "finding_id": "F-GENETIC",
+        "code": "LINEAGE_MISMATCH"
+      }
+    ],
+    "expected_gates": [],
+    "expected_disposition": "APPEAL_NEEDS_EVIDENCE",
+    "tenant_probe": null,
+    "note": null
+  },
+  {
+    "claim_id": "EV-T3-03",
+    "trap": "T3",
+    "tenant_id": "TEN-10",
+    "expected_reason": "CODING_ERROR",
+    "expected_version": "V2026",
+    "expected_lineage": "L-CODING-CORRECTION",
+    "expected_clause": "C-2026-CODING-CORRECTION",
+    "expected_required_evidence": [
+      "CORRECTED_CODING_SUBMISSION",
+      "ITEMIZED_BILL"
+    ],
+    "expected_missing_evidence": [
+      "CORRECTED_CODING_SUBMISSION"
+    ],
+    "expected_applicable_findings": [
+      "F-CODING"
+    ],
+    "expected_rejected_findings": [],
+    "expected_gates": [],
+    "expected_disposition": "APPEAL_NEEDS_EVIDENCE",
+    "tenant_probe": null,
+    "note": null
+  },
+  {
+    "claim_id": "EV-T4-01",
+    "trap": "T4",
+    "tenant_id": "TEN-11",
+    "expected_reason": "PREAUTH_MISSING",
+    "expected_version": "V2025",
+    "expected_lineage": "L-SLEEP-STUDY-PREAUTH",
+    "expected_clause": "C-2025-SLEEP-STUDY-PREAUTH",
+    "expected_required_evidence": [
+      "RETRO_AUTH_REQUEST"
+    ],
+    "expected_missing_evidence": [],
+    "expected_applicable_findings": [],
+    "expected_rejected_findings": [
+      {
+        "finding_id": "F-INPATIENT-RETRO",
+        "code": "LINEAGE_MISMATCH"
+      },
+      {
+        "finding_id": "F-MRI-REFERRAL",
+        "code": "LINEAGE_MISMATCH"
+      },
+      {
+        "finding_id": "F-SLEEP-RETRO",
+        "code": "CONTRADICTED"
+      }
+    ],
+    "expected_gates": [],
+    "expected_disposition": "APPEAL_VIABLE",
+    "tenant_probe": null,
+    "note": null
+  },
+  {
+    "claim_id": "EV-T4-02",
+    "trap": "T4",
+    "tenant_id": "TEN-12",
+    "expected_reason": "PREAUTH_MISSING",
+    "expected_version": "V2026",
+    "expected_lineage": "L-SLEEP-STUDY-PREAUTH",
+    "expected_clause": "C-2026-SLEEP-STUDY-PREAUTH",
+    "expected_required_evidence": [
+      "RETRO_AUTH_REQUEST"
+    ],
+    "expected_missing_evidence": [
+      "RETRO_AUTH_REQUEST"
+    ],
+    "expected_applicable_findings": [],
+    "expected_rejected_findings": [
+      {
+        "finding_id": "F-INPATIENT-RETRO",
+        "code": "LINEAGE_MISMATCH"
+      },
+      {
+        "finding_id": "F-MRI-REFERRAL",
+        "code": "LINEAGE_MISMATCH"
+      },
+      {
+        "finding_id": "F-SLEEP-RETRO",
+        "code": "CONTRADICTED"
+      }
+    ],
+    "expected_gates": [],
+    "expected_disposition": "APPEAL_NEEDS_EVIDENCE",
+    "tenant_probe": null,
+    "note": null
+  },
+  {
+    "claim_id": "EV-T5-01",
+    "trap": "T5",
+    "tenant_id": "TEN-13",
+    "expected_reason": "OUT_OF_NETWORK",
+    "expected_version": "V2025",
+    "expected_lineage": "L-OON-EMERGENCY",
+    "expected_clause": "C-2025-OON-EMERGENCY",
+    "expected_required_evidence": [
+      "DISCHARGE_SUMMARY",
+      "EMERGENCY_ATTESTATION"
+    ],
+    "expected_missing_evidence": [
+      "DISCHARGE_SUMMARY",
+      "EMERGENCY_ATTESTATION"
+    ],
+    "expected_applicable_findings": [],
+    "expected_rejected_findings": [
+      {
+        "finding_id": "F-OON-ER",
+        "code": "CONDITION_UNMET"
+      }
+    ],
+    "expected_gates": [
+      "EMERGENCY_REQUIRED"
+    ],
+    "expected_disposition": "NO_BASIS_ESCALATE",
+    "tenant_probe": null,
+    "note": "Emergency out-of-network precedent does not apply to an elective MRI"
+  },
+  {
+    "claim_id": "EV-T5-02",
+    "trap": "T5",
+    "tenant_id": "TEN-14",
+    "expected_reason": "OUT_OF_NETWORK",
+    "expected_version": "V2025",
+    "expected_lineage": "L-OON-EMERGENCY",
+    "expected_clause": "C-2025-OON-EMERGENCY",
+    "expected_required_evidence": [
+      "DISCHARGE_SUMMARY",
+      "EMERGENCY_ATTESTATION"
+    ],
+    "expected_missing_evidence": [
+      "DISCHARGE_SUMMARY",
+      "EMERGENCY_ATTESTATION"
+    ],
+    "expected_applicable_findings": [],
+    "expected_rejected_findings": [
+      {
+        "finding_id": "F-OON-ER",
+        "code": "CONDITION_UNMET"
+      }
+    ],
+    "expected_gates": [
+      "EMERGENCY_REQUIRED"
+    ],
+    "expected_disposition": "NO_BASIS_ESCALATE",
+    "tenant_probe": null,
+    "note": null
+  },
+  {
+    "claim_id": "EV-T6-01",
+    "trap": "T6",
+    "tenant_id": "TEN-15",
+    "expected_reason": "TIMELY_FILING",
+    "expected_version": "V2026",
+    "expected_lineage": "L-TIMELY-FILING",
+    "expected_clause": "C-2026-TIMELY-FILING",
+    "expected_required_evidence": [
+      "PROOF_OF_TIMELY_FILING"
+    ],
+    "expected_missing_evidence": [
+      "PROOF_OF_TIMELY_FILING"
+    ],
+    "expected_applicable_findings": [],
+    "expected_rejected_findings": [
+      {
+        "finding_id": "F-TIMELY-180",
+        "code": "VERSION_DRIFT"
+      }
+    ],
+    "expected_gates": [
+      "FILED_LATE"
+    ],
+    "expected_disposition": "NO_BASIS_ESCALATE",
+    "tenant_probe": null,
+    "note": "120 days was fine under the 180-day rule, but 2026 allows 90"
+  },
+  {
+    "claim_id": "EV-T6-02",
+    "trap": "T6",
+    "tenant_id": "TEN-01",
+    "expected_reason": "EXCLUDED_SERVICE",
+    "expected_version": "V2024",
+    "expected_lineage": "L-EXPERIMENTAL-EXCL",
+    "expected_clause": "C-2024-EXPERIMENTAL-EXCL",
+    "expected_required_evidence": [],
+    "expected_missing_evidence": [],
+    "expected_applicable_findings": [],
+    "expected_rejected_findings": [
+      {
+        "finding_id": "F-BARIATRIC",
+        "code": "LINEAGE_MISMATCH"
+      },
+      {
+        "finding_id": "F-GENETIC",
+        "code": "LINEAGE_MISMATCH"
+      }
+    ],
+    "expected_gates": [
+      "EXCLUSION_NO_BASIS"
+    ],
+    "expected_disposition": "NO_BASIS_ESCALATE",
+    "tenant_probe": null,
+    "note": "Genetic testing was only added in 2025; in 2024 it falls under the experimental exclusion"
+  },
+  {
+    "claim_id": "EV-T6-03",
+    "trap": "T6",
+    "tenant_id": "TEN-02",
+    "expected_reason": "WAITING_PERIOD",
+    "expected_version": "V2025",
+    "expected_lineage": "L-MATERNITY-WAIT",
+    "expected_clause": "C-2025-MATERNITY-WAIT",
+    "expected_required_evidence": [
+      "ENROLLMENT_RECORD"
+    ],
+    "expected_missing_evidence": [],
+    "expected_applicable_findings": [],
+    "expected_rejected_findings": [
+      {
+        "finding_id": "F-MATERNITY-9M",
+        "code": "VERSION_DRIFT"
+      }
+    ],
+    "expected_gates": [
+      "WAITING_NOT_MET"
+    ],
+    "expected_disposition": "NO_BASIS_ESCALATE",
+    "tenant_probe": null,
+    "note": "The 9-month rule is 2026 only; in 2025 the wait is 12 months"
+  },
+  {
+    "claim_id": "EV-T7-01",
+    "trap": "T7",
+    "tenant_id": "TEN-03",
+    "expected_reason": "CODING_ERROR",
+    "expected_version": "V2025",
+    "expected_lineage": "L-CODING-CORRECTION",
+    "expected_clause": "C-2025-CODING-CORRECTION",
+    "expected_required_evidence": [
+      "CORRECTED_CODING_SUBMISSION",
+      "ITEMIZED_BILL"
+    ],
+    "expected_missing_evidence": [],
+    "expected_applicable_findings": [
+      "F-CODING"
+    ],
+    "expected_rejected_findings": [],
+    "expected_gates": [],
+    "expected_disposition": "APPEAL_VIABLE",
+    "tenant_probe": "TEN-07",
+    "note": null
+  },
+  {
+    "claim_id": "EV-T7-02",
+    "trap": "T7",
+    "tenant_id": "TEN-05",
+    "expected_reason": "OUT_OF_NETWORK",
+    "expected_version": "V2025",
+    "expected_lineage": "L-OON-EMERGENCY",
+    "expected_clause": "C-2025-OON-EMERGENCY",
+    "expected_required_evidence": [
+      "DISCHARGE_SUMMARY",
+      "EMERGENCY_ATTESTATION"
+    ],
+    "expected_missing_evidence": [],
+    "expected_applicable_findings": [
+      "F-OON-ER"
+    ],
+    "expected_rejected_findings": [],
+    "expected_gates": [],
+    "expected_disposition": "APPEAL_VIABLE",
+    "tenant_probe": "TEN-01",
+    "note": null
+  },
+  {
+    "claim_id": "EV-N-01",
+    "trap": null,
+    "tenant_id": "TEN-05",
+    "expected_reason": "PREAUTH_MISSING",
+    "expected_version": "V2025",
+    "expected_lineage": "L-MRI-PREAUTH",
+    "expected_clause": "C-2025-MRI-PREAUTH",
+    "expected_required_evidence": [
+      "SPECIALIST_REFERRAL"
+    ],
+    "expected_missing_evidence": [
+      "SPECIALIST_REFERRAL"
+    ],
+    "expected_applicable_findings": [
+      "F-MRI-REFERRAL"
+    ],
+    "expected_rejected_findings": [
+      {
+        "finding_id": "F-INPATIENT-RETRO",
+        "code": "LINEAGE_MISMATCH"
+      },
+      {
+        "finding_id": "F-SLEEP-RETRO",
+        "code": "LINEAGE_MISMATCH"
+      }
+    ],
+    "expected_gates": [],
+    "expected_disposition": "APPEAL_NEEDS_EVIDENCE",
+    "tenant_probe": null,
+    "note": null
+  },
+  {
+    "claim_id": "EV-N-02",
+    "trap": null,
+    "tenant_id": "TEN-06",
+    "expected_reason": "PREAUTH_MISSING",
+    "expected_version": "V2024",
+    "expected_lineage": "L-MRI-PREAUTH",
+    "expected_clause": "C-2024-MRI-PREAUTH",
+    "expected_required_evidence": [
+      "SPECIALIST_REFERRAL"
+    ],
+    "expected_missing_evidence": [],
+    "expected_applicable_findings": [
+      "F-MRI-REFERRAL"
+    ],
+    "expected_rejected_findings": [
+      {
+        "finding_id": "F-INPATIENT-RETRO",
+        "code": "LINEAGE_MISMATCH"
+      },
+      {
+        "finding_id": "F-SLEEP-RETRO",
+        "code": "LINEAGE_MISMATCH"
+      }
+    ],
+    "expected_gates": [],
+    "expected_disposition": "APPEAL_VIABLE",
+    "tenant_probe": null,
+    "note": null
+  },
+  {
+    "claim_id": "EV-N-03",
+    "trap": null,
+    "tenant_id": "TEN-07",
+    "expected_reason": "PREAUTH_MISSING",
+    "expected_version": "V2026",
+    "expected_lineage": "L-INPATIENT-PREAUTH",
+    "expected_clause": "C-2026-INPATIENT-PREAUTH",
+    "expected_required_evidence": [
+      "DISCHARGE_SUMMARY",
+      "RETRO_AUTH_REQUEST"
+    ],
+    "expected_missing_evidence": [],
+    "expected_applicable_findings": [
+      "F-INPATIENT-RETRO"
+    ],
+    "expected_rejected_findings": [
+      {
+        "finding_id": "F-MRI-REFERRAL",
+        "code": "LINEAGE_MISMATCH"
+      },
+      {
+        "finding_id": "F-SLEEP-RETRO",
+        "code": "LINEAGE_MISMATCH"
+      }
+    ],
+    "expected_gates": [],
+    "expected_disposition": "APPEAL_VIABLE",
+    "tenant_probe": null,
+    "note": null
+  },
+  {
+    "claim_id": "EV-N-04",
+    "trap": null,
+    "tenant_id": "TEN-08",
+    "expected_reason": "NOT_MED_NECESSARY",
+    "expected_version": "V2025",
+    "expected_lineage": "L-ER-COVERAGE",
+    "expected_clause": "C-2025-ER-COVERAGE",
+    "expected_required_evidence": [
+      "DISCHARGE_SUMMARY"
+    ],
+    "expected_missing_evidence": [],
+    "expected_applicable_findings": [
+      "F-ER-NECESSITY"
+    ],
+    "expected_rejected_findings": [
+      {
+        "finding_id": "F-DME-NECESSITY",
+        "code": "LINEAGE_MISMATCH"
+      },
+      {
+        "finding_id": "F-PHYSIO-NECESSITY",
+        "code": "LINEAGE_MISMATCH"
+      },
+      {
+        "finding_id": "F-PHYSIO-NOTES",
+        "code": "LINEAGE_MISMATCH"
+      }
+    ],
+    "expected_gates": [],
+    "expected_disposition": "APPEAL_VIABLE",
+    "tenant_probe": null,
+    "note": null
+  },
+  {
+    "claim_id": "EV-N-05",
+    "trap": null,
+    "tenant_id": "TEN-09",
+    "expected_reason": "INCOMPLETE_DOCS",
+    "expected_version": "V2026",
+    "expected_lineage": "L-ITEMIZED-BILL",
+    "expected_clause": "C-2026-ITEMIZED-BILL",
+    "expected_required_evidence": [
+      "DISCHARGE_SUMMARY",
+      "ITEMIZED_BILL"
+    ],
+    "expected_missing_evidence": [
+      "DISCHARGE_SUMMARY"
+    ],
+    "expected_applicable_findings": [
+      "F-DOCS"
+    ],
+    "expected_rejected_findings": [],
+    "expected_gates": [],
+    "expected_disposition": "APPEAL_NEEDS_EVIDENCE",
+    "tenant_probe": null,
+    "note": null
+  },
+  {
+    "claim_id": "EV-N-06",
+    "trap": null,
+    "tenant_id": "TEN-10",
+    "expected_reason": "DUPLICATE_CLAIM",
+    "expected_version": "V2026",
+    "expected_lineage": "L-DUPLICATE",
+    "expected_clause": "C-2026-DUPLICATE",
+    "expected_required_evidence": [
+      "ITEMIZED_BILL"
+    ],
+    "expected_missing_evidence": [],
+    "expected_applicable_findings": [
+      "F-DUPLICATE"
+    ],
+    "expected_rejected_findings": [],
+    "expected_gates": [],
+    "expected_disposition": "APPEAL_VIABLE",
+    "tenant_probe": null,
+    "note": null
+  },
+  {
+    "claim_id": "EV-N-07",
+    "trap": null,
+    "tenant_id": "TEN-11",
+    "expected_reason": "EXCLUDED_SERVICE",
+    "expected_version": "V2026",
+    "expected_lineage": "L-BARIATRIC",
+    "expected_clause": "C-2026-BARIATRIC",
+    "expected_required_evidence": [
+      "BMI_RECORD",
+      "SUPERVISED_PROGRAM_RECORD"
+    ],
+    "expected_missing_evidence": [],
+    "expected_applicable_findings": [
+      "F-BARIATRIC"
+    ],
+    "expected_rejected_findings": [
+      {
+        "finding_id": "F-GENETIC",
+        "code": "LINEAGE_MISMATCH"
+      }
+    ],
+    "expected_gates": [],
+    "expected_disposition": "APPEAL_VIABLE",
+    "tenant_probe": null,
+    "note": null
+  },
+  {
+    "claim_id": "EV-N-08",
+    "trap": null,
+    "tenant_id": "TEN-12",
+    "expected_reason": "EXCLUDED_SERVICE",
+    "expected_version": "V2026",
+    "expected_lineage": "L-GENETIC-TEST",
+    "expected_clause": "C-2026-GENETIC-TEST",
+    "expected_required_evidence": [
+      "GENETIC_COUNSELOR_REFERRAL"
+    ],
+    "expected_missing_evidence": [],
+    "expected_applicable_findings": [
+      "F-GENETIC"
+    ],
+    "expected_rejected_findings": [
+      {
+        "finding_id": "F-BARIATRIC",
+        "code": "LINEAGE_MISMATCH"
+      }
+    ],
+    "expected_gates": [],
+    "expected_disposition": "APPEAL_VIABLE",
+    "tenant_probe": null,
+    "note": null
+  },
+  {
+    "claim_id": "EV-N-09",
+    "trap": null,
+    "tenant_id": "TEN-13",
+    "expected_reason": "WAITING_PERIOD",
+    "expected_version": "V2026",
+    "expected_lineage": "L-MATERNITY-WAIT",
+    "expected_clause": "C-2026-MATERNITY-WAIT",
+    "expected_required_evidence": [
+      "ENROLLMENT_RECORD"
+    ],
+    "expected_missing_evidence": [
+      "ENROLLMENT_RECORD"
+    ],
+    "expected_applicable_findings": [
+      "F-MATERNITY-9M"
+    ],
+    "expected_rejected_findings": [],
+    "expected_gates": [],
+    "expected_disposition": "APPEAL_NEEDS_EVIDENCE",
+    "tenant_probe": null,
+    "note": null
+  },
+  {
+    "claim_id": "EV-N-10",
+    "trap": null,
+    "tenant_id": "TEN-14",
+    "expected_reason": "TIMELY_FILING",
+    "expected_version": "V2025",
+    "expected_lineage": "L-TIMELY-FILING",
+    "expected_clause": "C-2025-TIMELY-FILING",
+    "expected_required_evidence": [
+      "PROOF_OF_TIMELY_FILING"
+    ],
+    "expected_missing_evidence": [],
+    "expected_applicable_findings": [
+      "F-TIMELY-180"
+    ],
+    "expected_rejected_findings": [],
+    "expected_gates": [],
+    "expected_disposition": "APPEAL_VIABLE",
+    "tenant_probe": null,
+    "note": null
+  },
+  {
+    "claim_id": "EV-N-11",
+    "trap": null,
+    "tenant_id": "TEN-15",
+    "expected_reason": "CODING_ERROR",
+    "expected_version": "V2025",
+    "expected_lineage": "L-CODING-CORRECTION",
+    "expected_clause": "C-2025-CODING-CORRECTION",
+    "expected_required_evidence": [
+      "CORRECTED_CODING_SUBMISSION",
+      "ITEMIZED_BILL"
+    ],
+    "expected_missing_evidence": [],
+    "expected_applicable_findings": [
+      "F-CODING"
+    ],
+    "expected_rejected_findings": [],
+    "expected_gates": [],
+    "expected_disposition": "APPEAL_VIABLE",
+    "tenant_probe": null,
+    "note": null
+  },
+  {
+    "claim_id": "EV-N-12",
+    "trap": null,
+    "tenant_id": "TEN-01",
+    "expected_reason": "NOT_MED_NECESSARY",
+    "expected_version": "V2026",
+    "expected_lineage": "L-DME-NECESSITY",
+    "expected_clause": "C-2026-DME-NECESSITY",
+    "expected_required_evidence": [
+      "PHYSICIAN_NECESSITY_LETTER"
+    ],
+    "expected_missing_evidence": [
+      "PHYSICIAN_NECESSITY_LETTER"
+    ],
+    "expected_applicable_findings": [
+      "F-DME-NECESSITY"
+    ],
+    "expected_rejected_findings": [
+      {
+        "finding_id": "F-ER-NECESSITY",
+        "code": "LINEAGE_MISMATCH"
+      },
+      {
+        "finding_id": "F-PHYSIO-NECESSITY",
+        "code": "LINEAGE_MISMATCH"
+      },
+      {
+        "finding_id": "F-PHYSIO-NOTES",
+        "code": "LINEAGE_MISMATCH"
+      }
+    ],
+    "expected_gates": [],
+    "expected_disposition": "APPEAL_NEEDS_EVIDENCE",
+    "tenant_probe": null,
+    "note": null
+  },
+  {
+    "claim_id": "EV-N-13",
+    "trap": null,
+    "tenant_id": "TEN-02",
+    "expected_reason": "OUT_OF_NETWORK",
+    "expected_version": "V2024",
+    "expected_lineage": "L-OON-EMERGENCY",
+    "expected_clause": "C-2024-OON-EMERGENCY",
+    "expected_required_evidence": [
+      "DISCHARGE_SUMMARY",
+      "EMERGENCY_ATTESTATION"
+    ],
+    "expected_missing_evidence": [
+      "DISCHARGE_SUMMARY"
+    ],
+    "expected_applicable_findings": [
+      "F-OON-ER"
+    ],
+    "expected_rejected_findings": [],
+    "expected_gates": [],
+    "expected_disposition": "APPEAL_NEEDS_EVIDENCE",
+    "tenant_probe": null,
+    "note": null
+  },
+  {
+    "claim_id": "EV-M-A",
+    "trap": "M",
+    "tenant_id": "TEN-03",
+    "expected_reason": "NOT_MED_NECESSARY",
+    "expected_version": "V2025",
+    "expected_lineage": "L-AMBULANCE",
+    "expected_clause": "C-2025-AMBULANCE",
+    "expected_required_evidence": [
+      "EMERGENCY_ATTESTATION"
+    ],
+    "expected_missing_evidence": [],
+    "expected_applicable_findings": [],
+    "expected_rejected_findings": [
+      {
+        "finding_id": "F-DME-NECESSITY",
+        "code": "LINEAGE_MISMATCH"
+      },
+      {
+        "finding_id": "F-ER-NECESSITY",
+        "code": "LINEAGE_MISMATCH"
+      },
+      {
+        "finding_id": "F-PHYSIO-NECESSITY",
+        "code": "LINEAGE_MISMATCH"
+      },
+      {
+        "finding_id": "F-PHYSIO-NOTES",
+        "code": "LINEAGE_MISMATCH"
+      }
+    ],
+    "expected_gates": [],
+    "expected_disposition": "APPEAL_VIABLE",
+    "tenant_probe": null,
+    "note": null
+  },
+  {
+    "claim_id": "EV-M-B1",
+    "trap": "M",
+    "tenant_id": "TEN-04",
+    "expected_reason": "NOT_MED_NECESSARY",
+    "expected_version": "V2026",
+    "expected_lineage": "L-AMBULANCE",
+    "expected_clause": "C-2026-AMBULANCE",
+    "expected_required_evidence": [
+      "EMERGENCY_ATTESTATION"
+    ],
+    "expected_missing_evidence": [],
+    "expected_applicable_findings": [],
+    "expected_rejected_findings": [
+      {
+        "finding_id": "F-DME-NECESSITY",
+        "code": "LINEAGE_MISMATCH"
+      },
+      {
+        "finding_id": "F-ER-NECESSITY",
+        "code": "LINEAGE_MISMATCH"
+      },
+      {
+        "finding_id": "F-PHYSIO-NECESSITY",
+        "code": "LINEAGE_MISMATCH"
+      },
+      {
+        "finding_id": "F-PHYSIO-NOTES",
+        "code": "LINEAGE_MISMATCH"
+      }
+    ],
+    "expected_gates": [],
+    "expected_disposition": "APPEAL_VIABLE",
+    "tenant_probe": null,
+    "note": null
+  },
+  {
+    "claim_id": "EV-M-B2",
+    "trap": "M",
+    "tenant_id": "TEN-05",
+    "expected_reason": "NOT_MED_NECESSARY",
+    "expected_version": "V2026",
+    "expected_lineage": "L-AMBULANCE",
+    "expected_clause": "C-2026-AMBULANCE",
+    "expected_required_evidence": [
+      "EMERGENCY_ATTESTATION"
+    ],
+    "expected_missing_evidence": [],
+    "expected_applicable_findings": [],
+    "expected_rejected_findings": [
+      {
+        "finding_id": "F-DME-NECESSITY",
+        "code": "LINEAGE_MISMATCH"
+      },
+      {
+        "finding_id": "F-ER-NECESSITY",
+        "code": "LINEAGE_MISMATCH"
+      },
+      {
+        "finding_id": "F-PHYSIO-NECESSITY",
+        "code": "LINEAGE_MISMATCH"
+      },
+      {
+        "finding_id": "F-PHYSIO-NOTES",
+        "code": "LINEAGE_MISMATCH"
+      }
+    ],
+    "expected_gates": [],
+    "expected_disposition": "APPEAL_VIABLE",
+    "tenant_probe": null,
+    "note": null
+  }
+]

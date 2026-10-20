@@ -1,0 +1,18 @@
+# Historical claims with verified outcomes that do NOT support a Finding.
+# They make memory realistic: losses, partial wins, and look-alike text.
+# `count` claims are generated per entry (dates spread inside the version).
+
+- {service: MRI, reason: OUT_OF_NETWORK, versions: [V2024, V2025], count: 2,
+   in_network: false, is_emergency: false, evidence: [ITEMIZED_BILL], outcome: UPHELD}
+- {service: BARIATRIC, reason: EXCLUDED_SERVICE, versions: [V2024], count: 2,
+   evidence: [BMI_RECORD], outcome: UPHELD}
+- {service: GENETIC_TEST, reason: EXCLUDED_SERVICE, versions: [V2024], count: 2,
+   evidence: [LAB_REPORT], outcome: UPHELD}
+- {service: MRI, reason: TIMELY_FILING, versions: [V2024], count: 2,
+   filing_lag_days: 210, evidence: [ITEMIZED_BILL], outcome: UPHELD}
+- {service: MATERNITY, reason: WAITING_PERIOD, versions: [V2025], count: 2,
+   enrolled_months: 8, evidence: [ENROLLMENT_RECORD], outcome: UPHELD}
+- {service: PHYSIO, reason: CODING_ERROR, versions: [V2025, V2026], count: 2,
+   evidence: [ITEMIZED_BILL], outcome: PARTIAL}
+- {service: MRI, reason: PREAUTH_MISSING, versions: [V2025], count: 2,
+   evidence: [], outcome: UPHELD}

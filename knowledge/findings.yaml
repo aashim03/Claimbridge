@@ -1,0 +1,151 @@
+# Seed semantic memory: Findings learned from verified historical cases.
+#
+# The case generator creates `support` OVERTURNED historical claims for each
+# Finding (cycling through `learned_in` versions), each with the `needs`
+# evidence, and `contradicted_by` later UPHELD claims under the same conditions.
+# Seeding links each Finding to those resolutions with DERIVED_FROM /
+# CONTRADICTED_BY.
+#
+# VALID_IN is NOT listed here. It is computed: every policy version whose clause
+# for this lineage has the same params as the clause the Finding was learned on.
+# That is the same rule the Curator applies when a new version is published.
+
+- finding_id: F-MRI-REFERRAL
+  reason: PREAUTH_MISSING
+  lineage: L-MRI-PREAUTH
+  service: MRI
+  learned_in: [V2024, V2025]
+  needs: [SPECIALIST_REFERRAL]
+  playbook: PB-REFERRAL-EXCEPTION
+  support: 4
+
+- finding_id: F-INPATIENT-RETRO
+  reason: PREAUTH_MISSING
+  lineage: L-INPATIENT-PREAUTH
+  service: INPATIENT_SURGERY
+  learned_in: [V2024, V2025, V2026]
+  needs: [RETRO_AUTH_REQUEST, DISCHARGE_SUMMARY]
+  playbook: PB-RETRO-AUTH
+  support: 3
+
+- finding_id: F-SLEEP-RETRO
+  reason: PREAUTH_MISSING
+  lineage: L-SLEEP-STUDY-PREAUTH
+  service: SLEEP_STUDY
+  learned_in: [V2024, V2025]
+  needs: [RETRO_AUTH_REQUEST]
+  playbook: PB-RETRO-AUTH
+  support: 2
+  contradicted_by: 2        # later UPHELD cases with the same evidence -> CONTRADICTED
+
+- finding_id: F-PHYSIO-NOTES
+  reason: NOT_MED_NECESSARY
+  lineage: L-PHYSIO-LIMIT
+  service: PHYSIO
+  learned_in: [V2024, V2025]
+  needs: [PROGRESS_NOTES]
+  playbook: PB-NECESSITY-APPEAL
+  support: 3
+
+- finding_id: F-PHYSIO-NECESSITY
+  reason: NOT_MED_NECESSARY
+  lineage: L-PHYSIO-LIMIT
+  service: PHYSIO
+  learned_in: [V2026]
+  needs: [PHYSICIAN_NECESSITY_LETTER, PROGRESS_NOTES]
+  playbook: PB-NECESSITY-APPEAL
+  support: 2
+
+- finding_id: F-ER-NECESSITY
+  reason: NOT_MED_NECESSARY
+  lineage: L-ER-COVERAGE
+  service: ER_VISIT
+  learned_in: [V2024, V2025]
+  needs: [DISCHARGE_SUMMARY]
+  playbook: PB-NECESSITY-APPEAL
+  support: 2
+
+- finding_id: F-DME-NECESSITY
+  reason: NOT_MED_NECESSARY
+  lineage: L-DME-NECESSITY
+  service: DME
+  learned_in: [V2025]
+  needs: [PHYSICIAN_NECESSITY_LETTER]
+  playbook: PB-NECESSITY-APPEAL
+  support: 2
+
+- finding_id: F-OON-ER
+  reason: OUT_OF_NETWORK
+  lineage: L-OON-EMERGENCY
+  service: ER_VISIT
+  learned_in: [V2024, V2025]
+  needs: [EMERGENCY_ATTESTATION, DISCHARGE_SUMMARY]
+  req_emergency: true
+  flags: {is_emergency: true, in_network: false}
+  playbook: PB-OON-EMERGENCY
+  support: 3
+
+- finding_id: F-BARIATRIC
+  reason: EXCLUDED_SERVICE
+  lineage: L-BARIATRIC
+  service: BARIATRIC
+  learned_in: [V2025]
+  needs: [BMI_RECORD, SUPERVISED_PROGRAM_RECORD]
+  playbook: PB-COVERAGE-CRITERIA
+  support: 2
+
+- finding_id: F-GENETIC
+  reason: EXCLUDED_SERVICE
+  lineage: L-GENETIC-TEST
+  service: GENETIC_TEST
+  learned_in: [V2025]
+  needs: [GENETIC_COUNSELOR_REFERRAL]
+  playbook: PB-COVERAGE-CRITERIA
+  support: 2
+
+- finding_id: F-MATERNITY-9M
+  reason: WAITING_PERIOD
+  lineage: L-MATERNITY-WAIT
+  service: MATERNITY
+  learned_in: [V2026]
+  needs: [ENROLLMENT_RECORD]
+  enrolled_months: 10
+  playbook: PB-WAITING-CHECK
+  support: 2
+
+- finding_id: F-TIMELY-180
+  reason: TIMELY_FILING
+  lineage: L-TIMELY-FILING
+  service: MRI
+  learned_in: [V2024, V2025]
+  needs: [PROOF_OF_TIMELY_FILING]
+  filing_lag_days: 120
+  playbook: PB-TIMELY-PROOF
+  support: 2
+
+- finding_id: F-CODING
+  reason: CODING_ERROR
+  lineage: L-CODING-CORRECTION
+  service: MRI
+  learned_in: [V2024, V2025, V2026]
+  needs: [ITEMIZED_BILL, CORRECTED_CODING_SUBMISSION]
+  playbook: PB-CODING-FIX
+  support: 3
+
+- finding_id: F-DOCS
+  reason: INCOMPLETE_DOCS
+  lineage: L-ITEMIZED-BILL
+  service: INPATIENT_SURGERY
+  learned_in: [V2024, V2025, V2026]
+  needs: [ITEMIZED_BILL, DISCHARGE_SUMMARY]
+  playbook: PB-DOCS-COMPLETE
+  support: 2
+
+- finding_id: F-DUPLICATE
+  reason: DUPLICATE_CLAIM
+  lineage: L-DUPLICATE
+  service: PHYSIO
+  learned_in: [V2025, V2026]
+  needs: [ITEMIZED_BILL]
+  playbook: PB-DUPLICATE-CLARIFY
+  support: 2

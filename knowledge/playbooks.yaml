@@ -1,0 +1,75 @@
+# Procedural memory: resolution workflows. `uses`/`wins` are updated by the Curator.
+
+- playbook_id: PB-REFERRAL-EXCEPTION
+  name: Specialist referral exception
+  reason: PREAUTH_MISSING
+  steps:
+    - {action: "Obtain the specialist's written referral for the imaging", evidence: SPECIALIST_REFERRAL}
+    - {action: "Appeal citing the referral exception in the governing clause"}
+
+- playbook_id: PB-RETRO-AUTH
+  name: Retroactive authorization
+  reason: PREAUTH_MISSING
+  steps:
+    - {action: "File a retroactive authorization request", evidence: RETRO_AUTH_REQUEST}
+    - {action: "Attach the clinical documentation the governing clause lists"}
+    - {action: "Submit the appeal within the appeal window"}
+
+- playbook_id: PB-NECESSITY-APPEAL
+  name: Medical necessity appeal
+  reason: NOT_MED_NECESSARY
+  steps:
+    - {action: "Obtain a physician letter of medical necessity", evidence: PHYSICIAN_NECESSITY_LETTER}
+    - {action: "Attach clinical progress notes", evidence: PROGRESS_NOTES}
+    - {action: "Request a peer-to-peer review"}
+
+- playbook_id: PB-OON-EMERGENCY
+  name: Out-of-network emergency exception
+  reason: OUT_OF_NETWORK
+  steps:
+    - {action: "File the emergency attestation within the notification window", evidence: EMERGENCY_ATTESTATION}
+    - {action: "Attach the discharge summary", evidence: DISCHARGE_SUMMARY}
+    - {action: "Appeal for payment at the in-network rate"}
+
+- playbook_id: PB-DOCS-COMPLETE
+  name: Complete the documentation
+  reason: INCOMPLETE_DOCS
+  steps:
+    - {action: "Request the itemized bill from the provider", evidence: ITEMIZED_BILL}
+    - {action: "Attach the discharge summary", evidence: DISCHARGE_SUMMARY}
+    - {action: "Resubmit the claim"}
+
+- playbook_id: PB-CODING-FIX
+  name: Coding correction
+  reason: CODING_ERROR
+  steps:
+    - {action: "Obtain the itemized bill", evidence: ITEMIZED_BILL}
+    - {action: "Ask the provider for a corrected coding submission", evidence: CORRECTED_CODING_SUBMISSION}
+
+- playbook_id: PB-WAITING-CHECK
+  name: Waiting period recheck
+  reason: WAITING_PERIOD
+  steps:
+    - {action: "Obtain the enrollment record", evidence: ENROLLMENT_RECORD}
+    - {action: "Recompute the waiting period under the policy version in force on the service date"}
+
+- playbook_id: PB-TIMELY-PROOF
+  name: Proof of timely filing
+  reason: TIMELY_FILING
+  steps:
+    - {action: "Locate proof that the claim was filed within the limit", evidence: PROOF_OF_TIMELY_FILING}
+    - {action: "If no proof exists, escalate: there is no appeal basis"}
+
+- playbook_id: PB-COVERAGE-CRITERIA
+  name: Coverage criteria appeal
+  reason: EXCLUDED_SERVICE
+  steps:
+    - {action: "Collect the records the coverage clause requires"}
+    - {action: "Appeal citing the coverage clause in force on the service date"}
+
+- playbook_id: PB-DUPLICATE-CLARIFY
+  name: Duplicate clarification
+  reason: DUPLICATE_CLAIM
+  steps:
+    - {action: "Obtain the itemized bill showing distinct services", evidence: ITEMIZED_BILL}
+    - {action: "Resubmit with a note referencing the original claim"}

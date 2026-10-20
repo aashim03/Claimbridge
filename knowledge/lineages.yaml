@@ -1,0 +1,413 @@
+# Clause lineages for LumenCare Silver (fictional).
+#
+# A lineage is the stable identity of a clause across policy versions.
+# For each version the lineage is present in, the loader creates one Clause
+# node: clause_id = C-<year>-<lineage suffix>, linked by SUPERSEDES to the
+# previous version's clause of the same lineage.
+#
+#   versions.<V>: inherit      -> identical to the previous version (unchanged params)
+#   versions.<V> missing       -> lineage absent in that version
+#
+# Flattened params that Cypher compares:
+#   referral_exception, max_sessions, notify_hours, wait_months, limit_days,
+#   req_emergency (clause only applies to emergencies), no_basis (exclusion, no appeal path)
+#
+# `routes` say which (denial reason, service) a denial under this lineage cites.
+# service "*" is a wildcard; a specific service beats the wildcard; then higher `priority` wins.
+# `requires` = evidence an appeal under this clause needs.
+
+- lineage_id: L-MRI-PREAUTH
+  section: "4.2"
+  title: Prior authorization for outpatient MRI
+  governs: [MRI]
+  routes: [{reason: PREAUTH_MISSING, service: MRI}]
+  versions:
+    V2024:
+      type: CONDITION
+      text: >
+        Outpatient magnetic resonance imaging requires prior authorization from the
+        Plan. Prior authorization is not required where the MRI was ordered on the
+        written referral of a board-certified specialist.
+      requires: [SPECIALIST_REFERRAL]
+      params: {referral_exception: true}
+    V2025: inherit
+    V2026:
+      type: CONDITION
+      text: >
+        Outpatient magnetic resonance imaging requires prior authorization from the
+        Plan before the date of service. No referral exception applies. Where
+        authorization was not obtained, a retroactive authorization request supported
+        by a letter of medical necessity may be submitted.
+      requires: [RETRO_AUTH_REQUEST, PHYSICIAN_NECESSITY_LETTER]
+      params: {referral_exception: false}
+
+- lineage_id: L-PHYSIO-LIMIT
+  section: "5.1"
+  title: Physiotherapy session limit
+  governs: [PHYSIO]
+  routes: [{reason: NOT_MED_NECESSARY, service: PHYSIO}]
+  versions:
+    V2024:
+      type: LIMIT
+      text: >
+        Physiotherapy is covered up to 20 sessions per plan year. Sessions are
+        considered medically necessary when supported by clinical progress notes.
+      requires: [PROGRESS_NOTES]
+      params: {max_sessions: 20}
+    V2025: inherit
+    V2026:
+      type: LIMIT
+      text: >
+        Physiotherapy is covered up to 12 sessions per plan year. Sessions beyond
+        the twelfth require a physician letter of medical necessity and clinical
+        progress notes demonstrating functional improvement.
+      requires: [PHYSICIAN_NECESSITY_LETTER, PROGRESS_NOTES]
+      params: {max_sessions: 12}
+
+- lineage_id: L-OON-EMERGENCY
+  section: "6.3"
+  title: Out-of-network services
+  governs: [ER_VISIT, AMBULANCE, MRI, INPATIENT_SURGERY]
+  routes: [{reason: OUT_OF_NETWORK, service: "*"}]
+  versions:
+    V2024:
+      type: CONDITION
+      text: >
+        Services from out-of-network providers are not covered, except emergency
+        services, which are covered at the in-network rate when an emergency
+        attestation is filed within 72 hours of admission.
+      requires: [EMERGENCY_ATTESTATION, DISCHARGE_SUMMARY]
+      params: {notify_hours: 72, req_emergency: true}
+    V2025: inherit
+    V2026:
+      type: CONDITION
+      text: >
+        Services from out-of-network providers are not covered, except emergency
+        services, which are covered at the in-network rate when an emergency
+        attestation is filed within 48 hours of admission.
+      requires: [EMERGENCY_ATTESTATION, DISCHARGE_SUMMARY]
+      params: {notify_hours: 48, req_emergency: true}
+
+- lineage_id: L-BARIATRIC
+  section: "7.4"
+  title: Bariatric surgery
+  governs: [BARIATRIC]
+  routes: [{reason: EXCLUDED_SERVICE, service: BARIATRIC}]
+  versions:
+    V2024:
+      type: EXCLUSION
+      text: >
+        Bariatric surgery and other surgical treatment of obesity are excluded.
+      requires: []
+      params: {no_basis: true}
+    V2025:
+      type: COVERAGE
+      text: >
+        Bariatric surgery is covered for members with a documented BMI of 40 or
+        more who completed a six-month supervised weight-loss program.
+      requires: [BMI_RECORD, SUPERVISED_PROGRAM_RECORD]
+      params: {no_basis: false}
+    V2026: inherit
+
+- lineage_id: L-MATERNITY-WAIT
+  section: "3.2"
+  title: Maternity waiting period
+  governs: [MATERNITY]
+  routes: [{reason: WAITING_PERIOD, service: MATERNITY}]
+  versions:
+    V2024:
+      type: CONDITION
+      text: >
+        Maternity benefits are available after the member has been continuously
+        enrolled for 12 months.
+      requires: [ENROLLMENT_RECORD]
+      params: {wait_months: 12}
+    V2025: inherit
+    V2026:
+      type: CONDITION
+      text: >
+        Maternity benefits are available after the member has been continuously
+        enrolled for 9 months.
+      requires: [ENROLLMENT_RECORD]
+      params: {wait_months: 9}
+
+- lineage_id: L-TIMELY-FILING
+  section: "9.1"
+  title: Timely filing limit
+  governs: []
+  routes: [{reason: TIMELY_FILING, service: "*"}]
+  versions:
+    V2024:
+      type: PROCEDURE
+      text: >
+        Claims must be filed within 180 days of the date of service.
+      requires: [PROOF_OF_TIMELY_FILING]
+      params: {limit_days: 180}
+    V2025: inherit
+    V2026:
+      type: PROCEDURE
+      text: >
+        Claims must be filed within 90 days of the date of service.
+      requires: [PROOF_OF_TIMELY_FILING]
+      params: {limit_days: 90}
+
+- lineage_id: L-GENETIC-TEST
+  section: "7.6"
+  title: Genetic testing
+  governs: [GENETIC_TEST]
+  routes: [{reason: EXCLUDED_SERVICE, service: GENETIC_TEST, priority: 1}]
+  versions:
+    V2025:
+      type: COVERAGE
+      text: >
+        Diagnostic genetic testing is covered when ordered following a referral
+        from a certified genetic counselor.
+      requires: [GENETIC_COUNSELOR_REFERRAL]
+      params: {}
+    V2026: inherit
+
+# ---------------- stable lineages ----------------
+
+- lineage_id: L-ER-COVERAGE
+  section: "6.1"
+  title: Emergency room coverage
+  governs: [ER_VISIT]
+  routes: [{reason: NOT_MED_NECESSARY, service: ER_VISIT}]
+  versions:
+    V2024:
+      type: COVERAGE
+      text: >
+        Emergency room services are covered when symptoms would lead a prudent
+        layperson to believe that urgent care was required, as documented in the
+        discharge summary.
+      requires: [DISCHARGE_SUMMARY]
+      params: {}
+    V2025: inherit
+    V2026: inherit
+
+- lineage_id: L-INPATIENT-PREAUTH
+  section: "4.1"
+  title: Prior authorization for inpatient surgery
+  governs: [INPATIENT_SURGERY]
+  routes: [{reason: PREAUTH_MISSING, service: INPATIENT_SURGERY}]
+  versions:
+    V2024:
+      type: CONDITION
+      text: >
+        Planned inpatient surgery requires prior authorization. If authorization
+        was not obtained, a retroactive authorization request with the discharge
+        summary may be submitted within the appeal window.
+      requires: [RETRO_AUTH_REQUEST, DISCHARGE_SUMMARY]
+      params: {}
+    V2025: inherit
+    V2026: inherit
+
+- lineage_id: L-SLEEP-STUDY-PREAUTH
+  section: "4.4"
+  title: Prior authorization for sleep studies
+  governs: [SLEEP_STUDY]
+  routes: [{reason: PREAUTH_MISSING, service: SLEEP_STUDY}]
+  versions:
+    V2024:
+      type: CONDITION
+      text: >
+        Facility-based sleep studies require prior authorization. A retroactive
+        authorization request may be considered.
+      requires: [RETRO_AUTH_REQUEST]
+      params: {}
+    V2025: inherit
+    V2026: inherit
+
+- lineage_id: L-MED-NECESSITY-DEF
+  section: "2.4"
+  title: Definition of medical necessity
+  governs: []
+  routes: [{reason: NOT_MED_NECESSARY, service: "*"}]
+  versions:
+    V2024:
+      type: CONDITION
+      text: >
+        A service is medically necessary when a treating physician documents that
+        it is appropriate and required for the diagnosis or treatment of the
+        member's condition.
+      requires: [PHYSICIAN_NECESSITY_LETTER]
+      params: {}
+    V2025: inherit
+    V2026: inherit
+
+- lineage_id: L-DME-NECESSITY
+  section: "5.4"
+  title: Durable medical equipment
+  governs: [DME]
+  routes: [{reason: NOT_MED_NECESSARY, service: DME}]
+  versions:
+    V2024:
+      type: COVERAGE
+      text: >
+        Durable medical equipment is covered when prescribed with a physician
+        letter of medical necessity.
+      requires: [PHYSICIAN_NECESSITY_LETTER]
+      params: {}
+    V2025: inherit
+    V2026: inherit
+
+- lineage_id: L-AMBULANCE
+  section: "6.5"
+  title: Ambulance transport
+  governs: [AMBULANCE]
+  routes: [{reason: NOT_MED_NECESSARY, service: AMBULANCE}]
+  versions:
+    V2024:
+      type: COVERAGE
+      text: >
+        Ground ambulance transport is covered for emergencies, as documented by an
+        emergency attestation.
+      requires: [EMERGENCY_ATTESTATION]
+      params: {}
+    V2025: inherit
+    V2026: inherit
+
+- lineage_id: L-ITEMIZED-BILL
+  section: "9.3"
+  title: Required claim documentation
+  governs: []
+  routes: [{reason: INCOMPLETE_DOCS, service: "*"}]
+  versions:
+    V2024:
+      type: PROCEDURE
+      text: >
+        Every claim must include an itemized bill. Inpatient and emergency claims
+        must also include a discharge summary.
+      requires: [ITEMIZED_BILL, DISCHARGE_SUMMARY]
+      params: {}
+    V2025: inherit
+    V2026: inherit
+
+- lineage_id: L-CODING-CORRECTION
+  section: "9.4"
+  title: Coding corrections
+  governs: []
+  routes: [{reason: CODING_ERROR, service: "*"}]
+  versions:
+    V2024:
+      type: PROCEDURE
+      text: >
+        Claims denied for coding errors may be resubmitted with a corrected coding
+        submission and an itemized bill.
+      requires: [ITEMIZED_BILL, CORRECTED_CODING_SUBMISSION]
+      params: {}
+    V2025: inherit
+    V2026: inherit
+
+- lineage_id: L-DUPLICATE
+  section: "9.5"
+  title: Duplicate claims
+  governs: []
+  routes: [{reason: DUPLICATE_CLAIM, service: "*"}]
+  versions:
+    V2024:
+      type: PROCEDURE
+      text: >
+        A claim matching an earlier claim for the same member, provider, service
+        date and amount is denied as a duplicate unless the itemized bill shows
+        distinct services.
+      requires: [ITEMIZED_BILL]
+      params: {}
+    V2025: inherit
+    V2026: inherit
+
+- lineage_id: L-EXPERIMENTAL-EXCL
+  section: "8.2"
+  title: Experimental and investigational services
+  governs: [GENETIC_TEST]
+  routes: [{reason: EXCLUDED_SERVICE, service: GENETIC_TEST, priority: 0}]
+  versions:
+    V2024:
+      type: EXCLUSION
+      text: >
+        Experimental or investigational services, including genetic testing not
+        otherwise listed as covered, are excluded.
+      requires: []
+      params: {no_basis: true}
+    V2025: inherit
+    V2026: inherit
+
+- lineage_id: L-COSMETIC-EXCL
+  section: "8.1"
+  title: Cosmetic services
+  governs: []
+  routes: []
+  versions:
+    V2024: {type: EXCLUSION, text: "Cosmetic procedures are excluded.", requires: [], params: {no_basis: true}}
+    V2025: inherit
+    V2026: inherit
+
+- lineage_id: L-NETWORK-DEF
+  section: "2.6"
+  title: Definition of network provider
+  governs: []
+  routes: []
+  versions:
+    V2024: {type: CONDITION, text: "A network provider is a provider contracted with the Plan on the date of service.", requires: [], params: {}}
+    V2025: inherit
+    V2026: inherit
+
+- lineage_id: L-RETRO-AUTH
+  section: "4.6"
+  title: Retroactive authorization
+  governs: []
+  routes: []
+  versions:
+    V2024: {type: PROCEDURE, text: "Retroactive authorization requests are reviewed against the clinical criteria that applied on the date of service.", requires: [RETRO_AUTH_REQUEST], params: {}}
+    V2025: inherit
+    V2026: inherit
+
+- lineage_id: L-ENROLLMENT
+  section: "3.1"
+  title: Enrollment and effective dates
+  governs: []
+  routes: []
+  versions:
+    V2024: {type: CONDITION, text: "Coverage begins on the enrollment effective date shown on the enrollment record.", requires: [ENROLLMENT_RECORD], params: {}}
+    V2025: inherit
+    V2026: inherit
+
+- lineage_id: L-ER-NOTIFY
+  section: "6.2"
+  title: Emergency admission notification
+  governs: []
+  routes: []
+  versions:
+    V2024: {type: PROCEDURE, text: "The Plan must be notified of an emergency admission as soon as reasonably possible.", requires: [], params: {}}
+    V2025: inherit
+    V2026: inherit
+
+- lineage_id: L-APPEAL-WINDOW
+  section: "10.1"
+  title: Appeal window
+  governs: []
+  routes: []
+  versions:
+    V2024: {type: PROCEDURE, text: "A member may appeal a denial within 180 days of the denial notice.", requires: [], params: {}}
+    V2025: inherit
+    V2026: inherit
+
+- lineage_id: L-PEER-REVIEW
+  section: "10.2"
+  title: Peer-to-peer review
+  governs: []
+  routes: []
+  versions:
+    V2024: {type: PROCEDURE, text: "The treating physician may request a peer-to-peer review of a medical necessity denial.", requires: [], params: {}}
+    V2025: inherit
+    V2026: inherit
+
+- lineage_id: L-DISCHARGE-DOCS
+  section: "9.2"
+  title: Discharge documentation
+  governs: []
+  routes: []
+  versions:
+    V2024: {type: PROCEDURE, text: "Inpatient and emergency claims must include the discharge summary.", requires: [DISCHARGE_SUMMARY], params: {}}
+    V2025: inherit
+    V2026: inherit

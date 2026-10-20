@@ -1,0 +1,97 @@
+# Evaluation claims, including the trap cases from docs/03-dataset-and-traps.md.
+#
+# `reason` is the TRUE denial reason. It is used only to write the denial-notice
+# text and to compute ground truth. It is never loaded into the graph: the
+# Intake agent must recover it from the notice text.
+#
+# notice_style: cited (quotes the section) | paraphrase (clause title, no section)
+#               | vague (generic wording) | misleading (wording hints at another reason)
+# Defaults: in_network true, is_emergency false, filing_lag_days 20, tenant round-robin.
+
+# ---- T1: version drift -------------------------------------------------------
+- {claim_id: EV-T1-01, trap: T1, service: MRI, reason: PREAUTH_MISSING, service_date: 20260310,
+   evidence: [SPECIALIST_REFERRAL, ITEMIZED_BILL], notice_style: cited,
+   note: "Referral exception removed in 2026; the 2025 referral precedent must be rejected"}
+- {claim_id: EV-T1-02, trap: T1, service: PHYSIO, reason: NOT_MED_NECESSARY, service_date: 20260415,
+   session_number: 15, evidence: [PROGRESS_NOTES], notice_style: paraphrase,
+   note: "2026 cut sessions to 12; progress notes alone no longer suffice"}
+- {claim_id: EV-T1-03, trap: T1, service: ER_VISIT, reason: OUT_OF_NETWORK, service_date: 20260205,
+   in_network: false, is_emergency: true, evidence: [EMERGENCY_ATTESTATION, DISCHARGE_SUMMARY],
+   notice_style: cited, note: "72h-window precedent does not carry into the 48h 2026 clause"}
+- {claim_id: EV-T1-04, trap: T1, service: BARIATRIC, reason: EXCLUDED_SERVICE, service_date: 20240612,
+   evidence: [BMI_RECORD, SUPERVISED_PROGRAM_RECORD], notice_style: cited,
+   note: "Reverse drift: the 2025 coverage precedent does not apply to a 2024 service date"}
+
+# ---- T2: same reason, wrong lineage -----------------------------------------
+- {claim_id: EV-T2-01, trap: T2, service: INPATIENT_SURGERY, reason: PREAUTH_MISSING, service_date: 20250612,
+   evidence: [DISCHARGE_SUMMARY], notice_style: vague,
+   note: "MRI preauth precedents look similar but cite a different lineage"}
+- {claim_id: EV-T2-02, trap: T2, service: DME, reason: NOT_MED_NECESSARY, service_date: 20250820,
+   evidence: [PHYSICIAN_NECESSITY_LETTER], notice_style: paraphrase}
+- {claim_id: EV-T2-03, trap: T2, service: AMBULANCE, reason: NOT_MED_NECESSARY, service_date: 20250303,
+   is_emergency: true, evidence: [ITEMIZED_BILL], notice_style: cited}
+
+# ---- T3: precedent applies but evidence is missing ---------------------------
+- {claim_id: EV-T3-01, trap: T3, service: PHYSIO, reason: NOT_MED_NECESSARY, service_date: 20260520,
+   session_number: 14, evidence: [], notice_style: cited}
+- {claim_id: EV-T3-02, trap: T3, service: BARIATRIC, reason: EXCLUDED_SERVICE, service_date: 20250910,
+   evidence: [BMI_RECORD], notice_style: paraphrase}
+- {claim_id: EV-T3-03, trap: T3, service: MRI, reason: CODING_ERROR, service_date: 20260115,
+   evidence: [ITEMIZED_BILL], notice_style: cited}
+
+# ---- T4: contradicted memory -------------------------------------------------
+- {claim_id: EV-T4-01, trap: T4, service: SLEEP_STUDY, reason: PREAUTH_MISSING, service_date: 20250715,
+   evidence: [RETRO_AUTH_REQUEST], notice_style: cited}
+- {claim_id: EV-T4-02, trap: T4, service: SLEEP_STUDY, reason: PREAUTH_MISSING, service_date: 20260210,
+   evidence: [], notice_style: vague}
+
+# ---- T5: condition unmet ------------------------------------------------------
+- {claim_id: EV-T5-01, trap: T5, service: MRI, reason: OUT_OF_NETWORK, service_date: 20250418,
+   in_network: false, is_emergency: false, evidence: [ITEMIZED_BILL], notice_style: cited,
+   note: "Emergency out-of-network precedent does not apply to an elective MRI"}
+- {claim_id: EV-T5-02, trap: T5, service: PHYSIO, reason: OUT_OF_NETWORK, service_date: 20251102,
+   in_network: false, is_emergency: false, evidence: [ITEMIZED_BILL, PROGRESS_NOTES], notice_style: paraphrase}
+
+# ---- T6: no valid basis ---------------------------------------------------------
+- {claim_id: EV-T6-01, trap: T6, service: MRI, reason: TIMELY_FILING, service_date: 20260201,
+   filing_lag_days: 120, evidence: [ITEMIZED_BILL], notice_style: cited,
+   note: "120 days was fine under the 180-day rule, but 2026 allows 90"}
+- {claim_id: EV-T6-02, trap: T6, service: GENETIC_TEST, reason: EXCLUDED_SERVICE, service_date: 20240905,
+   evidence: [GENETIC_COUNSELOR_REFERRAL], notice_style: paraphrase,
+   note: "Genetic testing was only added in 2025; in 2024 it falls under the experimental exclusion"}
+- {claim_id: EV-T6-03, trap: T6, service: MATERNITY, reason: WAITING_PERIOD, service_date: 20250610,
+   enrolled_months: 10, evidence: [ENROLLMENT_RECORD], notice_style: cited,
+   note: "The 9-month rule is 2026 only; in 2025 the wait is 12 months"}
+
+# ---- T7: tenant isolation (checked at the API layer in Phase 4) ------------------
+- {claim_id: EV-T7-01, trap: T7, tenant: TEN-03, service: DME, reason: CODING_ERROR, service_date: 20250501,
+   evidence: [ITEMIZED_BILL, CORRECTED_CODING_SUBMISSION], notice_style: cited, tenant_probe: TEN-07}
+- {claim_id: EV-T7-02, trap: T7, tenant: TEN-05, service: ER_VISIT, reason: OUT_OF_NETWORK, service_date: 20250922,
+   in_network: false, is_emergency: true, evidence: [EMERGENCY_ATTESTATION, DISCHARGE_SUMMARY],
+   notice_style: paraphrase, tenant_probe: TEN-01}
+
+# ---- Normal cases -------------------------------------------------------------
+- {claim_id: EV-N-01, service: MRI, reason: PREAUTH_MISSING, service_date: 20250305, evidence: [], notice_style: cited}
+- {claim_id: EV-N-02, service: MRI, reason: PREAUTH_MISSING, service_date: 20240920, evidence: [SPECIALIST_REFERRAL], notice_style: paraphrase}
+- {claim_id: EV-N-03, service: INPATIENT_SURGERY, reason: PREAUTH_MISSING, service_date: 20260320, evidence: [RETRO_AUTH_REQUEST, DISCHARGE_SUMMARY], notice_style: cited}
+- {claim_id: EV-N-04, service: ER_VISIT, reason: NOT_MED_NECESSARY, service_date: 20250115, is_emergency: true, evidence: [DISCHARGE_SUMMARY], notice_style: cited}
+- {claim_id: EV-N-05, service: INPATIENT_SURGERY, reason: INCOMPLETE_DOCS, service_date: 20260425, evidence: [ITEMIZED_BILL], notice_style: vague}
+- {claim_id: EV-N-06, service: PHYSIO, reason: DUPLICATE_CLAIM, service_date: 20260110, evidence: [ITEMIZED_BILL], notice_style: cited}
+- {claim_id: EV-N-07, service: BARIATRIC, reason: EXCLUDED_SERVICE, service_date: 20260305, evidence: [BMI_RECORD, SUPERVISED_PROGRAM_RECORD], notice_style: cited}
+- {claim_id: EV-N-08, service: GENETIC_TEST, reason: EXCLUDED_SERVICE, service_date: 20260708, evidence: [GENETIC_COUNSELOR_REFERRAL], notice_style: cited}
+- {claim_id: EV-N-09, service: MATERNITY, reason: WAITING_PERIOD, service_date: 20260402, enrolled_months: 10, evidence: [], notice_style: paraphrase}
+- {claim_id: EV-N-10, service: MRI, reason: TIMELY_FILING, service_date: 20250410, filing_lag_days: 150, evidence: [PROOF_OF_TIMELY_FILING], notice_style: cited}
+- {claim_id: EV-N-11, service: SLEEP_STUDY, reason: CODING_ERROR, service_date: 20250622, evidence: [ITEMIZED_BILL, CORRECTED_CODING_SUBMISSION], notice_style: misleading}
+- {claim_id: EV-N-12, service: DME, reason: NOT_MED_NECESSARY, service_date: 20260212, evidence: [], notice_style: cited}
+- {claim_id: EV-N-13, service: AMBULANCE, reason: OUT_OF_NETWORK, service_date: 20240711, in_network: false, is_emergency: true, evidence: [EMERGENCY_ATTESTATION], notice_style: cited}
+
+# ---- M: memory gain (no precedent exists for ambulance necessity at the start) ----
+# A is approved and its real outcome (OVERTURNED) recorded -> the Curator learns a Finding.
+# B1 is processed before that, B2 after: same facts, B2 should cite the learned precedent.
+# Ground truth below is the "before memory" state.
+- {claim_id: EV-M-A, trap: M, service: AMBULANCE, reason: NOT_MED_NECESSARY, service_date: 20250610,
+   is_emergency: true, evidence: [EMERGENCY_ATTESTATION, ITEMIZED_BILL], notice_style: cited}
+- {claim_id: EV-M-B1, trap: M, service: AMBULANCE, reason: NOT_MED_NECESSARY, service_date: 20260115,
+   is_emergency: true, evidence: [EMERGENCY_ATTESTATION], notice_style: cited}
+- {claim_id: EV-M-B2, trap: M, service: AMBULANCE, reason: NOT_MED_NECESSARY, service_date: 20260220,
+   is_emergency: true, evidence: [EMERGENCY_ATTESTATION], notice_style: cited}
