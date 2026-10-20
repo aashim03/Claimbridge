@@ -1,0 +1,142 @@
+{
+  "run_at": "2026-10-17T13:19:18.696Z",
+  "base": "http://127.0.0.1:3100",
+  "results": [
+    {
+      "name": "landing: the recorded replay plays when asked",
+      "passed": true,
+      "detail": "1/9 -> 3/9"
+    },
+    {
+      "name": "the agents plan both claims",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "docket: New claim opens a drawer with a notice field",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "docket: Escape closes the drawer",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "case: the graph replay is the default tab",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "case: Play/Pause toggles",
+      "passed": true,
+      "detail": "Play -> Pause"
+    },
+    {
+      "name": "case: Step advances the replay",
+      "passed": true,
+      "detail": "1/9 -> 2/9"
+    },
+    {
+      "name": "case: nodes are drawn as steps play",
+      "passed": true,
+      "detail": "2 visible"
+    },
+    {
+      "name": "case: clicking a node pins what it contributed",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "case: the replay reaches a recommendation",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "case: the Plan tab shows its content",
+      "passed": true,
+      "detail": "Each item names"
+    },
+    {
+      "name": "case: the Precedents tab shows its content",
+      "passed": true,
+      "detail": "recorded win"
+    },
+    {
+      "name": "case: the Evidence tab shows its content",
+      "passed": true,
+      "detail": "Declare a document is on file"
+    },
+    {
+      "name": "case: the Agent record tab shows its content",
+      "passed": true,
+      "detail": "Picked up"
+    },
+    {
+      "name": "case: the support score is never a bare 0%",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "case: no stale wording (\"good law\", \"Could be wrong if\")",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "case: declaring a document is recorded and not marked verified",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "case: the claim is re-planned after the change",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "memory page renders its content",
+      "passed": true,
+      "detail": "Memory / recorded win"
+    },
+    {
+      "name": "agents page renders its content",
+      "passed": true,
+      "detail": "Agents / Supervisor"
+    },
+    {
+      "name": "evaluation page renders its content",
+      "passed": true,
+      "detail": "What each system can see / Limits of this evaluation"
+    },
+    {
+      "name": "evaluation page names the run it shows",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "mobile-docket: no horizontal page scroll",
+      "passed": true,
+      "detail": "overflow 0px"
+    },
+    {
+      "name": "mobile-case: no horizontal page scroll",
+      "passed": true,
+      "detail": "overflow 0px"
+    },
+    {
+      "name": "mobile-evaluation: no horizontal page scroll",
+      "passed": true,
+      "detail": "overflow 0px"
+    },
+    {
+      "name": "mobile-landing: no horizontal page scroll",
+      "passed": true,
+      "detail": "overflow 0px"
+    },
+    {
+      "name": "no JavaScript errors anywhere",
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "errors": []
+}

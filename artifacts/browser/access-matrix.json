@@ -1,0 +1,142 @@
+{
+  "run_at": "2026-10-17T12:31:25.839Z",
+  "isolated_graph": "claimbridge_access",
+  "tokens": "random per run, never stored",
+  "results": [
+    {
+      "name": "anonymous visitor sees only the sign-in form",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "anonymous API calls are all 401",
+      "passed": true,
+      "detail": "401,401,401,401,401"
+    },
+    {
+      "name": "a wrong token is refused and the gate stays",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no cookie after a failed sign-in",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "alice sees her own claim and not bob's",
+      "passed": true,
+      "detail": "Protected workspace · alice · TEN-01Sign out\nClaimBridge\n\nWORKSPACE\n\nDocket\n1\nMemory\n5\nEvaluation\nLive from the graph\nPolicy world\n2026\nSupervisor\nstopped\nLLM\nfake · live\nOpen a claim by ID\n/\n\nSynthet"
+    },
+    {
+      "name": "session cookie is HttpOnly, SameSite=Strict, scoped to /api",
+      "passed": true,
+      "detail": "{\"name\":\"claimbridge_session\",\"value\":\"59dbaa822b3590e2a3b7a6b199b7b5812b6e08f80bf6fb27\",\"domain\":\"127.0.0.1\",\"path\":\"/api\",\"expires\":1792269065.278764,\"size\":67,\"httpOnly\":true,\"secure\":false,\"session\":false,\"sameSite\":\"Strict\",\"priority\":\"Medium\",\"sourceScheme\":\"NonSecure\",\"sourcePort\":3201}"
+    },
+    {
+      "name": "the token is not readable from page script",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "reload keeps the session",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "opening bob's claim by URL shows none of its details",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "alice's cookie gets 404 for bob's detail, graph and packet",
+      "passed": true,
+      "detail": "404,404,404"
+    },
+    {
+      "name": "alice cannot approve, record an outcome for, or file bob's claim",
+      "passed": true,
+      "detail": "404,404,404"
+    },
+    {
+      "name": "a cookie-authenticated write without the same-origin header is refused",
+      "passed": true,
+      "detail": "403"
+    },
+    {
+      "name": "operator-only actions are 403 for a tenant",
+      "passed": true,
+      "detail": "403,403,403"
+    },
+    {
+      "name": "X-Tenant-Id cannot change whose cases are shown",
+      "passed": true,
+      "detail": "{\"tenant\":\"TEN-01\",\"rows\":[{\"resolution_id\":\"R-HC-032\",\"outcome\":\"OVERTURNED\",\"own\":false,\"claim_id\":null,\"service_date\":null,\"notice_text\":null},{\"resolution_id\":\"R-HC-033\",\"outcome\":\"OVERTURNED\",\"own\":false,\"claim_id\":null,\"service_date\":null,\"notice_text\":null},{\"resolution_id\":\"R-HC-034\",\"outcom"
+    },
+    {
+      "name": "every response names the signed-in subject",
+      "passed": true,
+      "detail": "alice,alice,alice"
+    },
+    {
+      "name": "the stream delivers a bare timestamp, no ids or worker metadata",
+      "passed": true,
+      "detail": "{\"ev\": 1792240252699}"
+    },
+    {
+      "name": "a cookie swapped in another tab never leaves alice's data on screen under bob",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bob sees his claim and not alice's",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "after sign-out the page holds no claim data",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "after sign-out the API is closed to this browser",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "history back does not resurrect signed-out data",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "the operator sees both tenants",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "operator-only endpoints work for the operator",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "switching operator to alice leaves no other tenant's data",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "revoking a credential ends an already-open page's session",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "the revoked token can no longer sign in",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no JavaScript errors in the page",
+      "passed": true,
+      "detail": ""
+    }
+  ]
+}
