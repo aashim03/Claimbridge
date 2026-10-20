@@ -1,0 +1,103 @@
+{
+ "claims": 12,
+ "kills": 10,
+ "pool": "intake=2,retrieval=2,verifier=2,planner=2,curator=1",
+ "lease_ttl_s": 4,
+ "step_delay_s": 2,
+ "completed": 12,
+ "correct": 12,
+ "duplicate_step_outputs": 0,
+ "fenced_writes_rejected": 0,
+ "lease_expiries_recorded": 4,
+ "steps_interrupted": 7,
+ "takeovers": [
+  {
+   "claim": "EV-T1-01",
+   "killed": "planner-4",
+   "resumed_by": "planner-5"
+  },
+  {
+   "claim": "EV-T1-02",
+   "killed": "verifier-4",
+   "resumed_by": "verifier-3"
+  },
+  {
+   "claim": "EV-T1-02",
+   "killed": "planner-2",
+   "resumed_by": "planner-6"
+  },
+  {
+   "claim": "EV-T1-02",
+   "killed": "planner-6",
+   "resumed_by": "planner-5"
+  },
+  {
+   "claim": "EV-T1-04",
+   "killed": "intake-2",
+   "resumed_by": "intake-1"
+  },
+  {
+   "claim": "EV-T1-04",
+   "killed": "planner-3",
+   "resumed_by": "planner-4"
+  },
+  {
+   "claim": "EV-T3-02",
+   "killed": "verifier-2",
+   "resumed_by": "verifier-4"
+  }
+ ],
+ "recovery_seconds": [
+  6.65,
+  6.43,
+  11.7,
+  6.67,
+  11.52,
+  7.6,
+  7.42
+ ],
+ "mean_recovery_seconds": 8.28,
+ "wall_seconds": 47.6,
+ "killed": [
+  {
+   "agent": "intake-2",
+   "claim": "EV-T1-04"
+  },
+  {
+   "agent": "intake-1",
+   "claim": "EV-T4-01"
+  },
+  {
+   "agent": "verifier-1",
+   "claim": "EV-T2-03"
+  },
+  {
+   "agent": "verifier-2",
+   "claim": "EV-T3-02"
+  },
+  {
+   "agent": "planner-1",
+   "claim": "EV-T2-02"
+  },
+  {
+   "agent": "planner-3",
+   "claim": "EV-T1-04"
+  },
+  {
+   "agent": "verifier-4",
+   "claim": "EV-T1-02"
+  },
+  {
+   "agent": "planner-4",
+   "claim": "EV-T1-01"
+  },
+  {
+   "agent": "planner-2",
+   "claim": "EV-T1-02"
+  },
+  {
+   "agent": "planner-6",
+   "claim": "EV-T1-02"
+  }
+ ]
+}

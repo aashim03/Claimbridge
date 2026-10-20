@@ -1,0 +1,70 @@
+{
+ "run_id": "20261017T183825+0530-3c6ce4",
+ "label": "final",
+ "status": "incomplete",
+ "started_at": "2026-10-17T18:38:25+05:30",
+ "git": {
+  "revision": "ca01047a6a046f37cfefcee1b9fa016b42ef974c",
+  "dirty": true,
+  "tracked_diff_sha256": "8e0b1d481922b466713808e9a409c84b8fd1d0badff528f843640fd863e72cf3"
+ },
+ "source_sha256": "848bb7301544155c1d362f39a8178bf680f8af5b381b6c4b053530ac4f7ad9f1",
+ "dataset": {
+  "knowledge": "1a7e941eba15c9bf14949701315fb5239f584e4d3469e9159f9ad128fbb08741",
+  "scenarios": "8c30bdd276bacb1896095184acc88e738d3fa0f083ecd350cbf12f410349a6bb",
+  "generated": "0d3ac8d68a821d0105d0f0afe844a13415da64503e94ad1adab88a144370ef0e",
+  "all": "3dbeaec8d0bce312b7781c611ba397290d5ead581e6042df5ecae7ff55faf299"
+ },
+ "prompts": {
+  "intake": "254a269eda85e160",
+  "planner": "79ad22b9130be465",
+  "baseline": "c9c65f4bd0deec48"
+ },
+ "config": {
+  "llm_platform": "groq",
+  "llm_model": "openai/gpt-oss-120b",
+  "llm_mode": "cached",
+  "reasoning_effort": "medium",
+  "embedding_model": "BAAI/bge-small-en-v1.5",
+  "baseline_embedding_model": "BAAI/bge-small-en-v1.5",
+  "baseline_strong_embedding_model": "mixedbread-ai/mxbai-embed-large-v1",
+  "baseline_top_k": 8,
+  "planner_draft_audit": false,
+  "graph": "claimbridge_eval",
+  "lease_ttl_s": 20.0,
+  "cache_policy": "replay a recorded provider response if present, else call and record"
+ },
+ "invalid_reasons": [],
+ "steps": {
+  "claimbridge": {
+   "started_at": "2026-10-17T18:38:26+05:30",
+   "ended_at": "2026-10-17T18:38:47+05:30",
+   "source_unchanged": true
+  },
+  "no_memory": {
+   "started_at": "2026-10-17T18:38:47+05:30",
+   "ended_at": "2026-10-17T18:39:07+05:30",
+   "source_unchanged": true
+  },
+  "baseline_rag": {
+   "started_at": "2026-10-17T18:39:07+05:30",
+   "ended_at": "2026-10-17T18:39:18+05:30",
+   "source_unchanged": true
+  },
+  "baseline_rag_strong": {
+   "started_at": "2026-10-17T18:39:18+05:30",
+   "ended_at": "2026-10-17T18:40:46+05:30",
+   "source_unchanged": true
+  },
+  "chaos": {
+   "started_at": "2026-10-17T18:40:46+05:30",
+   "ended_at": "2026-10-17T18:41:42+05:30",
+   "source_unchanged": true
+  }
+ },
+ "notes": [
+  "Baseline RAG + findings (the information-parity comparison) was NOT run: the free Groq tier's daily token limit (200,000) was exhausted earlier the same day and every attempt returned a provider rate-limit error. The code is in place; it is the comparison that most needs running.",
+  "Letters without a section number need a live model call; where the provider was unavailable the unseen-case check reports them as not evaluated, not as failures."
+ ],
+ "ended_at": "2026-10-17T18:41:59+05:30"
+}

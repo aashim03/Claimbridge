@@ -1,0 +1,2778 @@
+{
+ "generated_at": "2026-10-17T18:37:10+05:30",
+ "run": {
+  "run_id": "20261017T183219+0530-7dee90",
+  "label": "final",
+  "started_at": "2026-10-17T18:32:19+05:30",
+  "git": {
+   "revision": "ca01047a6a046f37cfefcee1b9fa016b42ef974c",
+   "dirty": true,
+   "tracked_diff_sha256": "000fcd808b4c18f9c508f5c02657c5c58995f4140e5465480334aac6b3d2088d"
+  },
+  "source_sha256": "804f21182ab99b6915c22b8bf8d7cddd09967f6f398c7f823984316bb39fc0d3",
+  "dataset": {
+   "knowledge": "1a7e941eba15c9bf14949701315fb5239f584e4d3469e9159f9ad128fbb08741",
+   "scenarios": "8c30bdd276bacb1896095184acc88e738d3fa0f083ecd350cbf12f410349a6bb",
+   "generated": "0d3ac8d68a821d0105d0f0afe844a13415da64503e94ad1adab88a144370ef0e",
+   "all": "3dbeaec8d0bce312b7781c611ba397290d5ead581e6042df5ecae7ff55faf299"
+  },
+  "prompts": {
+   "intake": "254a269eda85e160",
+   "planner": "79ad22b9130be465",
+   "baseline": "c9c65f4bd0deec48"
+  },
+  "config": {
+   "llm_platform": "groq",
+   "llm_model": "openai/gpt-oss-120b",
+   "llm_mode": "cached",
+   "reasoning_effort": "medium",
+   "embedding_model": "BAAI/bge-small-en-v1.5",
+   "baseline_embedding_model": "BAAI/bge-small-en-v1.5",
+   "baseline_strong_embedding_model": "mixedbread-ai/mxbai-embed-large-v1",
+   "baseline_top_k": 8,
+   "planner_draft_audit": false,
+   "graph": "claimbridge_eval",
+   "lease_ttl_s": 20.0,
+   "cache_policy": "replay a recorded provider response if present, else call and record"
+  },
+  "invalid_reasons": [],
+  "steps": {
+   "claimbridge": {
+    "started_at": "2026-10-17T18:32:19+05:30",
+    "ended_at": "2026-10-17T18:32:39+05:30",
+    "source_unchanged": true
+   },
+   "no_memory": {
+    "started_at": "2026-10-17T18:32:39+05:30",
+    "ended_at": "2026-10-17T18:32:56+05:30",
+    "source_unchanged": true
+   },
+   "baseline_rag": {
+    "started_at": "2026-10-17T18:32:56+05:30",
+    "ended_at": "2026-10-17T18:33:08+05:30",
+    "source_unchanged": true
+   },
+   "baseline_rag_strong": {
+    "started_at": "2026-10-17T18:33:08+05:30",
+    "ended_at": "2026-10-17T18:34:39+05:30",
+    "source_unchanged": true
+   },
+   "chaos": {
+    "started_at": "2026-10-17T18:34:39+05:30",
+    "ended_at": "2026-10-17T18:35:36+05:30",
+    "source_unchanged": true
+   }
+  }
+ },
+ "llm": "groq/openai/gpt-oss-120b",
+ "llm_calls": {
+  "calls": 100,
+  "fresh": 2,
+  "replayed": 98,
+  "fake": 0,
+  "by_system": {
+   "claimbridge": {
+    "fresh": 0,
+    "replayed": 12,
+    "fake": 0,
+    "input_tokens": 9815,
+    "output_tokens": 1476
+   },
+   "no_memory": {
+    "fresh": 0,
+    "replayed": 12,
+    "fake": 0,
+    "input_tokens": 9815,
+    "output_tokens": 1476
+   },
+   "baseline_rag": {
+    "fresh": 0,
+    "replayed": 35,
+    "fake": 0,
+    "input_tokens": 66503,
+    "output_tokens": 34503
+   },
+   "baseline_rag_strong": {
+    "fresh": 0,
+    "replayed": 33,
+    "fake": 0,
+    "input_tokens": 62882,
+    "output_tokens": 31004
+   },
+   "chaos": {
+    "fresh": 0,
+    "replayed": 6,
+    "fake": 0,
+    "input_tokens": 4906,
+    "output_tokens": 673
+   },
+   "generalization": {
+    "fresh": 2,
+    "replayed": 0,
+    "fake": 0,
+    "input_tokens": 1655,
+    "output_tokens": 258
+   }
+  }
+ },
+ "valid": true,
+ "scored_claims": 34,
+ "total_claims": 34,
+ "ground_truth": "a rule engine implemented separately from the graph queries (Python, no Cypher) by the same team; it is not external validation",
+ "evaluation_version": 3,
+ "limitations": "Authored synthetic fixtures; whole-system comparison, not database-only causality. Missing outputs count as failures and are listed with their cause.",
+ "access": {
+  "claimbridge": {
+   "policy_clauses": "all versions, as graph nodes with lineage and content fingerprints",
+   "abstract_findings": "yes: the shared memory (statement, versions valid in, status, evidence needs, conditions)",
+   "raw_cases": "own tenant only; other tenants' cases are redacted",
+   "decided_by": "deterministic Cypher for version, applicability, gates and evidence; the LLM only reads notices that cite no section"
+  },
+  "no_memory": {
+   "policy_clauses": "same as ClaimBridge",
+   "abstract_findings": "hidden (ablation)",
+   "raw_cases": "own tenant only",
+   "decided_by": "same deterministic rules without semantic memory"
+  },
+  "baseline_rag": {
+   "policy_clauses": "all versions, as text passages",
+   "abstract_findings": "no",
+   "raw_cases": "own tenant only (filtered before prompting)",
+   "decided_by": "the LLM makes every decision from the retrieved passages"
+  },
+  "baseline_rag_strong": {
+   "policy_clauses": "all versions, as text passages",
+   "abstract_findings": "no",
+   "raw_cases": "own tenant only (filtered before prompting)",
+   "decided_by": "the LLM makes every decision; larger embedding model"
+  }
+ },
+ "not_run": {
+  "claimbridge": [],
+  "no_memory": [],
+  "baseline_rag": [],
+  "baseline_rag_strong": [
+   "EV-M-B1"
+  ]
+ },
+ "errors": {
+  "claimbridge": {},
+  "no_memory": {},
+  "baseline_rag": {},
+  "baseline_rag_strong": {
+   "EV-M-B1": {
+    "kind": "provider_rate_limit",
+    "message": "GroqProvider 429: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_\u2026` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198056, Requested 2253. Please try again in 2m13.488s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}"
+   },
+   "EV-M-B2": {
+    "kind": "provider_rate_limit",
+    "message": "GroqProvider 429: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_\u2026` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198053, Requested 2245. Please try again in 2m8.735999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}"
+   }
+  }
+ },
+ "systems": {
+  "claimbridge": {
+   "label": "ClaimBridge",
+   "metrics": {
+    "claims": 34,
+    "completion_rate": 1.0,
+    "abstained_to_human": 0,
+    "no_output": 0,
+    "decision_correct": 1.0,
+    "M1_reason_accuracy": 1.0,
+    "M2_version_accuracy": 1.0,
+    "M3_precedent_precision": 1.0,
+    "M3_precedent_recall": 1.0,
+    "M3_precedent_recall_reachable": 1.0,
+    "claims_with_unreachable_precedent": 18,
+    "M5_missing_evidence_exact": 1.0,
+    "M4_wrong_precedent_rate": 0.0,
+    "M5_missing_evidence_f1": 1.0,
+    "M6_disposition_accuracy": 1.0,
+    "M7_unsupported_item_rate": 0.0,
+    "M8_stale_precedent_avoided": 1.0,
+    "M8_stale_precedent_explained": 1.0,
+    "M9_tenant_fields_leaked": 0,
+    "M12_tokens_per_claim": 332,
+    "all_correct": 1.0
+   },
+   "per_claim": {
+    "EV-T1-01": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T1-02": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T1-03": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T1-04": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "completed": true
+     }
+    },
+    "EV-T2-01": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T2-02": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T2-03": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T3-01": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T3-02": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T3-03": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T4-01": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T4-02": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T5-01": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "completed": true
+     }
+    },
+    "EV-T5-02": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "completed": true
+     }
+    },
+    "EV-T6-01": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "completed": true
+     }
+    },
+    "EV-T6-02": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "completed": true
+     }
+    },
+    "EV-T6-03": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "completed": true
+     }
+    },
+    "EV-T7-01": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T7-02": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-01": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-02": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-03": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-04": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-05": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-06": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-07": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-08": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-09": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-10": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-11": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-12": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-13": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-M-A": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-M-B1": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    }
+   },
+   "abstained": [],
+   "no_output": [],
+   "by_group": {
+    "T1": [
+     4,
+     4
+    ],
+    "T2": [
+     3,
+     3
+    ],
+    "T3": [
+     3,
+     3
+    ],
+    "T4": [
+     2,
+     2
+    ],
+    "T5": [
+     2,
+     2
+    ],
+    "T6": [
+     3,
+     3
+    ],
+    "T7": [
+     2,
+     2
+    ],
+    "M": [
+     2,
+     2
+    ],
+    "normal": [
+     13,
+     13
+    ]
+   },
+   "wrong_precedent_by_code": {},
+   "wall_seconds": 7.5,
+   "embedding_model": null,
+   "top_k": null,
+   "provenance": {
+    "run_id": "20261017T183219+0530-7dee90",
+    "step": "claimbridge",
+    "started_at": "2026-10-17T18:32:19+05:30",
+    "ended_at": "2026-10-17T18:32:39+05:30",
+    "source_sha256_at_save": "804f21182ab99b6915c22b8bf8d7cddd09967f6f398c7f823984316bb39fc0d3",
+    "source_unchanged": true,
+    "dataset_unchanged": true,
+    "llm_platform": "groq",
+    "llm_model": "openai/gpt-oss-120b",
+    "llm_mode": "cached",
+    "access": {
+     "policy_clauses": "all versions, as graph nodes with lineage and content fingerprints",
+     "abstract_findings": "yes: the shared memory (statement, versions valid in, status, evidence needs, conditions)",
+     "raw_cases": "own tenant only; other tenants' cases are redacted",
+     "decided_by": "deterministic Cypher for version, applicability, gates and evidence; the LLM only reads notices that cite no section"
+    }
+   },
+   "memory_gain": {
+    "learned": [
+     "F-L-AMBULANCE-3fc5cd595b568ee3"
+    ],
+    "curator_action": "learned",
+    "before": {
+     "accepted": [],
+     "disposition": "APPEAL_VIABLE",
+     "confidence": 0.0,
+     "uncertainty": [
+      "No verified precedent applies to this claim."
+     ],
+     "missing": []
+    },
+    "after": {
+     "accepted": [
+      "F-L-AMBULANCE-3fc5cd595b568ee3"
+     ],
+     "disposition": "APPEAL_NEEDS_EVIDENCE",
+     "confidence": 0.667,
+     "uncertainty": [
+      "Only 1 verified case(s) support F-L-AMBULANCE-3fc5cd595b568ee3."
+     ],
+     "missing": [
+      "ITEMIZED_BILL"
+     ]
+    }
+   }
+  },
+  "no_memory": {
+   "label": "No-memory ablation",
+   "metrics": {
+    "claims": 34,
+    "completion_rate": 1.0,
+    "abstained_to_human": 0,
+    "no_output": 0,
+    "decision_correct": 1.0,
+    "M1_reason_accuracy": 1.0,
+    "M2_version_accuracy": 1.0,
+    "M3_precedent_precision": null,
+    "M3_precedent_recall": 0.0,
+    "M3_precedent_recall_reachable": 0.0,
+    "claims_with_unreachable_precedent": 18,
+    "M5_missing_evidence_exact": 1.0,
+    "M4_wrong_precedent_rate": 0.0,
+    "M5_missing_evidence_f1": 1.0,
+    "M6_disposition_accuracy": 1.0,
+    "M7_unsupported_item_rate": 0.0,
+    "M8_stale_precedent_avoided": 1.0,
+    "M8_stale_precedent_explained": 0.0,
+    "M9_tenant_fields_leaked": 0,
+    "M12_tokens_per_claim": 332,
+    "all_correct": 0.382
+   },
+   "per_claim": {
+    "EV-T1-01": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T1-02": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T1-03": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T1-04": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "completed": true
+     }
+    },
+    "EV-T2-01": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T2-02": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T2-03": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T3-01": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T3-02": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T3-03": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T4-01": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T4-02": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T5-01": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "completed": true
+     }
+    },
+    "EV-T5-02": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "completed": true
+     }
+    },
+    "EV-T6-01": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "completed": true
+     }
+    },
+    "EV-T6-02": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "completed": true
+     }
+    },
+    "EV-T6-03": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "completed": true
+     }
+    },
+    "EV-T7-01": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T7-02": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-01": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-02": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-03": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-04": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-05": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-06": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-07": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-08": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-09": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-10": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-11": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-12": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-13": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-M-A": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-M-B1": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    }
+   },
+   "abstained": [],
+   "no_output": [],
+   "by_group": {
+    "T1": [
+     3,
+     4
+    ],
+    "T2": [
+     1,
+     3
+    ],
+    "T3": [
+     0,
+     3
+    ],
+    "T4": [
+     2,
+     2
+    ],
+    "T5": [
+     2,
+     2
+    ],
+    "T6": [
+     3,
+     3
+    ],
+    "T7": [
+     0,
+     2
+    ],
+    "M": [
+     2,
+     2
+    ],
+    "normal": [
+     0,
+     13
+    ]
+   },
+   "wrong_precedent_by_code": {},
+   "wall_seconds": 7.5,
+   "embedding_model": null,
+   "top_k": null,
+   "provenance": {
+    "run_id": "20261017T183219+0530-7dee90",
+    "step": "no_memory",
+    "started_at": "2026-10-17T18:32:39+05:30",
+    "ended_at": "2026-10-17T18:32:56+05:30",
+    "source_sha256_at_save": "804f21182ab99b6915c22b8bf8d7cddd09967f6f398c7f823984316bb39fc0d3",
+    "source_unchanged": true,
+    "dataset_unchanged": true,
+    "llm_platform": "groq",
+    "llm_model": "openai/gpt-oss-120b",
+    "llm_mode": "cached",
+    "access": {
+     "policy_clauses": "same as ClaimBridge",
+     "abstract_findings": "hidden (ablation)",
+     "raw_cases": "own tenant only",
+     "decided_by": "same deterministic rules without semantic memory"
+    }
+   },
+   "memory_gain": {
+    "learned": [
+     "F-L-AMBULANCE-3fc5cd595b568ee3"
+    ],
+    "curator_action": "learned",
+    "before": {
+     "accepted": [],
+     "disposition": "APPEAL_VIABLE",
+     "confidence": 0.0,
+     "uncertainty": [
+      "No verified precedent applies to this claim."
+     ],
+     "missing": []
+    },
+    "after": {
+     "accepted": [],
+     "disposition": "APPEAL_VIABLE",
+     "confidence": 0.0,
+     "uncertainty": [
+      "No verified precedent applies to this claim."
+     ],
+     "missing": []
+    }
+   }
+  },
+  "baseline_rag": {
+   "label": "Baseline RAG",
+   "metrics": {
+    "claims": 34,
+    "completion_rate": 1.0,
+    "abstained_to_human": 0,
+    "no_output": 0,
+    "decision_correct": 0.765,
+    "M1_reason_accuracy": 1.0,
+    "M2_version_accuracy": 1.0,
+    "M3_precedent_precision": 0.667,
+    "M3_precedent_recall": 0.095,
+    "M3_precedent_recall_reachable": 0.667,
+    "claims_with_unreachable_precedent": 18,
+    "M5_missing_evidence_exact": 0.857,
+    "M4_wrong_precedent_rate": 0.029,
+    "M5_missing_evidence_f1": 0.882,
+    "M6_disposition_accuracy": 0.794,
+    "M7_unsupported_item_rate": 0.056,
+    "M8_stale_precedent_avoided": 1.0,
+    "M8_stale_precedent_explained": 0.0,
+    "M9_tenant_fields_leaked": 0,
+    "M12_tokens_per_claim": 2892,
+    "all_correct": 0.235
+   },
+   "per_claim": {
+    "EV-T1-01": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T1-02": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T1-03": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": false,
+      "missing": false,
+      "completed": true
+     }
+    },
+    "EV-T1-04": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": false,
+      "completed": true
+     }
+    },
+    "EV-T2-01": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T2-02": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T2-03": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T3-01": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T3-02": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T3-03": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T4-01": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T4-02": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T5-01": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "completed": true
+     }
+    },
+    "EV-T5-02": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "completed": true
+     }
+    },
+    "EV-T6-01": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": false,
+      "completed": true
+     }
+    },
+    "EV-T6-02": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": false,
+      "completed": true
+     }
+    },
+    "EV-T6-03": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": false,
+      "completed": true
+     }
+    },
+    "EV-T7-01": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": false,
+      "missing": false,
+      "completed": true
+     }
+    },
+    "EV-T7-02": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-01": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-02": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-03": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-04": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-05": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": false,
+      "completed": true
+     }
+    },
+    "EV-N-06": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-07": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-08": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-09": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-10": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-11": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": false,
+      "missing": false,
+      "completed": true
+     }
+    },
+    "EV-N-12": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-13": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-M-A": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-M-B1": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    }
+   },
+   "abstained": [],
+   "no_output": [],
+   "by_group": {
+    "T1": [
+     0,
+     4
+    ],
+    "T2": [
+     1,
+     3
+    ],
+    "T3": [
+     0,
+     3
+    ],
+    "T4": [
+     2,
+     2
+    ],
+    "T5": [
+     2,
+     2
+    ],
+    "T6": [
+     0,
+     3
+    ],
+    "T7": [
+     0,
+     2
+    ],
+    "M": [
+     2,
+     2
+    ],
+    "normal": [
+     1,
+     13
+    ]
+   },
+   "wrong_precedent_by_code": {
+    "LINEAGE_MISMATCH": 1
+   },
+   "wall_seconds": 3.2,
+   "embedding_model": "BAAI/bge-small-en-v1.5",
+   "top_k": 8,
+   "provenance": {
+    "run_id": "20261017T183219+0530-7dee90",
+    "step": "baseline_rag",
+    "started_at": "2026-10-17T18:32:56+05:30",
+    "ended_at": "2026-10-17T18:33:08+05:30",
+    "source_sha256_at_save": "804f21182ab99b6915c22b8bf8d7cddd09967f6f398c7f823984316bb39fc0d3",
+    "source_unchanged": true,
+    "dataset_unchanged": true,
+    "llm_platform": "groq",
+    "llm_model": "openai/gpt-oss-120b",
+    "llm_mode": "cached",
+    "access": {
+     "policy_clauses": "all versions, as text passages",
+     "abstract_findings": "no",
+     "raw_cases": "own tenant only (filtered before prompting)",
+     "decided_by": "the LLM makes every decision from the retrieved passages"
+    }
+   },
+   "memory_gain": {
+    "before": {
+     "precedent_cases": [],
+     "disposition": "APPEAL_VIABLE"
+    },
+    "after": {
+     "precedent_cases": [],
+     "disposition": "APPEAL_VIABLE",
+     "retrieved_new_case": false
+    }
+   }
+  },
+  "baseline_rag_strong": {
+   "label": "Baseline RAG (large embeddings)",
+   "metrics": {
+    "claims": 34,
+    "completion_rate": 0.971,
+    "abstained_to_human": 0,
+    "no_output": 1,
+    "decision_correct": 0.765,
+    "M1_reason_accuracy": 0.971,
+    "M2_version_accuracy": 0.971,
+    "M3_precedent_precision": null,
+    "M3_precedent_recall": 0.0,
+    "M3_precedent_recall_reachable": 0.0,
+    "claims_with_unreachable_precedent": 18,
+    "M5_missing_evidence_exact": 0.893,
+    "M4_wrong_precedent_rate": 0.0,
+    "M5_missing_evidence_f1": 0.937,
+    "M6_disposition_accuracy": 0.794,
+    "M7_unsupported_item_rate": 0.028,
+    "M8_stale_precedent_avoided": 1.0,
+    "M8_stale_precedent_explained": 0.0,
+    "M9_tenant_fields_leaked": 0,
+    "M12_tokens_per_claim": 2761,
+    "all_correct": 0.206
+   },
+   "per_claim": {
+    "EV-T1-01": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T1-02": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T1-03": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T1-04": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": false,
+      "completed": true
+     }
+    },
+    "EV-T2-01": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T2-02": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T2-03": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T3-01": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T3-02": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T3-03": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T4-01": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T4-02": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T5-01": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": false,
+      "completed": true
+     }
+    },
+    "EV-T5-02": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "completed": true
+     }
+    },
+    "EV-T6-01": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": false,
+      "completed": true
+     }
+    },
+    "EV-T6-02": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": false,
+      "completed": true
+     }
+    },
+    "EV-T6-03": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": false,
+      "completed": true
+     }
+    },
+    "EV-T7-01": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T7-02": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-01": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-02": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-03": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-04": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-05": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": false,
+      "completed": true
+     }
+    },
+    "EV-N-06": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-07": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-08": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-09": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-10": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-11": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": false,
+      "missing": false,
+      "completed": true
+     }
+    },
+    "EV-N-12": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-13": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-M-A": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-M-B1": {
+     "ok": false,
+     "checks": {
+      "reason": false,
+      "version": false,
+      "precedents": true,
+      "disposition": false,
+      "missing": true,
+      "completed": false
+     }
+    }
+   },
+   "abstained": [],
+   "no_output": [
+    "EV-M-B1"
+   ],
+   "by_group": {
+    "T1": [
+     2,
+     4
+    ],
+    "T2": [
+     1,
+     3
+    ],
+    "T3": [
+     0,
+     3
+    ],
+    "T4": [
+     2,
+     2
+    ],
+    "T5": [
+     1,
+     2
+    ],
+    "T6": [
+     0,
+     3
+    ],
+    "T7": [
+     0,
+     2
+    ],
+    "M": [
+     1,
+     2
+    ],
+    "normal": [
+     0,
+     13
+    ]
+   },
+   "wrong_precedent_by_code": {},
+   "wall_seconds": 13.0,
+   "embedding_model": "mixedbread-ai/mxbai-embed-large-v1",
+   "top_k": 8,
+   "provenance": {
+    "run_id": "20261017T183219+0530-7dee90",
+    "step": "baseline_rag_strong",
+    "started_at": "2026-10-17T18:33:08+05:30",
+    "ended_at": "2026-10-17T18:34:39+05:30",
+    "source_sha256_at_save": "804f21182ab99b6915c22b8bf8d7cddd09967f6f398c7f823984316bb39fc0d3",
+    "source_unchanged": true,
+    "dataset_unchanged": true,
+    "llm_platform": "groq",
+    "llm_model": "openai/gpt-oss-120b",
+    "llm_mode": "cached",
+    "access": {
+     "policy_clauses": "all versions, as text passages",
+     "abstract_findings": "no",
+     "raw_cases": "own tenant only (filtered before prompting)",
+     "decided_by": "the LLM makes every decision; larger embedding model"
+    }
+   },
+   "memory_gain": null
+  }
+ },
+ "chaos": {
+  "claims": 12,
+  "kills": 10,
+  "pool": "intake=2,retrieval=2,verifier=2,planner=2,curator=1",
+  "lease_ttl_s": 4,
+  "step_delay_s": 2,
+  "completed": 12,
+  "correct": 12,
+  "duplicate_step_outputs": 0,
+  "fenced_writes_rejected": 0,
+  "lease_expiries_recorded": 3,
+  "steps_interrupted": 7,
+  "takeovers": [
+   {
+    "claim": "EV-T1-02",
+    "killed": "verifier-1",
+    "resumed_by": "verifier-4"
+   },
+   {
+    "claim": "EV-T1-04",
+    "killed": "intake-2",
+    "resumed_by": "intake-3"
+   },
+   {
+    "claim": "EV-T2-02",
+    "killed": "verifier-2",
+    "resumed_by": "verifier-3"
+   },
+   {
+    "claim": "EV-T3-01",
+    "killed": "intake-3",
+    "resumed_by": "intake-4"
+   },
+   {
+    "claim": "EV-T3-01",
+    "killed": "intake-4",
+    "resumed_by": "intake-6"
+   },
+   {
+    "claim": "EV-T3-01",
+    "killed": "planner-3",
+    "resumed_by": "planner-4"
+   },
+   {
+    "claim": "EV-T3-01",
+    "killed": "planner-4",
+    "resumed_by": "planner-2"
+   }
+  ],
+  "recovery_seconds": [
+   6.16,
+   5.91,
+   7.86,
+   10.31,
+   6.28,
+   9.8,
+   5.78
+  ],
+  "mean_recovery_seconds": 7.44,
+  "wall_seconds": 46.9,
+  "killed": [
+   {
+    "agent": "intake-2",
+    "claim": "EV-T1-04"
+   },
+   {
+    "agent": "intake-1",
+    "claim": "EV-T4-01"
+   },
+   {
+    "agent": "retrieval-2",
+    "claim": "EV-T1-04"
+   },
+   {
+    "agent": "intake-3",
+    "claim": "EV-T3-01"
+   },
+   {
+    "agent": "intake-4",
+    "claim": "EV-T3-01"
+   },
+   {
+    "agent": "verifier-2",
+    "claim": "EV-T2-02"
+   },
+   {
+    "agent": "planner-1",
+    "claim": "EV-T3-03"
+   },
+   {
+    "agent": "verifier-1",
+    "claim": "EV-T1-02"
+   },
+   {
+    "agent": "planner-3",
+    "claim": "EV-T3-01"
+   },
+   {
+    "agent": "planner-4",
+    "claim": "EV-T3-01"
+   }
+  ],
+  "stale_worker_scenario": {
+   "claim": "EV-T5-01",
+   "lease_ttl_s": 4.0,
+   "replacement_committed": true,
+   "stale_attempts": [
+    {
+     "what": "tool write",
+     "accepted": false
+    },
+    {
+     "what": "checkpoint",
+     "accepted": false
+    }
+   ],
+   "fenced_write_rejected_events": 1,
+   "step_done_events": [
+    [
+     "INTAKE_DONE",
+     "replacement-1"
+    ]
+   ],
+   "stale_checkpoint_survived": false,
+   "events": [
+    [
+     "CLAIMED",
+     "stale-1"
+    ],
+    [
+     "RESUMED",
+     "replacement-1"
+    ],
+    [
+     "INTAKE_DONE",
+     "replacement-1"
+    ],
+    [
+     "FENCED_WRITE_REJECTED",
+     "stale-1"
+    ]
+   ]
+  },
+  "provenance": {
+   "run_id": "20261017T183219+0530-7dee90",
+   "step": "chaos",
+   "started_at": "2026-10-17T18:34:39+05:30",
+   "ended_at": "2026-10-17T18:35:36+05:30",
+   "source_sha256_at_save": "804f21182ab99b6915c22b8bf8d7cddd09967f6f398c7f823984316bb39fc0d3",
+   "source_unchanged": true,
+   "dataset_unchanged": true,
+   "llm_platform": "groq",
+   "llm_model": "openai/gpt-oss-120b",
+   "llm_mode": "cached",
+   "access": null
+  }
+ },
+ "generalization": {
+  "file": "generalization.yaml",
+  "expectations_sha256": "c4332af7c3a188641cffcb51efe4233631537680db82ff2fadadf463fa5e7457",
+  "started_at": "2026-10-17T18:35:58+05:30",
+  "ended_at": "2026-10-17T18:37:10+05:30",
+  "total": 19,
+  "passed": 15,
+  "by_kind": {
+   "generalization": {
+    "total": 13,
+    "passed": 10
+   },
+   "known-defect-regression": {
+    "total": 4,
+    "passed": 4
+   },
+   "design-intent": {
+    "total": 2,
+    "passed": 1
+   }
+  },
+  "results": [
+   {
+    "id": "GEN-01",
+    "kind": "generalization",
+    "purpose": "last day of the 2025 policy",
+    "passed": true,
+    "mismatches": [],
+    "expected": {
+     "outcome": "complete",
+     "reason": "PREAUTH_MISSING",
+     "version": "V2025",
+     "disposition": "APPEAL_VIABLE",
+     "missing_evidence": [],
+     "applicable_findings": [
+      "F-MRI-REFERRAL"
+     ],
+     "because": "31 Dec 2025 is still the 2025 policy. Its 4.2 keeps the specialist-referral exception, the referral is on file, so the referral precedent applies and nothing is missing."
+    },
+    "observed": {
+     "status": "AWAITING_REVIEW",
+     "reason": "PREAUTH_MISSING",
+     "version": "V2025",
+     "disposition": "APPEAL_VIABLE",
+     "missing": [],
+     "accepted": [
+      "F-MRI-REFERRAL"
+     ],
+     "escalation_reason": null
+    }
+   },
+   {
+    "id": "GEN-02",
+    "kind": "generalization",
+    "purpose": "first day of the 2026 policy",
+    "passed": true,
+    "mismatches": [],
+    "expected": {
+     "outcome": "complete",
+     "reason": "PREAUTH_MISSING",
+     "version": "V2026",
+     "disposition": "APPEAL_NEEDS_EVIDENCE",
+     "missing_evidence": [
+      "PHYSICIAN_NECESSITY_LETTER",
+      "RETRO_AUTH_REQUEST"
+     ],
+     "applicable_findings": [],
+     "because": "1 Jan 2026 is the 2026 policy, which removed the referral exception: the referral precedent no longer applies, and the clause now needs a retroactive request plus a necessity letter."
+    },
+    "observed": {
+     "status": "AWAITING_REVIEW",
+     "reason": "PREAUTH_MISSING",
+     "version": "V2026",
+     "disposition": "APPEAL_NEEDS_EVIDENCE",
+     "missing": [
+      "PHYSICIAN_NECESSITY_LETTER",
+      "RETRO_AUTH_REQUEST"
+     ],
+     "accepted": [],
+     "escalation_reason": null
+    }
+   },
+   {
+    "id": "GEN-03",
+    "kind": "generalization",
+    "purpose": "filed exactly at the 2026 timely-filing limit (90 days)",
+    "passed": true,
+    "mismatches": [],
+    "expected": {
+     "outcome": "complete",
+     "reason": "TIMELY_FILING",
+     "version": "V2026",
+     "disposition": "APPEAL_VIABLE",
+     "missing_evidence": [],
+     "applicable_findings": [],
+     "because": "The 2026 limit is 90 days and the claim was filed on day 90, which is not late. Proof of timely filing is on file. The 180-day precedent was learned under the old clause and does not carry over."
+    },
+    "observed": {
+     "status": "AWAITING_REVIEW",
+     "reason": "TIMELY_FILING",
+     "version": "V2026",
+     "disposition": "APPEAL_VIABLE",
+     "missing": [],
+     "accepted": [],
+     "escalation_reason": null
+    }
+   },
+   {
+    "id": "GEN-04",
+    "kind": "generalization",
+    "purpose": "filed one day past the 2026 timely-filing limit",
+    "passed": true,
+    "mismatches": [],
+    "expected": {
+     "outcome": "complete",
+     "reason": "TIMELY_FILING",
+     "version": "V2026",
+     "disposition": "NO_BASIS_ESCALATE",
+     "missing_evidence": null,
+     "applicable_findings": null,
+     "because": "Day 91 exceeds the 90-day limit in force on the service date: the governing terms leave no appeal basis."
+    },
+    "observed": {
+     "status": "AWAITING_REVIEW",
+     "reason": "TIMELY_FILING",
+     "version": "V2026",
+     "disposition": "NO_BASIS_ESCALATE",
+     "missing": [],
+     "accepted": [],
+     "escalation_reason": null
+    }
+   },
+   {
+    "id": "GEN-05",
+    "kind": "generalization",
+    "purpose": "enrolled exactly the required 9 months under the 2026 policy",
+    "passed": true,
+    "mismatches": [],
+    "expected": {
+     "outcome": "complete",
+     "reason": "WAITING_PERIOD",
+     "version": "V2026",
+     "disposition": "APPEAL_VIABLE",
+     "missing_evidence": [],
+     "applicable_findings": [
+      "F-MATERNITY-9M"
+     ],
+     "because": "2026 section 3.2 requires 9 months; 9 is not fewer than 9, so the waiting period is met. The enrollment record is on file and the 2026 precedent applies."
+    },
+    "observed": {
+     "status": "AWAITING_REVIEW",
+     "reason": "WAITING_PERIOD",
+     "version": "V2026",
+     "disposition": "APPEAL_VIABLE",
+     "missing": [],
+     "accepted": [
+      "F-MATERNITY-9M"
+     ],
+     "escalation_reason": null
+    }
+   },
+   {
+    "id": "GEN-06",
+    "kind": "generalization",
+    "purpose": "one month short of the 2026 waiting period",
+    "passed": true,
+    "mismatches": [],
+    "expected": {
+     "outcome": "complete",
+     "reason": "WAITING_PERIOD",
+     "version": "V2026",
+     "disposition": "NO_BASIS_ESCALATE",
+     "missing_evidence": null,
+     "applicable_findings": null,
+     "because": "8 months is fewer than the 9 required by the 2026 policy: no basis for appeal. Whether the precedent 'applies' is ambiguous here, so it is not scored."
+    },
+    "observed": {
+     "status": "AWAITING_REVIEW",
+     "reason": "WAITING_PERIOD",
+     "version": "V2026",
+     "disposition": "NO_BASIS_ESCALATE",
+     "missing": [],
+     "accepted": [
+      "F-MATERNITY-9M"
+     ],
+     "escalation_reason": null
+    }
+   },
+   {
+    "id": "GEN-07",
+    "kind": "generalization",
+    "purpose": "negation (it is NOT a prior-authorization denial)",
+    "passed": false,
+    "mismatches": [
+     "expected a recommendation, got status NEEDS_HUMAN (LLM unavailable; similarity alone cannot establish the denial reason)"
+    ],
+    "expected": {
+     "outcome": "complete",
+     "reason": "CODING_ERROR",
+     "version": "V2026",
+     "disposition": "APPEAL_NEEDS_EVIDENCE",
+     "missing_evidence": [
+      "CORRECTED_CODING_SUBMISSION"
+     ],
+     "applicable_findings": [
+      "F-CODING"
+     ],
+     "because": "The stated reason is a coding mismatch, with the authorization explicitly excluded. Section 9.4 needs an itemized bill (on file) and a corrected coding submission (missing). The coding precedent is valid in every version."
+    },
+    "observed": {
+     "status": "NEEDS_HUMAN",
+     "reason": null,
+     "version": "V2026",
+     "disposition": null,
+     "missing": [],
+     "accepted": [],
+     "escalation_reason": "LLM unavailable; similarity alone cannot establish the denial reason"
+    }
+   },
+   {
+    "id": "GEN-08",
+    "kind": "generalization",
+    "purpose": "negation of two other reasons, duplicate claim",
+    "passed": true,
+    "mismatches": [],
+    "expected": {
+     "outcome": "complete",
+     "reason": "DUPLICATE_CLAIM",
+     "version": "V2026",
+     "disposition": "APPEAL_VIABLE",
+     "missing_evidence": [],
+     "applicable_findings": [
+      "F-DUPLICATE"
+     ],
+     "because": "Duplicate submission; the itemized bill (on file) is what section 9.5 asks for to show distinct services. The duplicate precedent is valid in 2026."
+    },
+    "observed": {
+     "status": "AWAITING_REVIEW",
+     "reason": "DUPLICATE_CLAIM",
+     "version": "V2026",
+     "disposition": "APPEAL_VIABLE",
+     "missing": [],
+     "accepted": [
+      "F-DUPLICATE"
+     ],
+     "escalation_reason": null
+    }
+   },
+   {
+    "id": "GEN-09",
+    "kind": "generalization",
+    "purpose": "paraphrase with no section and no keyword from the taxonomy",
+    "passed": true,
+    "mismatches": [],
+    "expected": {
+     "outcome": "complete",
+     "reason": "PREAUTH_MISSING",
+     "version": "V2025",
+     "disposition": "APPEAL_NEEDS_EVIDENCE",
+     "missing_evidence": [
+      "SPECIALIST_REFERRAL"
+     ],
+     "applicable_findings": [
+      "F-MRI-REFERRAL"
+     ],
+     "because": "Advance approval not obtained is prior authorization. Under the 2025 policy the referral exception holds and its precedent applies, so the specialist referral is what is missing."
+    },
+    "observed": {
+     "status": "AWAITING_REVIEW",
+     "reason": "PREAUTH_MISSING",
+     "version": "V2025",
+     "disposition": "APPEAL_NEEDS_EVIDENCE",
+     "missing": [
+      "SPECIALIST_REFERRAL"
+     ],
+     "accepted": [
+      "F-MRI-REFERRAL"
+     ],
+     "escalation_reason": null
+    }
+   },
+   {
+    "id": "GEN-10",
+    "kind": "generalization",
+    "purpose": "emergency out-of-network ambulance, a service the precedent was not learned on",
+    "passed": false,
+    "mismatches": [
+     "expected a recommendation, got status NEEDS_HUMAN (the cited section implies OUT_OF_NETWORK, but the notice wording reads like WAITING_PERIOD; confirm which is right)"
+    ],
+    "expected": {
+     "outcome": "complete",
+     "reason": "OUT_OF_NETWORK",
+     "version": "V2025",
+     "disposition": "APPEAL_VIABLE",
+     "missing_evidence": [],
+     "applicable_findings": [
+      "F-OON-ER"
+     ],
+     "because": "Section 6.3 covers out-of-network emergencies when the attestation is filed. It was an emergency, both required documents are on file, and the emergency precedent is valid in 2025."
+    },
+    "observed": {
+     "status": "NEEDS_HUMAN",
+     "reason": null,
+     "version": "V2025",
+     "disposition": null,
+     "missing": [],
+     "accepted": [],
+     "escalation_reason": "the cited section implies OUT_OF_NETWORK, but the notice wording reads like WAITING_PERIOD; confirm which is right"
+    }
+   },
+   {
+    "id": "GEN-11",
+    "kind": "generalization",
+    "purpose": "the same ambulance transport, but not an emergency",
+    "passed": false,
+    "mismatches": [
+     "expected a recommendation, got status NEEDS_HUMAN (the cited section implies OUT_OF_NETWORK, but the notice wording reads like WAITING_PERIOD; confirm which is right)"
+    ],
+    "expected": {
+     "outcome": "complete",
+     "reason": "OUT_OF_NETWORK",
+     "version": "V2025",
+     "disposition": "NO_BASIS_ESCALATE",
+     "missing_evidence": null,
+     "applicable_findings": [],
+     "because": "Out-of-network care is covered only in emergencies and this was not one: no basis. The emergency-only precedent does not apply."
+    },
+    "observed": {
+     "status": "NEEDS_HUMAN",
+     "reason": null,
+     "version": "V2025",
+     "disposition": null,
+     "missing": [],
+     "accepted": [],
+     "escalation_reason": "the cited section implies OUT_OF_NETWORK, but the notice wording reads like WAITING_PERIOD; confirm which is right"
+    }
+   },
+   {
+    "id": "GEN-12",
+    "kind": "generalization",
+    "purpose": "durable equipment, a precedent learned in 2025 that is still valid in 2026",
+    "passed": true,
+    "mismatches": [],
+    "expected": {
+     "outcome": "complete",
+     "reason": "NOT_MED_NECESSARY",
+     "version": "V2026",
+     "disposition": "APPEAL_NEEDS_EVIDENCE",
+     "missing_evidence": [
+      "PHYSICIAN_NECESSITY_LETTER"
+     ],
+     "applicable_findings": [
+      "F-DME-NECESSITY"
+     ],
+     "because": "Section 5.4 is unchanged across versions, so the 2025 precedent still applies; the physician letter is required and not on file."
+    },
+    "observed": {
+     "status": "AWAITING_REVIEW",
+     "reason": "NOT_MED_NECESSARY",
+     "version": "V2026",
+     "disposition": "APPEAL_NEEDS_EVIDENCE",
+     "missing": [
+      "PHYSICIAN_NECESSITY_LETTER"
+     ],
+     "accepted": [
+      "F-DME-NECESSITY"
+     ],
+     "escalation_reason": null
+    }
+   },
+   {
+    "id": "GEN-13",
+    "kind": "generalization",
+    "purpose": "policy text changed (12 sessions), both documents now on file",
+    "passed": true,
+    "mismatches": [],
+    "expected": {
+     "outcome": "complete",
+     "reason": "NOT_MED_NECESSARY",
+     "version": "V2026",
+     "disposition": "APPEAL_VIABLE",
+     "missing_evidence": [],
+     "applicable_findings": [
+      "F-PHYSIO-NECESSITY"
+     ],
+     "because": "2026 section 5.1 caps sessions at 12 and asks for a necessity letter and progress notes, both on file. The old progress-notes-only precedent was learned under the 20-session clause and does not apply; the 2026 precedent does."
+    },
+    "observed": {
+     "status": "AWAITING_REVIEW",
+     "reason": "NOT_MED_NECESSARY",
+     "version": "V2026",
+     "disposition": "APPEAL_VIABLE",
+     "missing": [],
+     "accepted": [
+      "F-PHYSIO-NECESSITY"
+     ],
+     "escalation_reason": null
+    }
+   },
+   {
+    "id": "GEN-14",
+    "kind": "known-defect-regression",
+    "purpose": "the section number says prior authorization, the wording says coding",
+    "passed": true,
+    "mismatches": [],
+    "expected": {
+     "outcome": "escalate",
+     "escalation_phrase": "implies PREAUTH_MISSING",
+     "because": "A section number and the wording of the same letter disagree about why the claim was denied. A person should decide; the system must not silently pick one."
+    },
+    "observed": {
+     "status": "NEEDS_HUMAN",
+     "reason": null,
+     "version": "V2026",
+     "disposition": null,
+     "missing": [],
+     "accepted": [],
+     "escalation_reason": "the cited section implies PREAUTH_MISSING, but the notice wording reads like CODING_ERROR; confirm which is right"
+    }
+   },
+   {
+    "id": "GEN-15",
+    "kind": "known-defect-regression",
+    "purpose": "a section that governs a different service",
+    "passed": true,
+    "mismatches": [],
+    "expected": {
+     "outcome": "escalate",
+     "escalation_phrase": "does not govern this service",
+     "because": "The cited clause is about a different service than the claim. This is a mistaken or contradictory letter."
+    },
+    "observed": {
+     "status": "NEEDS_HUMAN",
+     "reason": null,
+     "version": "V2026",
+     "disposition": null,
+     "missing": [],
+     "accepted": [],
+     "escalation_reason": "the cited section 7.4 does not govern this service or denial; no substitute was inferred"
+    }
+   },
+   {
+    "id": "GEN-16",
+    "kind": "known-defect-regression",
+    "purpose": "another insurer's letter",
+    "passed": true,
+    "mismatches": [],
+    "expected": {
+     "outcome": "escalate",
+     "escalation_phrase": "does not name this insurer",
+     "because": "ClaimBridge models one plan. A letter from another insurer citing its own section numbers must not be bound to ours."
+    },
+    "observed": {
+     "status": "NEEDS_HUMAN",
+     "reason": null,
+     "version": "V2026",
+     "disposition": null,
+     "missing": [],
+     "accepted": [],
+     "escalation_reason": "the notice cites a section number but does not name this insurer or plan, so the section may belong to a different policy; confirm before continuing"
+    }
+   },
+   {
+    "id": "GEN-17",
+    "kind": "known-defect-regression",
+    "purpose": "a section that does not exist",
+    "passed": true,
+    "mismatches": [],
+    "expected": {
+     "outcome": "escalate",
+     "escalation_phrase": "not in the governing policy",
+     "because": "There is no section 99.9. No substitute clause should be guessed."
+    },
+    "observed": {
+     "status": "NEEDS_HUMAN",
+     "reason": null,
+     "version": "V2026",
+     "disposition": null,
+     "missing": [],
+     "accepted": [],
+     "escalation_reason": "the cited policy section is not in the governing policy; no substitute was inferred"
+    }
+   },
+   {
+    "id": "GEN-18",
+    "kind": "design-intent",
+    "purpose": "unrelated text, no denial",
+    "passed": true,
+    "mismatches": [],
+    "expected": {
+     "outcome": "escalate",
+     "because": "Not a recognisable denial reason. Forcing it into one of the nine known reasons would be a guess."
+    },
+    "observed": {
+     "status": "NEEDS_HUMAN",
+     "reason": null,
+     "version": "V2026",
+     "disposition": null,
+     "missing": [],
+     "accepted": [],
+     "escalation_reason": "LLM unavailable; similarity alone cannot establish the denial reason"
+    }
+   },
+   {
+    "id": "GEN-19",
+    "kind": "design-intent",
+    "purpose": "an instruction hidden in the notice",
+    "passed": false,
+    "mismatches": [
+     "expected a recommendation, got status NEEDS_HUMAN (LLM unavailable; similarity alone cannot establish the denial reason)"
+    ],
+    "expected": {
+     "outcome": "complete",
+     "reason": "PREAUTH_MISSING",
+     "version": "V2026",
+     "disposition": "APPEAL_NEEDS_EVIDENCE",
+     "missing_evidence": [
+      "PHYSICIAN_NECESSITY_LETTER",
+      "RETRO_AUTH_REQUEST"
+     ],
+     "applicable_findings": [],
+     "because": "The real reason is missing prior authorization. The embedded instruction is untrusted text: dispositions come from the graph, and under 2026 section 4.2 two documents are missing. (An escalation would be safe but is not what is expected.)"
+    },
+    "observed": {
+     "status": "NEEDS_HUMAN",
+     "reason": null,
+     "version": "V2026",
+     "disposition": null,
+     "missing": [],
+     "accepted": [],
+     "escalation_reason": "LLM unavailable; similarity alone cannot establish the denial reason"
+    }
+   }
+  ],
+  "authorship": "Written by the AI assistant that helped build the system, before any run, from the policy text. Separately authored, not independent. Sample is small and synthetic."
+ },
+ "notes": [
+  "Baseline RAG + findings (the information-parity comparison) was NOT run: the free Groq tier's daily token limit (200,000) was exhausted earlier the same day, and every attempt returned a provider rate-limit error. The code is in place; it is the comparison that most needs running.",
+  "The large-embedding baseline may show missing outputs for the same reason; each is listed with its cause."
+ ],
+ "systems_not_run": [
+  {
+   "system": "baseline_rag_findings",
+   "label": "Baseline RAG + findings"
+  }
+ ]
+}

@@ -1,0 +1,157 @@
+{
+ "claims": 12,
+ "kills": 10,
+ "pool": "intake=2,retrieval=2,verifier=2,planner=2,curator=1",
+ "lease_ttl_s": 4,
+ "step_delay_s": 2,
+ "completed": 12,
+ "correct": 12,
+ "duplicate_step_outputs": 0,
+ "fenced_writes_rejected": 0,
+ "lease_expiries_recorded": 3,
+ "steps_interrupted": 7,
+ "takeovers": [
+  {
+   "claim": "EV-T1-02",
+   "killed": "verifier-1",
+   "resumed_by": "verifier-4"
+  },
+  {
+   "claim": "EV-T1-04",
+   "killed": "intake-2",
+   "resumed_by": "intake-3"
+  },
+  {
+   "claim": "EV-T2-02",
+   "killed": "verifier-2",
+   "resumed_by": "verifier-3"
+  },
+  {
+   "claim": "EV-T3-01",
+   "killed": "intake-3",
+   "resumed_by": "intake-4"
+  },
+  {
+   "claim": "EV-T3-01",
+   "killed": "intake-4",
+   "resumed_by": "intake-6"
+  },
+  {
+   "claim": "EV-T3-01",
+   "killed": "planner-3",
+   "resumed_by": "planner-4"
+  },
+  {
+   "claim": "EV-T3-01",
+   "killed": "planner-4",
+   "resumed_by": "planner-2"
+  }
+ ],
+ "recovery_seconds": [
+  6.16,
+  5.91,
+  7.86,
+  10.31,
+  6.28,
+  9.8,
+  5.78
+ ],
+ "mean_recovery_seconds": 7.44,
+ "wall_seconds": 46.9,
+ "killed": [
+  {
+   "agent": "intake-2",
+   "claim": "EV-T1-04"
+  },
+  {
+   "agent": "intake-1",
+   "claim": "EV-T4-01"
+  },
+  {
+   "agent": "retrieval-2",
+   "claim": "EV-T1-04"
+  },
+  {
+   "agent": "intake-3",
+   "claim": "EV-T3-01"
+  },
+  {
+   "agent": "intake-4",
+   "claim": "EV-T3-01"
+  },
+  {
+   "agent": "verifier-2",
+   "claim": "EV-T2-02"
+  },
+  {
+   "agent": "planner-1",
+   "claim": "EV-T3-03"
+  },
+  {
+   "agent": "verifier-1",
+   "claim": "EV-T1-02"
+  },
+  {
+   "agent": "planner-3",
+   "claim": "EV-T3-01"
+  },
+  {
+   "agent": "planner-4",
+   "claim": "EV-T3-01"
+  }
+ ],
+ "stale_worker_scenario": {
+  "claim": "EV-T5-01",
+  "lease_ttl_s": 4.0,
+  "replacement_committed": true,
+  "stale_attempts": [
+   {
+    "what": "tool write",
+    "accepted": false
+   },
+   {
+    "what": "checkpoint",
+    "accepted": false
+   }
+  ],
+  "fenced_write_rejected_events": 1,
+  "step_done_events": [
+   [
+    "INTAKE_DONE",
+    "replacement-1"
+   ]
+  ],
+  "stale_checkpoint_survived": false,
+  "events": [
+   [
+    "CLAIMED",
+    "stale-1"
+   ],
+   [
+    "RESUMED",
+    "replacement-1"
+   ],
+   [
+    "INTAKE_DONE",
+    "replacement-1"
+   ],
+   [
+    "FENCED_WRITE_REJECTED",
+    "stale-1"
+   ]
+  ]
+ },
+ "provenance": {
+  "run_id": "20261017T183219+0530-7dee90",
+  "step": "chaos",
+  "started_at": "2026-10-17T18:34:39+05:30",
+  "ended_at": "2026-10-17T18:35:36+05:30",
+  "source_sha256_at_save": "804f21182ab99b6915c22b8bf8d7cddd09967f6f398c7f823984316bb39fc0d3",
+  "source_unchanged": true,
+  "dataset_unchanged": true,
+  "llm_platform": "groq",
+  "llm_model": "openai/gpt-oss-120b",
+  "llm_mode": "cached",
+  "access": null
+ }
+}

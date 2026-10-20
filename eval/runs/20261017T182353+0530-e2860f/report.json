@@ -1,0 +1,2911 @@
+{
+ "generated_at": "2026-10-17T18:28:09+05:30",
+ "run": {
+  "run_id": "20261017T182353+0530-e2860f",
+  "label": "final-r1",
+  "started_at": "2026-10-17T18:23:53+05:30",
+  "git": {
+   "revision": "ca01047a6a046f37cfefcee1b9fa016b42ef974c",
+   "dirty": true,
+   "tracked_diff_sha256": "e41ef4b545eaada5b6cb845c5d541d7164794a06f5a9c99e3d6239e234b4a265"
+  },
+  "source_sha256": "96b3ab1437145559b01ace4bf062ede7e1d9a4879ae64b9d91506df299284fac",
+  "dataset": {
+   "knowledge": "1a7e941eba15c9bf14949701315fb5239f584e4d3469e9159f9ad128fbb08741",
+   "scenarios": "8c30bdd276bacb1896095184acc88e738d3fa0f083ecd350cbf12f410349a6bb",
+   "generated": "0d3ac8d68a821d0105d0f0afe844a13415da64503e94ad1adab88a144370ef0e",
+   "all": "3dbeaec8d0bce312b7781c611ba397290d5ead581e6042df5ecae7ff55faf299"
+  },
+  "prompts": {
+   "intake": "254a269eda85e160",
+   "planner": "79ad22b9130be465",
+   "baseline": "c9c65f4bd0deec48"
+  },
+  "config": {
+   "llm_platform": "groq",
+   "llm_model": "openai/gpt-oss-120b",
+   "llm_mode": "cached",
+   "reasoning_effort": "medium",
+   "embedding_model": "BAAI/bge-small-en-v1.5",
+   "baseline_embedding_model": "BAAI/bge-small-en-v1.5",
+   "baseline_strong_embedding_model": "mixedbread-ai/mxbai-embed-large-v1",
+   "baseline_top_k": 8,
+   "planner_draft_audit": false,
+   "graph": "claimbridge_eval",
+   "lease_ttl_s": 20.0,
+   "cache_policy": "replay a recorded provider response if present, else call and record"
+  },
+  "invalid_reasons": [],
+  "steps": {
+   "claimbridge": {
+    "started_at": "2026-10-17T18:23:54+05:30",
+    "ended_at": "2026-10-17T18:24:13+05:30",
+    "source_unchanged": true
+   },
+   "no_memory": {
+    "started_at": "2026-10-17T18:24:13+05:30",
+    "ended_at": "2026-10-17T18:24:31+05:30",
+    "source_unchanged": true
+   },
+   "baseline_rag": {
+    "started_at": "2026-10-17T18:24:31+05:30",
+    "ended_at": "2026-10-17T18:24:44+05:30",
+    "source_unchanged": true
+   },
+   "baseline_rag_strong": {
+    "started_at": "2026-10-17T18:24:44+05:30",
+    "ended_at": "2026-10-17T18:26:54+05:30",
+    "source_unchanged": true
+   },
+   "baseline_rag_findings": {
+    "started_at": "2026-10-17T18:26:54+05:30",
+    "ended_at": "2026-10-17T18:27:12+05:30",
+    "source_unchanged": true
+   },
+   "chaos": {
+    "started_at": "2026-10-17T18:27:12+05:30",
+    "ended_at": "2026-10-17T18:28:09+05:30",
+    "source_unchanged": true
+   }
+  }
+ },
+ "llm": "groq/openai/gpt-oss-120b",
+ "llm_calls": {
+  "calls": 98,
+  "fresh": 4,
+  "replayed": 94,
+  "fake": 0,
+  "by_system": {
+   "claimbridge": {
+    "fresh": 0,
+    "replayed": 12,
+    "fake": 0,
+    "input_tokens": 9815,
+    "output_tokens": 1476
+   },
+   "no_memory": {
+    "fresh": 0,
+    "replayed": 12,
+    "fake": 0,
+    "input_tokens": 9815,
+    "output_tokens": 1476
+   },
+   "baseline_rag": {
+    "fresh": 0,
+    "replayed": 35,
+    "fake": 0,
+    "input_tokens": 66503,
+    "output_tokens": 34503
+   },
+   "baseline_rag_strong": {
+    "fresh": 4,
+    "replayed": 29,
+    "fake": 0,
+    "input_tokens": 62882,
+    "output_tokens": 31004
+   },
+   "chaos": {
+    "fresh": 0,
+    "replayed": 6,
+    "fake": 0,
+    "input_tokens": 4906,
+    "output_tokens": 673
+   }
+  }
+ },
+ "valid": true,
+ "scored_claims": 34,
+ "total_claims": 34,
+ "ground_truth": "a rule engine implemented separately from the graph queries (Python, no Cypher) by the same team; it is not external validation",
+ "evaluation_version": 3,
+ "limitations": "Authored synthetic fixtures; whole-system comparison, not database-only causality. Missing outputs count as failures and are listed with their cause.",
+ "access": {
+  "claimbridge": {
+   "policy_clauses": "all versions, as graph nodes with lineage and content fingerprints",
+   "abstract_findings": "yes: the shared memory (statement, versions valid in, status, evidence needs, conditions)",
+   "raw_cases": "own tenant only; other tenants' cases are redacted",
+   "decided_by": "deterministic Cypher for version, applicability, gates and evidence; the LLM only reads notices that cite no section"
+  },
+  "no_memory": {
+   "policy_clauses": "same as ClaimBridge",
+   "abstract_findings": "hidden (ablation)",
+   "raw_cases": "own tenant only",
+   "decided_by": "same deterministic rules without semantic memory"
+  },
+  "baseline_rag": {
+   "policy_clauses": "all versions, as text passages",
+   "abstract_findings": "no",
+   "raw_cases": "own tenant only (filtered before prompting)",
+   "decided_by": "the LLM makes every decision from the retrieved passages"
+  },
+  "baseline_rag_strong": {
+   "policy_clauses": "all versions, as text passages",
+   "abstract_findings": "no",
+   "raw_cases": "own tenant only (filtered before prompting)",
+   "decided_by": "the LLM makes every decision; larger embedding model"
+  },
+  "baseline_rag_findings": {
+   "policy_clauses": "all versions, as text passages",
+   "abstract_findings": "yes: the same facts ClaimBridge stores, as passages (no verdicts about any claim)",
+   "raw_cases": "own tenant only (filtered before prompting)",
+   "decided_by": "the LLM makes every decision from the retrieved passages"
+  }
+ },
+ "not_run": {
+  "claimbridge": [],
+  "no_memory": [],
+  "baseline_rag": [],
+  "baseline_rag_strong": [
+   "EV-M-B1"
+  ],
+  "baseline_rag_findings": [
+   "EV-T1-01",
+   "EV-T1-02",
+   "EV-T1-03",
+   "EV-T1-04",
+   "EV-T2-01",
+   "EV-T2-02",
+   "EV-T2-03",
+   "EV-T3-01",
+   "EV-T3-02",
+   "EV-T3-03",
+   "EV-T4-01",
+   "EV-T4-02",
+   "EV-T5-01",
+   "EV-T5-02",
+   "EV-T6-01",
+   "EV-T6-02",
+   "EV-T6-03",
+   "EV-T7-01",
+   "EV-T7-02",
+   "EV-N-01",
+   "EV-N-02",
+   "EV-N-03",
+   "EV-N-04",
+   "EV-N-05",
+   "EV-N-06",
+   "EV-N-07",
+   "EV-N-08",
+   "EV-N-09",
+   "EV-N-10",
+   "EV-N-11",
+   "EV-N-12",
+   "EV-N-13",
+   "EV-M-A",
+   "EV-M-B1"
+  ]
+ },
+ "errors": {
+  "claimbridge": {},
+  "no_memory": {},
+  "baseline_rag": {},
+  "baseline_rag_strong": {
+   "EV-M-B1": {
+    "kind": "provider_rate_limit",
+    "message": "GroqProvider 429: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01jand21taf979e3m64c7sq3xk` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199131, Requested 3036. Please try again in 15m36.143999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}"
+   },
+   "EV-M-B2": {
+    "kind": "provider_rate_limit",
+    "message": "GroqProvider 429: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01jand21taf979e3m64c7sq3xk` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199129, Requested 3056. Please try again in 15m43.92s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}"
+   }
+  },
+  "baseline_rag_findings": {
+   "EV-T1-01": {
+    "kind": "provider_rate_limit",
+    "message": "GroqProvider 429: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01jand21taf979e3m64c7sq3xk` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199105, Requested 3406. Please try again in 18m4.752s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}"
+   },
+   "EV-T1-02": {
+    "kind": "provider_rate_limit",
+    "message": "GroqProvider 429: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01jand21taf979e3m64c7sq3xk` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199104, Requested 3391. Please try again in 17m57.839999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}"
+   },
+   "EV-T1-03": {
+    "kind": "provider_rate_limit",
+    "message": "GroqProvider 429: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01jand21taf979e3m64c7sq3xk` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199104, Requested 3302. Please try again in 17m19.392s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}"
+   },
+   "EV-T1-04": {
+    "kind": "provider_rate_limit",
+    "message": "GroqProvider 429: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01jand21taf979e3m64c7sq3xk` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199103, Requested 3211. Please try again in 16m39.648s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}"
+   },
+   "EV-T2-01": {
+    "kind": "provider_rate_limit",
+    "message": "GroqProvider 429: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01jand21taf979e3m64c7sq3xk` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199103, Requested 3380. Please try again in 17m52.656s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}"
+   },
+   "EV-T2-02": {
+    "kind": "provider_rate_limit",
+    "message": "GroqProvider 429: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01jand21taf979e3m64c7sq3xk` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199102, Requested 3365. Please try again in 17m45.744s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}"
+   },
+   "EV-T2-03": {
+    "kind": "provider_rate_limit",
+    "message": "GroqProvider 429: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01jand21taf979e3m64c7sq3xk` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199102, Requested 3284. Please try again in 17m10.752s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}"
+   },
+   "EV-T3-01": {
+    "kind": "provider_rate_limit",
+    "message": "GroqProvider 429: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01jand21taf979e3m64c7sq3xk` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199101, Requested 3040. Please try again in 15m24.911999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}"
+   },
+   "EV-T3-02": {
+    "kind": "provider_rate_limit",
+    "message": "GroqProvider 429: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01jand21taf979e3m64c7sq3xk` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199101, Requested 3114. Please try again in 15m56.88s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}"
+   },
+   "EV-T3-03": {
+    "kind": "provider_rate_limit",
+    "message": "GroqProvider 429: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01jand21taf979e3m64c7sq3xk` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199100, Requested 3209. Please try again in 16m37.488s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}"
+   },
+   "EV-T4-01": {
+    "kind": "provider_rate_limit",
+    "message": "GroqProvider 429: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01jand21taf979e3m64c7sq3xk` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199100, Requested 3067. Please try again in 15m36.143999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}"
+   },
+   "EV-T4-02": {
+    "kind": "provider_rate_limit",
+    "message": "GroqProvider 429: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01jand21taf979e3m64c7sq3xk` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199099, Requested 3149. Please try again in 16m11.136s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}"
+   },
+   "EV-T5-01": {
+    "kind": "provider_rate_limit",
+    "message": "GroqProvider 429: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01jand21taf979e3m64c7sq3xk` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199099, Requested 3278. Please try again in 17m6.864s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}"
+   },
+   "EV-T5-02": {
+    "kind": "provider_rate_limit",
+    "message": "GroqProvider 429: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01jand21taf979e3m64c7sq3xk` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199099, Requested 3382. Please try again in 17m51.791999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}"
+   },
+   "EV-T6-01": {
+    "kind": "provider_rate_limit",
+    "message": "GroqProvider 429: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01jand21taf979e3m64c7sq3xk` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199098, Requested 3449. Please try again in 18m20.304s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}"
+   },
+   "EV-T6-02": {
+    "kind": "provider_rate_limit",
+    "message": "GroqProvider 429: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01jand21taf979e3m64c7sq3xk` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199098, Requested 3214. Please try again in 16m38.784s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}"
+   },
+   "EV-T6-03": {
+    "kind": "provider_rate_limit",
+    "message": "GroqProvider 429: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01jand21taf979e3m64c7sq3xk` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199097, Requested 3006. Please try again in 15m8.496s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}"
+   },
+   "EV-T7-01": {
+    "kind": "provider_rate_limit",
+    "message": "GroqProvider 429: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01jand21taf979e3m64c7sq3xk` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199097, Requested 2993. Please try again in 15m2.879999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}"
+   },
+   "EV-T7-02": {
+    "kind": "provider_rate_limit",
+    "message": "GroqProvider 429: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01jand21taf979e3m64c7sq3xk` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199096, Requested 3350. Please try again in 17m36.672s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}"
+   },
+   "EV-N-01": {
+    "kind": "provider_rate_limit",
+    "message": "GroqProvider 429: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01jand21taf979e3m64c7sq3xk` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199096, Requested 3395. Please try again in 17m56.112s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}"
+   },
+   "EV-N-02": {
+    "kind": "provider_rate_limit",
+    "message": "GroqProvider 429: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01jand21taf979e3m64c7sq3xk` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199095, Requested 3484. Please try again in 18m34.128s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}"
+   },
+   "EV-N-03": {
+    "kind": "provider_rate_limit",
+    "message": "GroqProvider 429: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01jand21taf979e3m64c7sq3xk` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199094, Requested 3357. Please try again in 17m38.832s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}"
+   },
+   "EV-N-04": {
+    "kind": "provider_rate_limit",
+    "message": "GroqProvider 429: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01jand21taf979e3m64c7sq3xk` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199094, Requested 3209. Please try again in 16m34.896s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}"
+   },
+   "EV-N-05": {
+    "kind": "provider_rate_limit",
+    "message": "GroqProvider 429: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01jand21taf979e3m64c7sq3xk` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199093, Requested 3385. Please try again in 17m50.496s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}"
+   },
+   "EV-N-06": {
+    "kind": "provider_rate_limit",
+    "message": "GroqProvider 429: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01jand21taf979e3m64c7sq3xk` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199093, Requested 3331. Please try again in 17m27.168s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}"
+   },
+   "EV-N-07": {
+    "kind": "provider_rate_limit",
+    "message": "GroqProvider 429: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01jand21taf979e3m64c7sq3xk` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199092, Requested 3153. Please try again in 16m9.84s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}"
+   },
+   "EV-N-08": {
+    "kind": "provider_rate_limit",
+    "message": "GroqProvider 429: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01jand21taf979e3m64c7sq3xk` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199092, Requested 3137. Please try again in 16m2.928s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}"
+   },
+   "EV-N-09": {
+    "kind": "provider_rate_limit",
+    "message": "GroqProvider 429: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01jand21taf979e3m64c7sq3xk` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199091, Requested 3037. Please try again in 15m19.296s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}"
+   },
+   "EV-N-10": {
+    "kind": "provider_rate_limit",
+    "message": "GroqProvider 429: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01jand21taf979e3m64c7sq3xk` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199091, Requested 3444. Please try again in 18m15.12s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}"
+   },
+   "EV-N-11": {
+    "kind": "provider_rate_limit",
+    "message": "GroqProvider 429: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01jand21taf979e3m64c7sq3xk` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199090, Requested 3491. Please try again in 18m34.992s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}"
+   },
+   "EV-N-12": {
+    "kind": "provider_rate_limit",
+    "message": "GroqProvider 429: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01jand21taf979e3m64c7sq3xk` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199090, Requested 3006. Please try again in 15m5.472s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}"
+   },
+   "EV-N-13": {
+    "kind": "provider_rate_limit",
+    "message": "GroqProvider 429: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01jand21taf979e3m64c7sq3xk` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199089, Requested 3279. Please try again in 17m2.976s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}"
+   },
+   "EV-M-A": {
+    "kind": "provider_rate_limit",
+    "message": "GroqProvider 429: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01jand21taf979e3m64c7sq3xk` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199089, Requested 3211. Please try again in 16m33.6s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}"
+   },
+   "EV-M-B1": {
+    "kind": "provider_rate_limit",
+    "message": "GroqProvider 429: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01jand21taf979e3m64c7sq3xk` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199088, Requested 3210. Please try again in 16m32.736s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}"
+   }
+  }
+ },
+ "systems": {
+  "claimbridge": {
+   "label": "ClaimBridge",
+   "metrics": {
+    "claims": 34,
+    "completion_rate": 1.0,
+    "abstained_to_human": 0,
+    "no_output": 0,
+    "decision_correct": 1.0,
+    "M1_reason_accuracy": 1.0,
+    "M2_version_accuracy": 1.0,
+    "M3_precedent_precision": 1.0,
+    "M3_precedent_recall": 1.0,
+    "M3_precedent_recall_reachable": 1.0,
+    "claims_with_unreachable_precedent": 18,
+    "M5_missing_evidence_exact": 1.0,
+    "M4_wrong_precedent_rate": 0.0,
+    "M5_missing_evidence_f1": 1.0,
+    "M6_disposition_accuracy": 1.0,
+    "M7_unsupported_item_rate": 0.0,
+    "M8_stale_precedent_avoided": 1.0,
+    "M8_stale_precedent_explained": 1.0,
+    "M9_tenant_fields_leaked": 0,
+    "M12_tokens_per_claim": 332,
+    "all_correct": 1.0
+   },
+   "per_claim": {
+    "EV-T1-01": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T1-02": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T1-03": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T1-04": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "completed": true
+     }
+    },
+    "EV-T2-01": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T2-02": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T2-03": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T3-01": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T3-02": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T3-03": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T4-01": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T4-02": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T5-01": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "completed": true
+     }
+    },
+    "EV-T5-02": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "completed": true
+     }
+    },
+    "EV-T6-01": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "completed": true
+     }
+    },
+    "EV-T6-02": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "completed": true
+     }
+    },
+    "EV-T6-03": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "completed": true
+     }
+    },
+    "EV-T7-01": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T7-02": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-01": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-02": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-03": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-04": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-05": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-06": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-07": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-08": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-09": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-10": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-11": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-12": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-13": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-M-A": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-M-B1": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    }
+   },
+   "abstained": [],
+   "no_output": [],
+   "by_group": {
+    "T1": [
+     4,
+     4
+    ],
+    "T2": [
+     3,
+     3
+    ],
+    "T3": [
+     3,
+     3
+    ],
+    "T4": [
+     2,
+     2
+    ],
+    "T5": [
+     2,
+     2
+    ],
+    "T6": [
+     3,
+     3
+    ],
+    "T7": [
+     2,
+     2
+    ],
+    "M": [
+     2,
+     2
+    ],
+    "normal": [
+     13,
+     13
+    ]
+   },
+   "wrong_precedent_by_code": {},
+   "wall_seconds": 7.5,
+   "embedding_model": null,
+   "top_k": null,
+   "provenance": {
+    "run_id": "20261017T182353+0530-e2860f",
+    "step": "claimbridge",
+    "started_at": "2026-10-17T18:23:54+05:30",
+    "ended_at": "2026-10-17T18:24:13+05:30",
+    "source_sha256_at_save": "96b3ab1437145559b01ace4bf062ede7e1d9a4879ae64b9d91506df299284fac",
+    "source_unchanged": true,
+    "dataset_unchanged": true,
+    "llm_platform": "groq",
+    "llm_model": "openai/gpt-oss-120b",
+    "llm_mode": "cached",
+    "access": {
+     "policy_clauses": "all versions, as graph nodes with lineage and content fingerprints",
+     "abstract_findings": "yes: the shared memory (statement, versions valid in, status, evidence needs, conditions)",
+     "raw_cases": "own tenant only; other tenants' cases are redacted",
+     "decided_by": "deterministic Cypher for version, applicability, gates and evidence; the LLM only reads notices that cite no section"
+    }
+   },
+   "memory_gain": {
+    "learned": [
+     "F-L-AMBULANCE-3fc5cd595b568ee3"
+    ],
+    "curator_action": "learned",
+    "before": {
+     "accepted": [],
+     "disposition": "APPEAL_VIABLE",
+     "confidence": 0.0,
+     "uncertainty": [
+      "No verified precedent applies to this claim."
+     ],
+     "missing": []
+    },
+    "after": {
+     "accepted": [
+      "F-L-AMBULANCE-3fc5cd595b568ee3"
+     ],
+     "disposition": "APPEAL_NEEDS_EVIDENCE",
+     "confidence": 0.667,
+     "uncertainty": [
+      "Only 1 verified case(s) support F-L-AMBULANCE-3fc5cd595b568ee3."
+     ],
+     "missing": [
+      "ITEMIZED_BILL"
+     ]
+    }
+   }
+  },
+  "no_memory": {
+   "label": "No-memory ablation",
+   "metrics": {
+    "claims": 34,
+    "completion_rate": 1.0,
+    "abstained_to_human": 0,
+    "no_output": 0,
+    "decision_correct": 1.0,
+    "M1_reason_accuracy": 1.0,
+    "M2_version_accuracy": 1.0,
+    "M3_precedent_precision": null,
+    "M3_precedent_recall": 0.0,
+    "M3_precedent_recall_reachable": 0.0,
+    "claims_with_unreachable_precedent": 18,
+    "M5_missing_evidence_exact": 1.0,
+    "M4_wrong_precedent_rate": 0.0,
+    "M5_missing_evidence_f1": 1.0,
+    "M6_disposition_accuracy": 1.0,
+    "M7_unsupported_item_rate": 0.0,
+    "M8_stale_precedent_avoided": 1.0,
+    "M8_stale_precedent_explained": 0.0,
+    "M9_tenant_fields_leaked": 0,
+    "M12_tokens_per_claim": 332,
+    "all_correct": 0.382
+   },
+   "per_claim": {
+    "EV-T1-01": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T1-02": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T1-03": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T1-04": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "completed": true
+     }
+    },
+    "EV-T2-01": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T2-02": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T2-03": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T3-01": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T3-02": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T3-03": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T4-01": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T4-02": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T5-01": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "completed": true
+     }
+    },
+    "EV-T5-02": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "completed": true
+     }
+    },
+    "EV-T6-01": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "completed": true
+     }
+    },
+    "EV-T6-02": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "completed": true
+     }
+    },
+    "EV-T6-03": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "completed": true
+     }
+    },
+    "EV-T7-01": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T7-02": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-01": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-02": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-03": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-04": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-05": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-06": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-07": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-08": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-09": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-10": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-11": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-12": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-13": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-M-A": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-M-B1": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    }
+   },
+   "abstained": [],
+   "no_output": [],
+   "by_group": {
+    "T1": [
+     3,
+     4
+    ],
+    "T2": [
+     1,
+     3
+    ],
+    "T3": [
+     0,
+     3
+    ],
+    "T4": [
+     2,
+     2
+    ],
+    "T5": [
+     2,
+     2
+    ],
+    "T6": [
+     3,
+     3
+    ],
+    "T7": [
+     0,
+     2
+    ],
+    "M": [
+     2,
+     2
+    ],
+    "normal": [
+     0,
+     13
+    ]
+   },
+   "wrong_precedent_by_code": {},
+   "wall_seconds": 8.5,
+   "embedding_model": null,
+   "top_k": null,
+   "provenance": {
+    "run_id": "20261017T182353+0530-e2860f",
+    "step": "no_memory",
+    "started_at": "2026-10-17T18:24:13+05:30",
+    "ended_at": "2026-10-17T18:24:31+05:30",
+    "source_sha256_at_save": "96b3ab1437145559b01ace4bf062ede7e1d9a4879ae64b9d91506df299284fac",
+    "source_unchanged": true,
+    "dataset_unchanged": true,
+    "llm_platform": "groq",
+    "llm_model": "openai/gpt-oss-120b",
+    "llm_mode": "cached",
+    "access": {
+     "policy_clauses": "same as ClaimBridge",
+     "abstract_findings": "hidden (ablation)",
+     "raw_cases": "own tenant only",
+     "decided_by": "same deterministic rules without semantic memory"
+    }
+   },
+   "memory_gain": {
+    "learned": [
+     "F-L-AMBULANCE-3fc5cd595b568ee3"
+    ],
+    "curator_action": "learned",
+    "before": {
+     "accepted": [],
+     "disposition": "APPEAL_VIABLE",
+     "confidence": 0.0,
+     "uncertainty": [
+      "No verified precedent applies to this claim."
+     ],
+     "missing": []
+    },
+    "after": {
+     "accepted": [],
+     "disposition": "APPEAL_VIABLE",
+     "confidence": 0.0,
+     "uncertainty": [
+      "No verified precedent applies to this claim."
+     ],
+     "missing": []
+    }
+   }
+  },
+  "baseline_rag": {
+   "label": "Baseline RAG",
+   "metrics": {
+    "claims": 34,
+    "completion_rate": 1.0,
+    "abstained_to_human": 0,
+    "no_output": 0,
+    "decision_correct": 0.765,
+    "M1_reason_accuracy": 1.0,
+    "M2_version_accuracy": 1.0,
+    "M3_precedent_precision": 0.667,
+    "M3_precedent_recall": 0.095,
+    "M3_precedent_recall_reachable": 0.667,
+    "claims_with_unreachable_precedent": 18,
+    "M5_missing_evidence_exact": 0.857,
+    "M4_wrong_precedent_rate": 0.029,
+    "M5_missing_evidence_f1": 0.882,
+    "M6_disposition_accuracy": 0.794,
+    "M7_unsupported_item_rate": 0.056,
+    "M8_stale_precedent_avoided": 1.0,
+    "M8_stale_precedent_explained": 0.0,
+    "M9_tenant_fields_leaked": 0,
+    "M12_tokens_per_claim": 2892,
+    "all_correct": 0.235
+   },
+   "per_claim": {
+    "EV-T1-01": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T1-02": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T1-03": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": false,
+      "missing": false,
+      "completed": true
+     }
+    },
+    "EV-T1-04": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": false,
+      "completed": true
+     }
+    },
+    "EV-T2-01": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T2-02": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T2-03": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T3-01": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T3-02": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T3-03": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T4-01": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T4-02": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T5-01": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "completed": true
+     }
+    },
+    "EV-T5-02": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "completed": true
+     }
+    },
+    "EV-T6-01": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": false,
+      "completed": true
+     }
+    },
+    "EV-T6-02": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": false,
+      "completed": true
+     }
+    },
+    "EV-T6-03": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": false,
+      "completed": true
+     }
+    },
+    "EV-T7-01": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": false,
+      "missing": false,
+      "completed": true
+     }
+    },
+    "EV-T7-02": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-01": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-02": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-03": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-04": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-05": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": false,
+      "completed": true
+     }
+    },
+    "EV-N-06": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-07": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-08": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-09": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-10": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-11": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": false,
+      "missing": false,
+      "completed": true
+     }
+    },
+    "EV-N-12": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-13": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-M-A": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-M-B1": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    }
+   },
+   "abstained": [],
+   "no_output": [],
+   "by_group": {
+    "T1": [
+     0,
+     4
+    ],
+    "T2": [
+     1,
+     3
+    ],
+    "T3": [
+     0,
+     3
+    ],
+    "T4": [
+     2,
+     2
+    ],
+    "T5": [
+     2,
+     2
+    ],
+    "T6": [
+     0,
+     3
+    ],
+    "T7": [
+     0,
+     2
+    ],
+    "M": [
+     2,
+     2
+    ],
+    "normal": [
+     1,
+     13
+    ]
+   },
+   "wrong_precedent_by_code": {
+    "LINEAGE_MISMATCH": 1
+   },
+   "wall_seconds": 3.4,
+   "embedding_model": "BAAI/bge-small-en-v1.5",
+   "top_k": 8,
+   "provenance": {
+    "run_id": "20261017T182353+0530-e2860f",
+    "step": "baseline_rag",
+    "started_at": "2026-10-17T18:24:31+05:30",
+    "ended_at": "2026-10-17T18:24:44+05:30",
+    "source_sha256_at_save": "96b3ab1437145559b01ace4bf062ede7e1d9a4879ae64b9d91506df299284fac",
+    "source_unchanged": true,
+    "dataset_unchanged": true,
+    "llm_platform": "groq",
+    "llm_model": "openai/gpt-oss-120b",
+    "llm_mode": "cached",
+    "access": {
+     "policy_clauses": "all versions, as text passages",
+     "abstract_findings": "no",
+     "raw_cases": "own tenant only (filtered before prompting)",
+     "decided_by": "the LLM makes every decision from the retrieved passages"
+    }
+   },
+   "memory_gain": {
+    "before": {
+     "precedent_cases": [],
+     "disposition": "APPEAL_VIABLE"
+    },
+    "after": {
+     "precedent_cases": [],
+     "disposition": "APPEAL_VIABLE",
+     "retrieved_new_case": false
+    }
+   }
+  },
+  "baseline_rag_strong": {
+   "label": "Baseline RAG (large embeddings)",
+   "metrics": {
+    "claims": 34,
+    "completion_rate": 0.971,
+    "abstained_to_human": 0,
+    "no_output": 1,
+    "decision_correct": 0.765,
+    "M1_reason_accuracy": 0.971,
+    "M2_version_accuracy": 0.971,
+    "M3_precedent_precision": null,
+    "M3_precedent_recall": 0.0,
+    "M3_precedent_recall_reachable": 0.0,
+    "claims_with_unreachable_precedent": 18,
+    "M5_missing_evidence_exact": 0.929,
+    "M4_wrong_precedent_rate": 0.0,
+    "M5_missing_evidence_f1": 0.937,
+    "M6_disposition_accuracy": 0.794,
+    "M7_unsupported_item_rate": 0.028,
+    "M8_stale_precedent_avoided": 1.0,
+    "M8_stale_precedent_explained": 0.0,
+    "M9_tenant_fields_leaked": 0,
+    "M12_tokens_per_claim": 2761,
+    "all_correct": 0.206
+   },
+   "per_claim": {
+    "EV-T1-01": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T1-02": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T1-03": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T1-04": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": false,
+      "completed": true
+     }
+    },
+    "EV-T2-01": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T2-02": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T2-03": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T3-01": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T3-02": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T3-03": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T4-01": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T4-02": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T5-01": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": false,
+      "completed": true
+     }
+    },
+    "EV-T5-02": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "completed": true
+     }
+    },
+    "EV-T6-01": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": false,
+      "completed": true
+     }
+    },
+    "EV-T6-02": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": false,
+      "completed": true
+     }
+    },
+    "EV-T6-03": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": false,
+      "completed": true
+     }
+    },
+    "EV-T7-01": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T7-02": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-01": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-02": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-03": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-04": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-05": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": false,
+      "completed": true
+     }
+    },
+    "EV-N-06": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-07": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-08": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-09": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-10": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-11": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": false,
+      "missing": false,
+      "completed": true
+     }
+    },
+    "EV-N-12": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-13": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-M-A": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-M-B1": {
+     "ok": false,
+     "checks": {
+      "reason": false,
+      "version": false,
+      "precedents": true,
+      "disposition": false,
+      "missing": true,
+      "completed": false
+     }
+    }
+   },
+   "abstained": [],
+   "no_output": [
+    "EV-M-B1"
+   ],
+   "by_group": {
+    "T1": [
+     2,
+     4
+    ],
+    "T2": [
+     1,
+     3
+    ],
+    "T3": [
+     0,
+     3
+    ],
+    "T4": [
+     2,
+     2
+    ],
+    "T5": [
+     1,
+     2
+    ],
+    "T6": [
+     0,
+     3
+    ],
+    "T7": [
+     0,
+     2
+    ],
+    "M": [
+     1,
+     2
+    ],
+    "normal": [
+     0,
+     13
+    ]
+   },
+   "wrong_precedent_by_code": {},
+   "wall_seconds": 45.1,
+   "embedding_model": "mixedbread-ai/mxbai-embed-large-v1",
+   "top_k": 8,
+   "provenance": {
+    "run_id": "20261017T182353+0530-e2860f",
+    "step": "baseline_rag_strong",
+    "started_at": "2026-10-17T18:24:44+05:30",
+    "ended_at": "2026-10-17T18:26:54+05:30",
+    "source_sha256_at_save": "96b3ab1437145559b01ace4bf062ede7e1d9a4879ae64b9d91506df299284fac",
+    "source_unchanged": true,
+    "dataset_unchanged": true,
+    "llm_platform": "groq",
+    "llm_model": "openai/gpt-oss-120b",
+    "llm_mode": "cached",
+    "access": {
+     "policy_clauses": "all versions, as text passages",
+     "abstract_findings": "no",
+     "raw_cases": "own tenant only (filtered before prompting)",
+     "decided_by": "the LLM makes every decision; larger embedding model"
+    }
+   },
+   "memory_gain": null
+  },
+  "baseline_rag_findings": {
+   "label": "Baseline RAG + findings",
+   "metrics": {
+    "claims": 34,
+    "completion_rate": 0.0,
+    "abstained_to_human": 0,
+    "no_output": 34,
+    "decision_correct": 0.0,
+    "M1_reason_accuracy": 0.0,
+    "M2_version_accuracy": 0.0,
+    "M3_precedent_precision": null,
+    "M3_precedent_recall": 0.0,
+    "M3_precedent_recall_reachable": 0.0,
+    "claims_with_unreachable_precedent": 18,
+    "M5_missing_evidence_exact": 0.536,
+    "M4_wrong_precedent_rate": 0.0,
+    "M5_missing_evidence_f1": 0.0,
+    "M6_disposition_accuracy": 0.0,
+    "M7_unsupported_item_rate": null,
+    "M8_stale_precedent_avoided": 0.0,
+    "M8_stale_precedent_explained": 0.0,
+    "M9_tenant_fields_leaked": 0,
+    "M12_tokens_per_claim": 0,
+    "all_correct": 0.0
+   },
+   "per_claim": {
+    "EV-T1-01": {
+     "ok": false,
+     "checks": {
+      "reason": false,
+      "version": false,
+      "precedents": true,
+      "disposition": false,
+      "missing": false,
+      "completed": false
+     }
+    },
+    "EV-T1-02": {
+     "ok": false,
+     "checks": {
+      "reason": false,
+      "version": false,
+      "precedents": false,
+      "disposition": false,
+      "missing": false,
+      "completed": false
+     }
+    },
+    "EV-T1-03": {
+     "ok": false,
+     "checks": {
+      "reason": false,
+      "version": false,
+      "precedents": true,
+      "disposition": false,
+      "missing": true,
+      "completed": false
+     }
+    },
+    "EV-T1-04": {
+     "ok": false,
+     "checks": {
+      "reason": false,
+      "version": false,
+      "precedents": true,
+      "disposition": false,
+      "completed": false
+     }
+    },
+    "EV-T2-01": {
+     "ok": false,
+     "checks": {
+      "reason": false,
+      "version": false,
+      "precedents": false,
+      "disposition": false,
+      "missing": false,
+      "completed": false
+     }
+    },
+    "EV-T2-02": {
+     "ok": false,
+     "checks": {
+      "reason": false,
+      "version": false,
+      "precedents": false,
+      "disposition": false,
+      "missing": true,
+      "completed": false
+     }
+    },
+    "EV-T2-03": {
+     "ok": false,
+     "checks": {
+      "reason": false,
+      "version": false,
+      "precedents": true,
+      "disposition": false,
+      "missing": false,
+      "completed": false
+     }
+    },
+    "EV-T3-01": {
+     "ok": false,
+     "checks": {
+      "reason": false,
+      "version": false,
+      "precedents": false,
+      "disposition": false,
+      "missing": false,
+      "completed": false
+     }
+    },
+    "EV-T3-02": {
+     "ok": false,
+     "checks": {
+      "reason": false,
+      "version": false,
+      "precedents": false,
+      "disposition": false,
+      "missing": false,
+      "completed": false
+     }
+    },
+    "EV-T3-03": {
+     "ok": false,
+     "checks": {
+      "reason": false,
+      "version": false,
+      "precedents": false,
+      "disposition": false,
+      "missing": false,
+      "completed": false
+     }
+    },
+    "EV-T4-01": {
+     "ok": false,
+     "checks": {
+      "reason": false,
+      "version": false,
+      "precedents": true,
+      "disposition": false,
+      "missing": true,
+      "completed": false
+     }
+    },
+    "EV-T4-02": {
+     "ok": false,
+     "checks": {
+      "reason": false,
+      "version": false,
+      "precedents": true,
+      "disposition": false,
+      "missing": false,
+      "completed": false
+     }
+    },
+    "EV-T5-01": {
+     "ok": false,
+     "checks": {
+      "reason": false,
+      "version": false,
+      "precedents": true,
+      "disposition": false,
+      "completed": false
+     }
+    },
+    "EV-T5-02": {
+     "ok": false,
+     "checks": {
+      "reason": false,
+      "version": false,
+      "precedents": true,
+      "disposition": false,
+      "completed": false
+     }
+    },
+    "EV-T6-01": {
+     "ok": false,
+     "checks": {
+      "reason": false,
+      "version": false,
+      "precedents": true,
+      "disposition": false,
+      "completed": false
+     }
+    },
+    "EV-T6-02": {
+     "ok": false,
+     "checks": {
+      "reason": false,
+      "version": false,
+      "precedents": true,
+      "disposition": false,
+      "completed": false
+     }
+    },
+    "EV-T6-03": {
+     "ok": false,
+     "checks": {
+      "reason": false,
+      "version": false,
+      "precedents": true,
+      "disposition": false,
+      "completed": false
+     }
+    },
+    "EV-T7-01": {
+     "ok": false,
+     "checks": {
+      "reason": false,
+      "version": false,
+      "precedents": false,
+      "disposition": false,
+      "missing": true,
+      "completed": false
+     }
+    },
+    "EV-T7-02": {
+     "ok": false,
+     "checks": {
+      "reason": false,
+      "version": false,
+      "precedents": false,
+      "disposition": false,
+      "missing": true,
+      "completed": false
+     }
+    },
+    "EV-N-01": {
+     "ok": false,
+     "checks": {
+      "reason": false,
+      "version": false,
+      "precedents": false,
+      "disposition": false,
+      "missing": false,
+      "completed": false
+     }
+    },
+    "EV-N-02": {
+     "ok": false,
+     "checks": {
+      "reason": false,
+      "version": false,
+      "precedents": false,
+      "disposition": false,
+      "missing": true,
+      "completed": false
+     }
+    },
+    "EV-N-03": {
+     "ok": false,
+     "checks": {
+      "reason": false,
+      "version": false,
+      "precedents": false,
+      "disposition": false,
+      "missing": true,
+      "completed": false
+     }
+    },
+    "EV-N-04": {
+     "ok": false,
+     "checks": {
+      "reason": false,
+      "version": false,
+      "precedents": false,
+      "disposition": false,
+      "missing": true,
+      "completed": false
+     }
+    },
+    "EV-N-05": {
+     "ok": false,
+     "checks": {
+      "reason": false,
+      "version": false,
+      "precedents": false,
+      "disposition": false,
+      "missing": false,
+      "completed": false
+     }
+    },
+    "EV-N-06": {
+     "ok": false,
+     "checks": {
+      "reason": false,
+      "version": false,
+      "precedents": false,
+      "disposition": false,
+      "missing": true,
+      "completed": false
+     }
+    },
+    "EV-N-07": {
+     "ok": false,
+     "checks": {
+      "reason": false,
+      "version": false,
+      "precedents": false,
+      "disposition": false,
+      "missing": true,
+      "completed": false
+     }
+    },
+    "EV-N-08": {
+     "ok": false,
+     "checks": {
+      "reason": false,
+      "version": false,
+      "precedents": false,
+      "disposition": false,
+      "missing": true,
+      "completed": false
+     }
+    },
+    "EV-N-09": {
+     "ok": false,
+     "checks": {
+      "reason": false,
+      "version": false,
+      "precedents": false,
+      "disposition": false,
+      "missing": false,
+      "completed": false
+     }
+    },
+    "EV-N-10": {
+     "ok": false,
+     "checks": {
+      "reason": false,
+      "version": false,
+      "precedents": false,
+      "disposition": false,
+      "missing": true,
+      "completed": false
+     }
+    },
+    "EV-N-11": {
+     "ok": false,
+     "checks": {
+      "reason": false,
+      "version": false,
+      "precedents": false,
+      "disposition": false,
+      "missing": true,
+      "completed": false
+     }
+    },
+    "EV-N-12": {
+     "ok": false,
+     "checks": {
+      "reason": false,
+      "version": false,
+      "precedents": false,
+      "disposition": false,
+      "missing": false,
+      "completed": false
+     }
+    },
+    "EV-N-13": {
+     "ok": false,
+     "checks": {
+      "reason": false,
+      "version": false,
+      "precedents": false,
+      "disposition": false,
+      "missing": false,
+      "completed": false
+     }
+    },
+    "EV-M-A": {
+     "ok": false,
+     "checks": {
+      "reason": false,
+      "version": false,
+      "precedents": true,
+      "disposition": false,
+      "missing": true,
+      "completed": false
+     }
+    },
+    "EV-M-B1": {
+     "ok": false,
+     "checks": {
+      "reason": false,
+      "version": false,
+      "precedents": true,
+      "disposition": false,
+      "missing": true,
+      "completed": false
+     }
+    }
+   },
+   "abstained": [],
+   "no_output": [
+    "EV-T1-01",
+    "EV-T1-02",
+    "EV-T1-03",
+    "EV-T1-04",
+    "EV-T2-01",
+    "EV-T2-02",
+    "EV-T2-03",
+    "EV-T3-01",
+    "EV-T3-02",
+    "EV-T3-03",
+    "EV-T4-01",
+    "EV-T4-02",
+    "EV-T5-01",
+    "EV-T5-02",
+    "EV-T6-01",
+    "EV-T6-02",
+    "EV-T6-03",
+    "EV-T7-01",
+    "EV-T7-02",
+    "EV-N-01",
+    "EV-N-02",
+    "EV-N-03",
+    "EV-N-04",
+    "EV-N-05",
+    "EV-N-06",
+    "EV-N-07",
+    "EV-N-08",
+    "EV-N-09",
+    "EV-N-10",
+    "EV-N-11",
+    "EV-N-12",
+    "EV-N-13",
+    "EV-M-A",
+    "EV-M-B1"
+   ],
+   "by_group": {
+    "T1": [
+     0,
+     4
+    ],
+    "T2": [
+     0,
+     3
+    ],
+    "T3": [
+     0,
+     3
+    ],
+    "T4": [
+     0,
+     2
+    ],
+    "T5": [
+     0,
+     2
+    ],
+    "T6": [
+     0,
+     3
+    ],
+    "T7": [
+     0,
+     2
+    ],
+    "M": [
+     0,
+     2
+    ],
+    "normal": [
+     0,
+     13
+    ]
+   },
+   "wrong_precedent_by_code": {},
+   "wall_seconds": 7.6,
+   "embedding_model": "BAAI/bge-small-en-v1.5",
+   "top_k": 10,
+   "provenance": {
+    "run_id": "20261017T182353+0530-e2860f",
+    "step": "baseline_rag_findings",
+    "started_at": "2026-10-17T18:26:54+05:30",
+    "ended_at": "2026-10-17T18:27:12+05:30",
+    "source_sha256_at_save": "96b3ab1437145559b01ace4bf062ede7e1d9a4879ae64b9d91506df299284fac",
+    "source_unchanged": true,
+    "dataset_unchanged": true,
+    "llm_platform": "groq",
+    "llm_model": "openai/gpt-oss-120b",
+    "llm_mode": "cached",
+    "access": {
+     "policy_clauses": "all versions, as text passages",
+     "abstract_findings": "yes: the same facts ClaimBridge stores, as passages (no verdicts about any claim)",
+     "raw_cases": "own tenant only (filtered before prompting)",
+     "decided_by": "the LLM makes every decision from the retrieved passages"
+    }
+   },
+   "memory_gain": null
+  }
+ },
+ "chaos": {
+  "claims": 12,
+  "kills": 10,
+  "pool": "intake=2,retrieval=2,verifier=2,planner=2,curator=1",
+  "lease_ttl_s": 4,
+  "step_delay_s": 2,
+  "completed": 12,
+  "correct": 12,
+  "duplicate_step_outputs": 0,
+  "fenced_writes_rejected": 0,
+  "lease_expiries_recorded": 6,
+  "steps_interrupted": 8,
+  "takeovers": [
+   {
+    "claim": "EV-T1-01",
+    "killed": "verifier-3",
+    "resumed_by": "verifier-5"
+   },
+   {
+    "claim": "EV-T1-01",
+    "killed": "verifier-5",
+    "resumed_by": "verifier-6"
+   },
+   {
+    "claim": "EV-T1-04",
+    "killed": "intake-2",
+    "resumed_by": "intake-4"
+   },
+   {
+    "claim": "EV-T1-04",
+    "killed": "verifier-2",
+    "resumed_by": "verifier-4"
+   },
+   {
+    "claim": "EV-T2-02",
+    "killed": "intake-1",
+    "resumed_by": "intake-4"
+   },
+   {
+    "claim": "EV-T2-02",
+    "killed": "planner-2",
+    "resumed_by": "planner-4"
+   },
+   {
+    "claim": "EV-T3-01",
+    "killed": "planner-4",
+    "resumed_by": "planner-3"
+   },
+   {
+    "claim": "EV-T4-02",
+    "killed": "verifier-4",
+    "resumed_by": "verifier-5"
+   }
+  ],
+  "recovery_seconds": [
+   9.45,
+   5.42,
+   8.23,
+   8.4,
+   6.26,
+   6.39,
+   5.52,
+   7.41
+  ],
+  "mean_recovery_seconds": 7.13,
+  "wall_seconds": 46.3,
+  "killed": [
+   {
+    "agent": "intake-2",
+    "claim": "EV-T1-04"
+   },
+   {
+    "agent": "intake-1",
+    "claim": "EV-T2-02"
+   },
+   {
+    "agent": "verifier-1",
+    "claim": "EV-T2-03"
+   },
+   {
+    "agent": "verifier-2",
+    "claim": "EV-T1-04"
+   },
+   {
+    "agent": "planner-1",
+    "claim": "EV-T3-02"
+   },
+   {
+    "agent": "planner-2",
+    "claim": "EV-T2-02"
+   },
+   {
+    "agent": "verifier-4",
+    "claim": "EV-T4-02"
+   },
+   {
+    "agent": "verifier-3",
+    "claim": "EV-T1-01"
+   },
+   {
+    "agent": "verifier-5",
+    "claim": "EV-T1-01"
+   },
+   {
+    "agent": "planner-4",
+    "claim": "EV-T3-01"
+   }
+  ],
+  "stale_worker_scenario": {
+   "claim": "EV-T5-01",
+   "lease_ttl_s": 4.0,
+   "replacement_committed": true,
+   "stale_attempts": [
+    {
+     "what": "tool write",
+     "accepted": false
+    },
+    {
+     "what": "checkpoint",
+     "accepted": false
+    }
+   ],
+   "fenced_write_rejected_events": 1,
+   "step_done_events": [
+    [
+     "INTAKE_DONE",
+     "replacement-1"
+    ]
+   ],
+   "stale_checkpoint_survived": false,
+   "events": [
+    [
+     "CLAIMED",
+     "stale-1"
+    ],
+    [
+     "RESUMED",
+     "replacement-1"
+    ],
+    [
+     "INTAKE_DONE",
+     "replacement-1"
+    ],
+    [
+     "FENCED_WRITE_REJECTED",
+     "stale-1"
+    ]
+   ]
+  },
+  "provenance": {
+   "run_id": "20261017T182353+0530-e2860f",
+   "step": "chaos",
+   "started_at": "2026-10-17T18:27:12+05:30",
+   "ended_at": "2026-10-17T18:28:09+05:30",
+   "source_sha256_at_save": "96b3ab1437145559b01ace4bf062ede7e1d9a4879ae64b9d91506df299284fac",
+   "source_unchanged": true,
+   "dataset_unchanged": true,
+   "llm_platform": "groq",
+   "llm_model": "openai/gpt-oss-120b",
+   "llm_mode": "cached",
+   "access": null
+  }
+ },
+ "generalization": null
+}

@@ -1,0 +1,129 @@
+{
+ "claims": 12,
+ "kills": 10,
+ "pool": "intake=2,retrieval=2,verifier=2,planner=2,curator=1",
+ "lease_ttl_s": 4,
+ "step_delay_s": 2,
+ "completed": 12,
+ "correct": 12,
+ "duplicate_step_outputs": 0,
+ "fenced_writes_rejected": 0,
+ "lease_expiries_recorded": 5,
+ "steps_interrupted": 10,
+ "takeovers": [
+  {
+   "claim": "EV-T1-01",
+   "killed": "planner-3",
+   "resumed_by": "planner-5"
+  },
+  {
+   "claim": "EV-T1-02",
+   "killed": "retrieval-1",
+   "resumed_by": "retrieval-4"
+  },
+  {
+   "claim": "EV-T1-04",
+   "killed": "intake-2",
+   "resumed_by": "intake-1"
+  },
+  {
+   "claim": "EV-T2-02",
+   "killed": "intake-3",
+   "resumed_by": "intake-4"
+  },
+  {
+   "claim": "EV-T3-01",
+   "killed": "planner-4",
+   "resumed_by": "planner-2"
+  },
+  {
+   "claim": "EV-T3-01",
+   "killed": "planner-2",
+   "resumed_by": "planner-6"
+  },
+  {
+   "claim": "EV-T3-02",
+   "killed": "retrieval-2",
+   "resumed_by": "retrieval-3"
+  },
+  {
+   "claim": "EV-T4-01",
+   "killed": "verifier-1",
+   "resumed_by": "verifier-2"
+  },
+  {
+   "claim": "EV-T4-01",
+   "killed": "planner-1",
+   "resumed_by": "planner-3"
+  },
+  {
+   "claim": "EV-T4-02",
+   "killed": "verifier-3",
+   "resumed_by": "verifier-4"
+  }
+ ],
+ "recovery_seconds": [
+  7.81,
+  6.1,
+  5.89,
+  5.58,
+  10.33,
+  6.3,
+  6.63,
+  6.73,
+  6.89,
+  7.78
+ ],
+ "mean_recovery_seconds": 7.0,
+ "wall_seconds": 47.2,
+ "killed": [
+  {
+   "agent": "intake-2",
+   "claim": "EV-T1-04"
+  },
+  {
+   "agent": "intake-3",
+   "claim": "EV-T2-02"
+  },
+  {
+   "agent": "retrieval-2",
+   "claim": "EV-T3-02"
+  },
+  {
+   "agent": "verifier-1",
+   "claim": "EV-T4-01"
+  },
+  {
+   "agent": "retrieval-1",
+   "claim": "EV-T1-02"
+  },
+  {
+   "agent": "planner-1",
+   "claim": "EV-T4-01"
+  },
+  {
+   "agent": "verifier-3",
+   "claim": "EV-T4-02"
+  },
+  {
+   "agent": "planner-3",
+   "claim": "EV-T1-01"
+  },
+  {
+   "agent": "planner-4",
+   "claim": "EV-T3-01"
+  },
+  {
+   "agent": "planner-2",
+   "claim": "EV-T3-01"
+  }
+ ],
+ "provenance": {
+  "source_sha256": "a333b11b29749354a98f97064a702704456c845f53d38fe9331995107a340f04",
+  "llm_platform": "groq",
+  "llm_model": "openai/gpt-oss-120b",
+  "llm_mode": "cached",
+  "generated_at": "2026-10-17T17:13:38",
+  "baseline_access": "shared clauses and own-tenant cases only"
+ }
+}

@@ -1,0 +1,1982 @@
+{
+ "generated_at": "2026-10-17T17:13:43",
+ "llm": "groq/openai/gpt-oss-120b",
+ "scored_claims": 34,
+ "total_claims": 34,
+ "not_scored": [],
+ "evaluation_version": 2,
+ "limitations": "Authored synthetic fixtures; whole-system comparison, not database-only causality. Missing outputs count as failures.",
+ "not_run": {
+  "claimbridge": [],
+  "no_memory": [],
+  "baseline_rag": [],
+  "baseline_rag_strong": [
+   "EV-N-11",
+   "EV-N-12",
+   "EV-N-13",
+   "EV-M-A",
+   "EV-M-B1"
+  ]
+ },
+ "systems": {
+  "claimbridge": {
+   "label": "ClaimBridge",
+   "metrics": {
+    "claims": 34,
+    "completion_rate": 1.0,
+    "decision_correct": 1.0,
+    "M1_reason_accuracy": 1.0,
+    "M2_version_accuracy": 1.0,
+    "M3_precedent_precision": 1.0,
+    "M3_precedent_recall": 1.0,
+    "M4_wrong_precedent_rate": 0.0,
+    "M5_missing_evidence_f1": 1.0,
+    "M6_disposition_accuracy": 1.0,
+    "M7_unsupported_item_rate": 0.0,
+    "M8_stale_precedent_avoided": 1.0,
+    "M8_stale_precedent_explained": 1.0,
+    "M9_tenant_fields_leaked": 0,
+    "M12_tokens_per_claim": 332,
+    "all_correct": 1.0
+   },
+   "per_claim": {
+    "EV-T1-01": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T1-02": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T1-03": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T1-04": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "completed": true
+     }
+    },
+    "EV-T2-01": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T2-02": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T2-03": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T3-01": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T3-02": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T3-03": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T4-01": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T4-02": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T5-01": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "completed": true
+     }
+    },
+    "EV-T5-02": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "completed": true
+     }
+    },
+    "EV-T6-01": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "completed": true
+     }
+    },
+    "EV-T6-02": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "completed": true
+     }
+    },
+    "EV-T6-03": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "completed": true
+     }
+    },
+    "EV-T7-01": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T7-02": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-01": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-02": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-03": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-04": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-05": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-06": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-07": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-08": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-09": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-10": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-11": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-12": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-13": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-M-A": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-M-B1": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    }
+   },
+   "by_group": {
+    "T1": [
+     4,
+     4
+    ],
+    "T2": [
+     3,
+     3
+    ],
+    "T3": [
+     3,
+     3
+    ],
+    "T4": [
+     2,
+     2
+    ],
+    "T5": [
+     2,
+     2
+    ],
+    "T6": [
+     3,
+     3
+    ],
+    "T7": [
+     2,
+     2
+    ],
+    "M": [
+     2,
+     2
+    ],
+    "normal": [
+     13,
+     13
+    ]
+   },
+   "wrong_precedent_by_code": {},
+   "wall_seconds": 66.0,
+   "embedding_model": null,
+   "provenance": {
+    "source_sha256": "5253b9e4ba4c35ca46a8e4f7848fbcd0a7dfbed3319427f853550d14c307fe87",
+    "llm_platform": "groq",
+    "llm_model": "openai/gpt-oss-120b",
+    "llm_mode": "cached",
+    "generated_at": "2026-10-17T16:52:27",
+    "baseline_access": "shared clauses and own-tenant cases only"
+   },
+   "memory_gain": {
+    "learned": [
+     "F-L-AMBULANCE-3fc5cd595b568ee3"
+    ],
+    "curator_action": "learned",
+    "before": {
+     "accepted": [],
+     "disposition": "APPEAL_VIABLE",
+     "confidence": 0.0,
+     "uncertainty": [
+      "No verified precedent applies to this claim.",
+      "Support score is a smoothed count of recorded outcomes, not an approval probability."
+     ],
+     "missing": []
+    },
+    "after": {
+     "accepted": [
+      "F-L-AMBULANCE-3fc5cd595b568ee3"
+     ],
+     "disposition": "APPEAL_NEEDS_EVIDENCE",
+     "confidence": 0.667,
+     "uncertainty": [
+      "Only 1 verified case(s) support F-L-AMBULANCE-3fc5cd595b568ee3.",
+      "Support score is a smoothed count of recorded outcomes, not an approval probability."
+     ],
+     "missing": [
+      "ITEMIZED_BILL"
+     ]
+    }
+   }
+  },
+  "no_memory": {
+   "label": "No-memory ablation",
+   "metrics": {
+    "claims": 34,
+    "completion_rate": 1.0,
+    "decision_correct": 1.0,
+    "M1_reason_accuracy": 1.0,
+    "M2_version_accuracy": 1.0,
+    "M3_precedent_precision": null,
+    "M3_precedent_recall": 0.0,
+    "M4_wrong_precedent_rate": 0.0,
+    "M5_missing_evidence_f1": 1.0,
+    "M6_disposition_accuracy": 1.0,
+    "M7_unsupported_item_rate": 0.0,
+    "M8_stale_precedent_avoided": 1.0,
+    "M8_stale_precedent_explained": 0.0,
+    "M9_tenant_fields_leaked": 0,
+    "M12_tokens_per_claim": 332,
+    "all_correct": 0.382
+   },
+   "per_claim": {
+    "EV-T1-01": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T1-02": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T1-03": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T1-04": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "completed": true
+     }
+    },
+    "EV-T2-01": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T2-02": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T2-03": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T3-01": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T3-02": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T3-03": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T4-01": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T4-02": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T5-01": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "completed": true
+     }
+    },
+    "EV-T5-02": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "completed": true
+     }
+    },
+    "EV-T6-01": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "completed": true
+     }
+    },
+    "EV-T6-02": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "completed": true
+     }
+    },
+    "EV-T6-03": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "completed": true
+     }
+    },
+    "EV-T7-01": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T7-02": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-01": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-02": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-03": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-04": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-05": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-06": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-07": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-08": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-09": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-10": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-11": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-12": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-13": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-M-A": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-M-B1": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    }
+   },
+   "by_group": {
+    "T1": [
+     3,
+     4
+    ],
+    "T2": [
+     1,
+     3
+    ],
+    "T3": [
+     0,
+     3
+    ],
+    "T4": [
+     2,
+     2
+    ],
+    "T5": [
+     2,
+     2
+    ],
+    "T6": [
+     3,
+     3
+    ],
+    "T7": [
+     0,
+     2
+    ],
+    "M": [
+     2,
+     2
+    ],
+    "normal": [
+     0,
+     13
+    ]
+   },
+   "wrong_precedent_by_code": {},
+   "wall_seconds": 13.5,
+   "embedding_model": null,
+   "provenance": {
+    "source_sha256": "5253b9e4ba4c35ca46a8e4f7848fbcd0a7dfbed3319427f853550d14c307fe87",
+    "llm_platform": "groq",
+    "llm_model": "openai/gpt-oss-120b",
+    "llm_mode": "cached",
+    "generated_at": "2026-10-17T16:52:57",
+    "baseline_access": "shared clauses and own-tenant cases only"
+   },
+   "memory_gain": {
+    "learned": [
+     "F-L-AMBULANCE-3fc5cd595b568ee3"
+    ],
+    "curator_action": "learned",
+    "before": {
+     "accepted": [],
+     "disposition": "APPEAL_VIABLE",
+     "confidence": 0.0,
+     "uncertainty": [
+      "No verified precedent applies to this claim.",
+      "Support score is a smoothed count of recorded outcomes, not an approval probability."
+     ],
+     "missing": []
+    },
+    "after": {
+     "accepted": [],
+     "disposition": "APPEAL_VIABLE",
+     "confidence": 0.0,
+     "uncertainty": [
+      "No verified precedent applies to this claim.",
+      "Support score is a smoothed count of recorded outcomes, not an approval probability."
+     ],
+     "missing": []
+    }
+   }
+  },
+  "baseline_rag": {
+   "label": "Baseline RAG",
+   "metrics": {
+    "claims": 34,
+    "completion_rate": 1.0,
+    "decision_correct": 0.765,
+    "M1_reason_accuracy": 1.0,
+    "M2_version_accuracy": 1.0,
+    "M3_precedent_precision": 0.667,
+    "M3_precedent_recall": 0.095,
+    "M4_wrong_precedent_rate": 0.029,
+    "M5_missing_evidence_f1": 0.882,
+    "M6_disposition_accuracy": 0.794,
+    "M7_unsupported_item_rate": 0.056,
+    "M8_stale_precedent_avoided": 1.0,
+    "M8_stale_precedent_explained": 0.0,
+    "M9_tenant_fields_leaked": 0,
+    "M12_tokens_per_claim": 2892,
+    "all_correct": 0.235
+   },
+   "per_claim": {
+    "EV-T1-01": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T1-02": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T1-03": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": false,
+      "missing": false,
+      "completed": true
+     }
+    },
+    "EV-T1-04": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": false,
+      "completed": true
+     }
+    },
+    "EV-T2-01": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T2-02": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T2-03": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T3-01": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T3-02": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T3-03": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T4-01": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T4-02": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T5-01": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "completed": true
+     }
+    },
+    "EV-T5-02": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "completed": true
+     }
+    },
+    "EV-T6-01": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": false,
+      "completed": true
+     }
+    },
+    "EV-T6-02": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": false,
+      "completed": true
+     }
+    },
+    "EV-T6-03": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": false,
+      "completed": true
+     }
+    },
+    "EV-T7-01": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": false,
+      "missing": false,
+      "completed": true
+     }
+    },
+    "EV-T7-02": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-01": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-02": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-03": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-04": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-05": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": false,
+      "completed": true
+     }
+    },
+    "EV-N-06": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-07": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-08": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-09": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-10": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-11": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": false,
+      "missing": false,
+      "completed": true
+     }
+    },
+    "EV-N-12": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-13": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-M-A": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-M-B1": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    }
+   },
+   "by_group": {
+    "T1": [
+     0,
+     4
+    ],
+    "T2": [
+     1,
+     3
+    ],
+    "T3": [
+     0,
+     3
+    ],
+    "T4": [
+     2,
+     2
+    ],
+    "T5": [
+     2,
+     2
+    ],
+    "T6": [
+     0,
+     3
+    ],
+    "T7": [
+     0,
+     2
+    ],
+    "M": [
+     2,
+     2
+    ],
+    "normal": [
+     1,
+     13
+    ]
+   },
+   "wrong_precedent_by_code": {
+    "LINEAGE_MISMATCH": 1
+   },
+   "wall_seconds": 623.2,
+   "embedding_model": "BAAI/bge-small-en-v1.5",
+   "provenance": {
+    "source_sha256": "a333b11b29749354a98f97064a702704456c845f53d38fe9331995107a340f04",
+    "llm_platform": "groq",
+    "llm_model": "openai/gpt-oss-120b",
+    "llm_mode": "cached",
+    "generated_at": "2026-10-17T17:03:47",
+    "baseline_access": "shared clauses and own-tenant cases only"
+   },
+   "memory_gain": {
+    "before": {
+     "precedent_cases": [],
+     "disposition": "APPEAL_VIABLE"
+    },
+    "after": {
+     "precedent_cases": [],
+     "disposition": "APPEAL_VIABLE",
+     "retrieved_new_case": false
+    }
+   }
+  },
+  "baseline_rag_strong": {
+   "label": "Baseline RAG (large embeddings)",
+   "metrics": {
+    "claims": 34,
+    "completion_rate": 0.853,
+    "decision_correct": 0.676,
+    "M1_reason_accuracy": 0.853,
+    "M2_version_accuracy": 0.853,
+    "M3_precedent_precision": null,
+    "M3_precedent_recall": 0.0,
+    "M4_wrong_precedent_rate": 0.0,
+    "M5_missing_evidence_f1": 0.897,
+    "M6_disposition_accuracy": 0.706,
+    "M7_unsupported_item_rate": 0.016,
+    "M8_stale_precedent_avoided": 1.0,
+    "M8_stale_precedent_explained": 0.0,
+    "M9_tenant_fields_leaked": 0,
+    "M12_tokens_per_claim": 2415,
+    "all_correct": 0.176
+   },
+   "per_claim": {
+    "EV-T1-01": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T1-02": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T1-03": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T1-04": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": false,
+      "completed": true
+     }
+    },
+    "EV-T2-01": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T2-02": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T2-03": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T3-01": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T3-02": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T3-03": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T4-01": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T4-02": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T5-01": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": false,
+      "completed": true
+     }
+    },
+    "EV-T5-02": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "completed": true
+     }
+    },
+    "EV-T6-01": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": false,
+      "completed": true
+     }
+    },
+    "EV-T6-02": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": false,
+      "completed": true
+     }
+    },
+    "EV-T6-03": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": false,
+      "completed": true
+     }
+    },
+    "EV-T7-01": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-T7-02": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-01": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-02": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-03": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-04": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-05": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": false,
+      "completed": true
+     }
+    },
+    "EV-N-06": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-07": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-08": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-09": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-10": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true,
+      "completed": true
+     }
+    },
+    "EV-N-11": {
+     "ok": false,
+     "checks": {
+      "reason": false,
+      "version": false,
+      "precedents": false,
+      "disposition": false,
+      "missing": true,
+      "completed": false
+     }
+    },
+    "EV-N-12": {
+     "ok": false,
+     "checks": {
+      "reason": false,
+      "version": false,
+      "precedents": false,
+      "disposition": false,
+      "missing": false,
+      "completed": false
+     }
+    },
+    "EV-N-13": {
+     "ok": false,
+     "checks": {
+      "reason": false,
+      "version": false,
+      "precedents": false,
+      "disposition": false,
+      "missing": false,
+      "completed": false
+     }
+    },
+    "EV-M-A": {
+     "ok": false,
+     "checks": {
+      "reason": false,
+      "version": false,
+      "precedents": true,
+      "disposition": false,
+      "missing": true,
+      "completed": false
+     }
+    },
+    "EV-M-B1": {
+     "ok": false,
+     "checks": {
+      "reason": false,
+      "version": false,
+      "precedents": true,
+      "disposition": false,
+      "missing": true,
+      "completed": false
+     }
+    }
+   },
+   "by_group": {
+    "T1": [
+     2,
+     4
+    ],
+    "T2": [
+     1,
+     3
+    ],
+    "T3": [
+     0,
+     3
+    ],
+    "T4": [
+     2,
+     2
+    ],
+    "T5": [
+     1,
+     2
+    ],
+    "T6": [
+     0,
+     3
+    ],
+    "T7": [
+     0,
+     2
+    ],
+    "M": [
+     0,
+     2
+    ],
+    "normal": [
+     0,
+     13
+    ]
+   },
+   "wrong_precedent_by_code": {},
+   "wall_seconds": 442.4,
+   "embedding_model": "mixedbread-ai/mxbai-embed-large-v1",
+   "provenance": {
+    "source_sha256": "a333b11b29749354a98f97064a702704456c845f53d38fe9331995107a340f04",
+    "llm_platform": "groq",
+    "llm_model": "openai/gpt-oss-120b",
+    "llm_mode": "cached",
+    "generated_at": "2026-10-17T17:12:46",
+    "baseline_access": "shared clauses and own-tenant cases only"
+   },
+   "memory_gain": null
+  }
+ },
+ "chaos": {
+  "claims": 12,
+  "kills": 10,
+  "pool": "intake=2,retrieval=2,verifier=2,planner=2,curator=1",
+  "lease_ttl_s": 4,
+  "step_delay_s": 2,
+  "completed": 12,
+  "correct": 12,
+  "duplicate_step_outputs": 0,
+  "fenced_writes_rejected": 0,
+  "lease_expiries_recorded": 5,
+  "steps_interrupted": 10,
+  "takeovers": [
+   {
+    "claim": "EV-T1-01",
+    "killed": "planner-3",
+    "resumed_by": "planner-5"
+   },
+   {
+    "claim": "EV-T1-02",
+    "killed": "retrieval-1",
+    "resumed_by": "retrieval-4"
+   },
+   {
+    "claim": "EV-T1-04",
+    "killed": "intake-2",
+    "resumed_by": "intake-1"
+   },
+   {
+    "claim": "EV-T2-02",
+    "killed": "intake-3",
+    "resumed_by": "intake-4"
+   },
+   {
+    "claim": "EV-T3-01",
+    "killed": "planner-4",
+    "resumed_by": "planner-2"
+   },
+   {
+    "claim": "EV-T3-01",
+    "killed": "planner-2",
+    "resumed_by": "planner-6"
+   },
+   {
+    "claim": "EV-T3-02",
+    "killed": "retrieval-2",
+    "resumed_by": "retrieval-3"
+   },
+   {
+    "claim": "EV-T4-01",
+    "killed": "verifier-1",
+    "resumed_by": "verifier-2"
+   },
+   {
+    "claim": "EV-T4-01",
+    "killed": "planner-1",
+    "resumed_by": "planner-3"
+   },
+   {
+    "claim": "EV-T4-02",
+    "killed": "verifier-3",
+    "resumed_by": "verifier-4"
+   }
+  ],
+  "recovery_seconds": [
+   7.81,
+   6.1,
+   5.89,
+   5.58,
+   10.33,
+   6.3,
+   6.63,
+   6.73,
+   6.89,
+   7.78
+  ],
+  "mean_recovery_seconds": 7.0,
+  "wall_seconds": 47.2,
+  "killed": [
+   {
+    "agent": "intake-2",
+    "claim": "EV-T1-04"
+   },
+   {
+    "agent": "intake-3",
+    "claim": "EV-T2-02"
+   },
+   {
+    "agent": "retrieval-2",
+    "claim": "EV-T3-02"
+   },
+   {
+    "agent": "verifier-1",
+    "claim": "EV-T4-01"
+   },
+   {
+    "agent": "retrieval-1",
+    "claim": "EV-T1-02"
+   },
+   {
+    "agent": "planner-1",
+    "claim": "EV-T4-01"
+   },
+   {
+    "agent": "verifier-3",
+    "claim": "EV-T4-02"
+   },
+   {
+    "agent": "planner-3",
+    "claim": "EV-T1-01"
+   },
+   {
+    "agent": "planner-4",
+    "claim": "EV-T3-01"
+   },
+   {
+    "agent": "planner-2",
+    "claim": "EV-T3-01"
+   }
+  ],
+  "provenance": {
+   "source_sha256": "a333b11b29749354a98f97064a702704456c845f53d38fe9331995107a340f04",
+   "llm_platform": "groq",
+   "llm_model": "openai/gpt-oss-120b",
+   "llm_mode": "cached",
+   "generated_at": "2026-10-17T17:13:38",
+   "baseline_access": "shared clauses and own-tenant cases only"
+  }
+ }
+}

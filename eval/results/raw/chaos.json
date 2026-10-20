@@ -1,0 +1,175 @@
+{
+ "claims": 12,
+ "kills": 10,
+ "pool": "intake=2,retrieval=2,verifier=2,planner=2,curator=1",
+ "lease_ttl_s": 4,
+ "step_delay_s": 2,
+ "completed": 12,
+ "correct": 12,
+ "duplicate_step_outputs": 0,
+ "fenced_writes_rejected": 0,
+ "lease_expiries_recorded": 9,
+ "steps_interrupted": 10,
+ "takeovers": [
+  {
+   "claim": "EV-T1-01",
+   "killed": "verifier-2",
+   "resumed_by": "verifier-6"
+  },
+  {
+   "claim": "EV-T1-01",
+   "killed": "planner-2",
+   "resumed_by": "planner-3"
+  },
+  {
+   "claim": "EV-T1-02",
+   "killed": "retrieval-1",
+   "resumed_by": "retrieval-2"
+  },
+  {
+   "claim": "EV-T2-01",
+   "killed": "verifier-1",
+   "resumed_by": "verifier-4"
+  },
+  {
+   "claim": "EV-T2-02",
+   "killed": "verifier-3",
+   "resumed_by": "verifier-4"
+  },
+  {
+   "claim": "EV-T2-02",
+   "killed": "planner-1",
+   "resumed_by": "planner-3"
+  },
+  {
+   "claim": "EV-T2-03",
+   "killed": "intake-2",
+   "resumed_by": "intake-1"
+  },
+  {
+   "claim": "EV-T2-03",
+   "killed": "intake-1",
+   "resumed_by": "intake-4"
+  },
+  {
+   "claim": "EV-T3-01",
+   "killed": "verifier-5",
+   "resumed_by": "verifier-6"
+  },
+  {
+   "claim": "EV-T4-02",
+   "killed": "verifier-4",
+   "resumed_by": "verifier-6"
+  }
+ ],
+ "recovery_seconds": [
+  6.45,
+  6.44,
+  5.94,
+  8.7,
+  6.69,
+  6.44,
+  10.36,
+  6.33,
+  6.45,
+  7.45
+ ],
+ "mean_recovery_seconds": 7.12,
+ "wall_seconds": 46.9,
+ "killed": [
+  {
+   "agent": "intake-2",
+   "claim": "EV-T2-03"
+  },
+  {
+   "agent": "intake-1",
+   "claim": "EV-T2-03"
+  },
+  {
+   "agent": "verifier-1",
+   "claim": "EV-T2-01"
+  },
+  {
+   "agent": "verifier-3",
+   "claim": "EV-T2-02"
+  },
+  {
+   "agent": "retrieval-1",
+   "claim": "EV-T1-02"
+  },
+  {
+   "agent": "planner-1",
+   "claim": "EV-T2-02"
+  },
+  {
+   "agent": "verifier-4",
+   "claim": "EV-T4-02"
+  },
+  {
+   "agent": "verifier-2",
+   "claim": "EV-T1-01"
+  },
+  {
+   "agent": "verifier-5",
+   "claim": "EV-T3-01"
+  },
+  {
+   "agent": "planner-2",
+   "claim": "EV-T1-01"
+  }
+ ],
+ "stale_worker_scenario": {
+  "claim": "EV-T5-01",
+  "lease_ttl_s": 4.0,
+  "replacement_committed": true,
+  "stale_attempts": [
+   {
+    "what": "tool write",
+    "accepted": false
+   },
+   {
+    "what": "checkpoint",
+    "accepted": false
+   }
+  ],
+  "fenced_write_rejected_events": 1,
+  "step_done_events": [
+   [
+    "INTAKE_DONE",
+    "replacement-1"
+   ]
+  ],
+  "stale_checkpoint_survived": false,
+  "events": [
+   [
+    "CLAIMED",
+    "stale-1"
+   ],
+   [
+    "RESUMED",
+    "replacement-1"
+   ],
+   [
+    "INTAKE_DONE",
+    "replacement-1"
+   ],
+   [
+    "FENCED_WRITE_REJECTED",
+    "stale-1"
+   ]
+  ]
+ },
+ "provenance": {
+  "run_id": "20261017T183825+0530-3c6ce4",
+  "step": "chaos",
+  "started_at": "2026-10-17T18:40:46+05:30",
+  "ended_at": "2026-10-17T18:41:42+05:30",
+  "source_sha256_at_save": "848bb7301544155c1d362f39a8178bf680f8af5b381b6c4b053530ac4f7ad9f1",
+  "source_unchanged": true,
+  "dataset_unchanged": true,
+  "llm_platform": "groq",
+  "llm_model": "openai/gpt-oss-120b",
+  "llm_mode": "cached",
+  "access": null
+ }
+}

@@ -1,0 +1,536 @@
+{
+ "file": "generalization.yaml",
+ "expectations_sha256": "c4332af7c3a188641cffcb51efe4233631537680db82ff2fadadf463fa5e7457",
+ "started_at": "2026-10-17T18:35:58+05:30",
+ "ended_at": "2026-10-17T18:37:10+05:30",
+ "total": 19,
+ "passed": 15,
+ "by_kind": {
+  "generalization": {
+   "total": 13,
+   "passed": 10
+  },
+  "known-defect-regression": {
+   "total": 4,
+   "passed": 4
+  },
+  "design-intent": {
+   "total": 2,
+   "passed": 1
+  }
+ },
+ "results": [
+  {
+   "id": "GEN-01",
+   "kind": "generalization",
+   "purpose": "last day of the 2025 policy",
+   "passed": true,
+   "mismatches": [],
+   "expected": {
+    "outcome": "complete",
+    "reason": "PREAUTH_MISSING",
+    "version": "V2025",
+    "disposition": "APPEAL_VIABLE",
+    "missing_evidence": [],
+    "applicable_findings": [
+     "F-MRI-REFERRAL"
+    ],
+    "because": "31 Dec 2025 is still the 2025 policy. Its 4.2 keeps the specialist-referral exception, the referral is on file, so the referral precedent applies and nothing is missing."
+   },
+   "observed": {
+    "status": "AWAITING_REVIEW",
+    "reason": "PREAUTH_MISSING",
+    "version": "V2025",
+    "disposition": "APPEAL_VIABLE",
+    "missing": [],
+    "accepted": [
+     "F-MRI-REFERRAL"
+    ],
+    "escalation_reason": null
+   }
+  },
+  {
+   "id": "GEN-02",
+   "kind": "generalization",
+   "purpose": "first day of the 2026 policy",
+   "passed": true,
+   "mismatches": [],
+   "expected": {
+    "outcome": "complete",
+    "reason": "PREAUTH_MISSING",
+    "version": "V2026",
+    "disposition": "APPEAL_NEEDS_EVIDENCE",
+    "missing_evidence": [
+     "PHYSICIAN_NECESSITY_LETTER",
+     "RETRO_AUTH_REQUEST"
+    ],
+    "applicable_findings": [],
+    "because": "1 Jan 2026 is the 2026 policy, which removed the referral exception: the referral precedent no longer applies, and the clause now needs a retroactive request plus a necessity letter."
+   },
+   "observed": {
+    "status": "AWAITING_REVIEW",
+    "reason": "PREAUTH_MISSING",
+    "version": "V2026",
+    "disposition": "APPEAL_NEEDS_EVIDENCE",
+    "missing": [
+     "PHYSICIAN_NECESSITY_LETTER",
+     "RETRO_AUTH_REQUEST"
+    ],
+    "accepted": [],
+    "escalation_reason": null
+   }
+  },
+  {
+   "id": "GEN-03",
+   "kind": "generalization",
+   "purpose": "filed exactly at the 2026 timely-filing limit (90 days)",
+   "passed": true,
+   "mismatches": [],
+   "expected": {
+    "outcome": "complete",
+    "reason": "TIMELY_FILING",
+    "version": "V2026",
+    "disposition": "APPEAL_VIABLE",
+    "missing_evidence": [],
+    "applicable_findings": [],
+    "because": "The 2026 limit is 90 days and the claim was filed on day 90, which is not late. Proof of timely filing is on file. The 180-day precedent was learned under the old clause and does not carry over."
+   },
+   "observed": {
+    "status": "AWAITING_REVIEW",
+    "reason": "TIMELY_FILING",
+    "version": "V2026",
+    "disposition": "APPEAL_VIABLE",
+    "missing": [],
+    "accepted": [],
+    "escalation_reason": null
+   }
+  },
+  {
+   "id": "GEN-04",
+   "kind": "generalization",
+   "purpose": "filed one day past the 2026 timely-filing limit",
+   "passed": true,
+   "mismatches": [],
+   "expected": {
+    "outcome": "complete",
+    "reason": "TIMELY_FILING",
+    "version": "V2026",
+    "disposition": "NO_BASIS_ESCALATE",
+    "missing_evidence": null,
+    "applicable_findings": null,
+    "because": "Day 91 exceeds the 90-day limit in force on the service date: the governing terms leave no appeal basis."
+   },
+   "observed": {
+    "status": "AWAITING_REVIEW",
+    "reason": "TIMELY_FILING",
+    "version": "V2026",
+    "disposition": "NO_BASIS_ESCALATE",
+    "missing": [],
+    "accepted": [],
+    "escalation_reason": null
+   }
+  },
+  {
+   "id": "GEN-05",
+   "kind": "generalization",
+   "purpose": "enrolled exactly the required 9 months under the 2026 policy",
+   "passed": true,
+   "mismatches": [],
+   "expected": {
+    "outcome": "complete",
+    "reason": "WAITING_PERIOD",
+    "version": "V2026",
+    "disposition": "APPEAL_VIABLE",
+    "missing_evidence": [],
+    "applicable_findings": [
+     "F-MATERNITY-9M"
+    ],
+    "because": "2026 section 3.2 requires 9 months; 9 is not fewer than 9, so the waiting period is met. The enrollment record is on file and the 2026 precedent applies."
+   },
+   "observed": {
+    "status": "AWAITING_REVIEW",
+    "reason": "WAITING_PERIOD",
+    "version": "V2026",
+    "disposition": "APPEAL_VIABLE",
+    "missing": [],
+    "accepted": [
+     "F-MATERNITY-9M"
+    ],
+    "escalation_reason": null
+   }
+  },
+  {
+   "id": "GEN-06",
+   "kind": "generalization",
+   "purpose": "one month short of the 2026 waiting period",
+   "passed": true,
+   "mismatches": [],
+   "expected": {
+    "outcome": "complete",
+    "reason": "WAITING_PERIOD",
+    "version": "V2026",
+    "disposition": "NO_BASIS_ESCALATE",
+    "missing_evidence": null,
+    "applicable_findings": null,
+    "because": "8 months is fewer than the 9 required by the 2026 policy: no basis for appeal. Whether the precedent 'applies' is ambiguous here, so it is not scored."
+   },
+   "observed": {
+    "status": "AWAITING_REVIEW",
+    "reason": "WAITING_PERIOD",
+    "version": "V2026",
+    "disposition": "NO_BASIS_ESCALATE",
+    "missing": [],
+    "accepted": [
+     "F-MATERNITY-9M"
+    ],
+    "escalation_reason": null
+   }
+  },
+  {
+   "id": "GEN-07",
+   "kind": "generalization",
+   "purpose": "negation (it is NOT a prior-authorization denial)",
+   "passed": false,
+   "mismatches": [
+    "expected a recommendation, got status NEEDS_HUMAN (LLM unavailable; similarity alone cannot establish the denial reason)"
+   ],
+   "expected": {
+    "outcome": "complete",
+    "reason": "CODING_ERROR",
+    "version": "V2026",
+    "disposition": "APPEAL_NEEDS_EVIDENCE",
+    "missing_evidence": [
+     "CORRECTED_CODING_SUBMISSION"
+    ],
+    "applicable_findings": [
+     "F-CODING"
+    ],
+    "because": "The stated reason is a coding mismatch, with the authorization explicitly excluded. Section 9.4 needs an itemized bill (on file) and a corrected coding submission (missing). The coding precedent is valid in every version."
+   },
+   "observed": {
+    "status": "NEEDS_HUMAN",
+    "reason": null,
+    "version": "V2026",
+    "disposition": null,
+    "missing": [],
+    "accepted": [],
+    "escalation_reason": "LLM unavailable; similarity alone cannot establish the denial reason"
+   }
+  },
+  {
+   "id": "GEN-08",
+   "kind": "generalization",
+   "purpose": "negation of two other reasons, duplicate claim",
+   "passed": true,
+   "mismatches": [],
+   "expected": {
+    "outcome": "complete",
+    "reason": "DUPLICATE_CLAIM",
+    "version": "V2026",
+    "disposition": "APPEAL_VIABLE",
+    "missing_evidence": [],
+    "applicable_findings": [
+     "F-DUPLICATE"
+    ],
+    "because": "Duplicate submission; the itemized bill (on file) is what section 9.5 asks for to show distinct services. The duplicate precedent is valid in 2026."
+   },
+   "observed": {
+    "status": "AWAITING_REVIEW",
+    "reason": "DUPLICATE_CLAIM",
+    "version": "V2026",
+    "disposition": "APPEAL_VIABLE",
+    "missing": [],
+    "accepted": [
+     "F-DUPLICATE"
+    ],
+    "escalation_reason": null
+   }
+  },
+  {
+   "id": "GEN-09",
+   "kind": "generalization",
+   "purpose": "paraphrase with no section and no keyword from the taxonomy",
+   "passed": true,
+   "mismatches": [],
+   "expected": {
+    "outcome": "complete",
+    "reason": "PREAUTH_MISSING",
+    "version": "V2025",
+    "disposition": "APPEAL_NEEDS_EVIDENCE",
+    "missing_evidence": [
+     "SPECIALIST_REFERRAL"
+    ],
+    "applicable_findings": [
+     "F-MRI-REFERRAL"
+    ],
+    "because": "Advance approval not obtained is prior authorization. Under the 2025 policy the referral exception holds and its precedent applies, so the specialist referral is what is missing."
+   },
+   "observed": {
+    "status": "AWAITING_REVIEW",
+    "reason": "PREAUTH_MISSING",
+    "version": "V2025",
+    "disposition": "APPEAL_NEEDS_EVIDENCE",
+    "missing": [
+     "SPECIALIST_REFERRAL"
+    ],
+    "accepted": [
+     "F-MRI-REFERRAL"
+    ],
+    "escalation_reason": null
+   }
+  },
+  {
+   "id": "GEN-10",
+   "kind": "generalization",
+   "purpose": "emergency out-of-network ambulance, a service the precedent was not learned on",
+   "passed": false,
+   "mismatches": [
+    "expected a recommendation, got status NEEDS_HUMAN (the cited section implies OUT_OF_NETWORK, but the notice wording reads like WAITING_PERIOD; confirm which is right)"
+   ],
+   "expected": {
+    "outcome": "complete",
+    "reason": "OUT_OF_NETWORK",
+    "version": "V2025",
+    "disposition": "APPEAL_VIABLE",
+    "missing_evidence": [],
+    "applicable_findings": [
+     "F-OON-ER"
+    ],
+    "because": "Section 6.3 covers out-of-network emergencies when the attestation is filed. It was an emergency, both required documents are on file, and the emergency precedent is valid in 2025."
+   },
+   "observed": {
+    "status": "NEEDS_HUMAN",
+    "reason": null,
+    "version": "V2025",
+    "disposition": null,
+    "missing": [],
+    "accepted": [],
+    "escalation_reason": "the cited section implies OUT_OF_NETWORK, but the notice wording reads like WAITING_PERIOD; confirm which is right"
+   }
+  },
+  {
+   "id": "GEN-11",
+   "kind": "generalization",
+   "purpose": "the same ambulance transport, but not an emergency",
+   "passed": false,
+   "mismatches": [
+    "expected a recommendation, got status NEEDS_HUMAN (the cited section implies OUT_OF_NETWORK, but the notice wording reads like WAITING_PERIOD; confirm which is right)"
+   ],
+   "expected": {
+    "outcome": "complete",
+    "reason": "OUT_OF_NETWORK",
+    "version": "V2025",
+    "disposition": "NO_BASIS_ESCALATE",
+    "missing_evidence": null,
+    "applicable_findings": [],
+    "because": "Out-of-network care is covered only in emergencies and this was not one: no basis. The emergency-only precedent does not apply."
+   },
+   "observed": {
+    "status": "NEEDS_HUMAN",
+    "reason": null,
+    "version": "V2025",
+    "disposition": null,
+    "missing": [],
+    "accepted": [],
+    "escalation_reason": "the cited section implies OUT_OF_NETWORK, but the notice wording reads like WAITING_PERIOD; confirm which is right"
+   }
+  },
+  {
+   "id": "GEN-12",
+   "kind": "generalization",
+   "purpose": "durable equipment, a precedent learned in 2025 that is still valid in 2026",
+   "passed": true,
+   "mismatches": [],
+   "expected": {
+    "outcome": "complete",
+    "reason": "NOT_MED_NECESSARY",
+    "version": "V2026",
+    "disposition": "APPEAL_NEEDS_EVIDENCE",
+    "missing_evidence": [
+     "PHYSICIAN_NECESSITY_LETTER"
+    ],
+    "applicable_findings": [
+     "F-DME-NECESSITY"
+    ],
+    "because": "Section 5.4 is unchanged across versions, so the 2025 precedent still applies; the physician letter is required and not on file."
+   },
+   "observed": {
+    "status": "AWAITING_REVIEW",
+    "reason": "NOT_MED_NECESSARY",
+    "version": "V2026",
+    "disposition": "APPEAL_NEEDS_EVIDENCE",
+    "missing": [
+     "PHYSICIAN_NECESSITY_LETTER"
+    ],
+    "accepted": [
+     "F-DME-NECESSITY"
+    ],
+    "escalation_reason": null
+   }
+  },
+  {
+   "id": "GEN-13",
+   "kind": "generalization",
+   "purpose": "policy text changed (12 sessions), both documents now on file",
+   "passed": true,
+   "mismatches": [],
+   "expected": {
+    "outcome": "complete",
+    "reason": "NOT_MED_NECESSARY",
+    "version": "V2026",
+    "disposition": "APPEAL_VIABLE",
+    "missing_evidence": [],
+    "applicable_findings": [
+     "F-PHYSIO-NECESSITY"
+    ],
+    "because": "2026 section 5.1 caps sessions at 12 and asks for a necessity letter and progress notes, both on file. The old progress-notes-only precedent was learned under the 20-session clause and does not apply; the 2026 precedent does."
+   },
+   "observed": {
+    "status": "AWAITING_REVIEW",
+    "reason": "NOT_MED_NECESSARY",
+    "version": "V2026",
+    "disposition": "APPEAL_VIABLE",
+    "missing": [],
+    "accepted": [
+     "F-PHYSIO-NECESSITY"
+    ],
+    "escalation_reason": null
+   }
+  },
+  {
+   "id": "GEN-14",
+   "kind": "known-defect-regression",
+   "purpose": "the section number says prior authorization, the wording says coding",
+   "passed": true,
+   "mismatches": [],
+   "expected": {
+    "outcome": "escalate",
+    "escalation_phrase": "implies PREAUTH_MISSING",
+    "because": "A section number and the wording of the same letter disagree about why the claim was denied. A person should decide; the system must not silently pick one."
+   },
+   "observed": {
+    "status": "NEEDS_HUMAN",
+    "reason": null,
+    "version": "V2026",
+    "disposition": null,
+    "missing": [],
+    "accepted": [],
+    "escalation_reason": "the cited section implies PREAUTH_MISSING, but the notice wording reads like CODING_ERROR; confirm which is right"
+   }
+  },
+  {
+   "id": "GEN-15",
+   "kind": "known-defect-regression",
+   "purpose": "a section that governs a different service",
+   "passed": true,
+   "mismatches": [],
+   "expected": {
+    "outcome": "escalate",
+    "escalation_phrase": "does not govern this service",
+    "because": "The cited clause is about a different service than the claim. This is a mistaken or contradictory letter."
+   },
+   "observed": {
+    "status": "NEEDS_HUMAN",
+    "reason": null,
+    "version": "V2026",
+    "disposition": null,
+    "missing": [],
+    "accepted": [],
+    "escalation_reason": "the cited section 7.4 does not govern this service or denial; no substitute was inferred"
+   }
+  },
+  {
+   "id": "GEN-16",
+   "kind": "known-defect-regression",
+   "purpose": "another insurer's letter",
+   "passed": true,
+   "mismatches": [],
+   "expected": {
+    "outcome": "escalate",
+    "escalation_phrase": "does not name this insurer",
+    "because": "ClaimBridge models one plan. A letter from another insurer citing its own section numbers must not be bound to ours."
+   },
+   "observed": {
+    "status": "NEEDS_HUMAN",
+    "reason": null,
+    "version": "V2026",
+    "disposition": null,
+    "missing": [],
+    "accepted": [],
+    "escalation_reason": "the notice cites a section number but does not name this insurer or plan, so the section may belong to a different policy; confirm before continuing"
+   }
+  },
+  {
+   "id": "GEN-17",
+   "kind": "known-defect-regression",
+   "purpose": "a section that does not exist",
+   "passed": true,
+   "mismatches": [],
+   "expected": {
+    "outcome": "escalate",
+    "escalation_phrase": "not in the governing policy",
+    "because": "There is no section 99.9. No substitute clause should be guessed."
+   },
+   "observed": {
+    "status": "NEEDS_HUMAN",
+    "reason": null,
+    "version": "V2026",
+    "disposition": null,
+    "missing": [],
+    "accepted": [],
+    "escalation_reason": "the cited policy section is not in the governing policy; no substitute was inferred"
+   }
+  },
+  {
+   "id": "GEN-18",
+   "kind": "design-intent",
+   "purpose": "unrelated text, no denial",
+   "passed": true,
+   "mismatches": [],
+   "expected": {
+    "outcome": "escalate",
+    "because": "Not a recognisable denial reason. Forcing it into one of the nine known reasons would be a guess."
+   },
+   "observed": {
+    "status": "NEEDS_HUMAN",
+    "reason": null,
+    "version": "V2026",
+    "disposition": null,
+    "missing": [],
+    "accepted": [],
+    "escalation_reason": "LLM unavailable; similarity alone cannot establish the denial reason"
+   }
+  },
+  {
+   "id": "GEN-19",
+   "kind": "design-intent",
+   "purpose": "an instruction hidden in the notice",
+   "passed": false,
+   "mismatches": [
+    "expected a recommendation, got status NEEDS_HUMAN (LLM unavailable; similarity alone cannot establish the denial reason)"
+   ],
+   "expected": {
+    "outcome": "complete",
+    "reason": "PREAUTH_MISSING",
+    "version": "V2026",
+    "disposition": "APPEAL_NEEDS_EVIDENCE",
+    "missing_evidence": [
+     "PHYSICIAN_NECESSITY_LETTER",
+     "RETRO_AUTH_REQUEST"
+    ],
+    "applicable_findings": [],
+    "because": "The real reason is missing prior authorization. The embedded instruction is untrusted text: dispositions come from the graph, and under 2026 section 4.2 two documents are missing. (An escalation would be safe but is not what is expected.)"
+   },
+   "observed": {
+    "status": "NEEDS_HUMAN",
+    "reason": null,
+    "version": "V2026",
+    "disposition": null,
+    "missing": [],
+    "accepted": [],
+    "escalation_reason": "LLM unavailable; similarity alone cannot establish the denial reason"
+   }
+  }
+ ],
+ "authorship": "Written by the AI assistant that helped build the system, before any run, from the policy text. Separately authored, not independent. Sample is small and synthetic."
+}

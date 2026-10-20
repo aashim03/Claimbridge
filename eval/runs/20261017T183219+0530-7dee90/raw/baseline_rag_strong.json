@@ -1,0 +1,1927 @@
+{
+ "system": "baseline_rag_strong",
+ "variant": "cases",
+ "embedding_model": "mixedbread-ai/mxbai-embed-large-v1",
+ "top_k": 8,
+ "wall_seconds": 13.0,
+ "predictions": {
+  "EV-T1-01": {
+   "reason": "PREAUTH_MISSING",
+   "version": "V2026",
+   "accepted": [],
+   "precedent_cases": [],
+   "rejected": {},
+   "missing": [
+    "PHYSICIAN_NECESSITY_LETTER",
+    "RETRO_AUTH_REQUEST"
+   ],
+   "disposition": "APPEAL_NEEDS_EVIDENCE",
+   "items_total": 3,
+   "items_unsupported": 0,
+   "leaked_fields": 0,
+   "tokens_in": 2002,
+   "tokens_out": 1074,
+   "retrieved": [
+    "CL-C-2024-MRI-PREAUTH",
+    "CL-C-2025-MRI-PREAUTH",
+    "CL-C-2026-MRI-PREAUTH",
+    "CS-HC-007",
+    "CL-C-2025-RETRO-AUTH",
+    "CS-HC-046",
+    "CL-C-2024-RETRO-AUTH",
+    "CL-C-2025-OON-EMERGENCY"
+   ],
+   "llm_cached": true
+  },
+  "EV-T1-02": {
+   "reason": "NOT_MED_NECESSARY",
+   "version": "V2026",
+   "accepted": [],
+   "precedent_cases": [],
+   "rejected": {},
+   "missing": [
+    "PHYSICIAN_NECESSITY_LETTER"
+   ],
+   "disposition": "APPEAL_NEEDS_EVIDENCE",
+   "items_total": 2,
+   "items_unsupported": 0,
+   "leaked_fields": 0,
+   "tokens_in": 1969,
+   "tokens_out": 974,
+   "retrieved": [
+    "CL-C-2024-PHYSIO-LIMIT",
+    "CL-C-2025-PHYSIO-LIMIT",
+    "CL-C-2026-PHYSIO-LIMIT",
+    "CL-C-2024-MED-NECESSITY-DEF",
+    "CL-C-2025-MED-NECESSITY-DEF",
+    "CL-C-2026-MED-NECESSITY-DEF",
+    "CS-HC-039",
+    "CL-C-2024-ER-COVERAGE"
+   ],
+   "llm_cached": true
+  },
+  "EV-T1-03": {
+   "reason": "OUT_OF_NETWORK",
+   "version": "V2026",
+   "accepted": [],
+   "precedent_cases": [],
+   "rejected": {},
+   "missing": [],
+   "disposition": "APPEAL_VIABLE",
+   "items_total": 3,
+   "items_unsupported": 0,
+   "leaked_fields": 0,
+   "tokens_in": 1932,
+   "tokens_out": 1527,
+   "retrieved": [
+    "CL-C-2024-ER-COVERAGE",
+    "CL-C-2025-ER-COVERAGE",
+    "CL-C-2024-OON-EMERGENCY",
+    "CL-C-2025-OON-EMERGENCY",
+    "CL-C-2026-OON-EMERGENCY",
+    "CL-C-2026-ER-COVERAGE",
+    "CL-C-2024-ER-NOTIFY",
+    "CL-C-2025-ER-NOTIFY"
+   ],
+   "llm_cached": true
+  },
+  "EV-T1-04": {
+   "reason": "EXCLUDED_SERVICE",
+   "version": "V2024",
+   "accepted": [],
+   "precedent_cases": [],
+   "rejected": {},
+   "missing": [],
+   "disposition": "APPEAL_VIABLE",
+   "items_total": 1,
+   "items_unsupported": 0,
+   "leaked_fields": 0,
+   "tokens_in": 1849,
+   "tokens_out": 642,
+   "retrieved": [
+    "CL-C-2024-BARIATRIC",
+    "CS-HC-025",
+    "CL-C-2025-BARIATRIC",
+    "CL-C-2026-BARIATRIC",
+    "CL-C-2024-COSMETIC-EXCL",
+    "CL-C-2025-COSMETIC-EXCL",
+    "CL-C-2024-EXPERIMENTAL-EXCL",
+    "CL-C-2025-EXPERIMENTAL-EXCL"
+   ],
+   "llm_cached": true
+  },
+  "EV-T2-01": {
+   "reason": "PREAUTH_MISSING",
+   "version": "V2025",
+   "accepted": [],
+   "precedent_cases": [],
+   "rejected": {},
+   "missing": [
+    "RETRO_AUTH_REQUEST"
+   ],
+   "disposition": "APPEAL_NEEDS_EVIDENCE",
+   "items_total": 3,
+   "items_unsupported": 0,
+   "leaked_fields": 0,
+   "tokens_in": 1997,
+   "tokens_out": 976,
+   "retrieved": [
+    "CL-C-2025-INPATIENT-PREAUTH",
+    "CL-C-2024-INPATIENT-PREAUTH",
+    "CL-C-2026-INPATIENT-PREAUTH",
+    "CS-HC-004",
+    "CS-HC-050",
+    "CS-HC-041",
+    "CL-C-2026-MRI-PREAUTH",
+    "CL-C-2025-ITEMIZED-BILL"
+   ],
+   "llm_cached": true
+  },
+  "EV-T2-02": {
+   "reason": "NOT_MED_NECESSARY",
+   "version": "V2025",
+   "accepted": [],
+   "precedent_cases": [],
+   "rejected": {},
+   "missing": [],
+   "disposition": "APPEAL_VIABLE",
+   "items_total": 2,
+   "items_unsupported": 0,
+   "leaked_fields": 0,
+   "tokens_in": 1925,
+   "tokens_out": 971,
+   "retrieved": [
+    "CL-C-2025-DME-NECESSITY",
+    "CL-C-2024-DME-NECESSITY",
+    "CL-C-2026-DME-NECESSITY",
+    "CL-C-2025-MED-NECESSITY-DEF",
+    "CL-C-2024-MED-NECESSITY-DEF",
+    "CL-C-2026-MED-NECESSITY-DEF",
+    "CS-HC-048",
+    "CL-C-2025-ER-COVERAGE"
+   ],
+   "llm_cached": true
+  },
+  "EV-T2-03": {
+   "reason": "NOT_MED_NECESSARY",
+   "version": "V2025",
+   "accepted": [],
+   "precedent_cases": [],
+   "rejected": {},
+   "missing": [
+    "EMERGENCY_ATTESTATION"
+   ],
+   "disposition": "APPEAL_NEEDS_EVIDENCE",
+   "items_total": 3,
+   "items_unsupported": 0,
+   "leaked_fields": 0,
+   "tokens_in": 1945,
+   "tokens_out": 1032,
+   "retrieved": [
+    "CL-C-2025-AMBULANCE",
+    "CL-C-2024-AMBULANCE",
+    "CL-C-2026-AMBULANCE",
+    "CL-C-2025-ER-COVERAGE",
+    "CL-C-2024-ER-COVERAGE",
+    "CS-HC-023",
+    "CL-C-2025-OON-EMERGENCY",
+    "CL-C-2024-OON-EMERGENCY"
+   ],
+   "llm_cached": true
+  },
+  "EV-T3-01": {
+   "reason": "NOT_MED_NECESSARY",
+   "version": "V2026",
+   "accepted": [],
+   "precedent_cases": [],
+   "rejected": {},
+   "missing": [
+    "PHYSICIAN_NECESSITY_LETTER",
+    "PROGRESS_NOTES"
+   ],
+   "disposition": "APPEAL_NEEDS_EVIDENCE",
+   "items_total": 4,
+   "items_unsupported": 0,
+   "leaked_fields": 0,
+   "tokens_in": 1827,
+   "tokens_out": 856,
+   "retrieved": [
+    "CL-C-2024-PHYSIO-LIMIT",
+    "CL-C-2025-PHYSIO-LIMIT",
+    "CL-C-2026-PHYSIO-LIMIT",
+    "CL-C-2025-COSMETIC-EXCL",
+    "CL-C-2024-COSMETIC-EXCL",
+    "CL-C-2025-EXPERIMENTAL-EXCL",
+    "CL-C-2024-EXPERIMENTAL-EXCL",
+    "CL-C-2025-RETRO-AUTH"
+   ],
+   "llm_cached": true
+  },
+  "EV-T3-02": {
+   "reason": "EXCLUDED_SERVICE",
+   "version": "V2025",
+   "accepted": [],
+   "precedent_cases": [],
+   "rejected": {},
+   "missing": [
+    "SUPERVISED_PROGRAM_RECORD"
+   ],
+   "disposition": "APPEAL_NEEDS_EVIDENCE",
+   "items_total": 3,
+   "items_unsupported": 0,
+   "leaked_fields": 0,
+   "tokens_in": 1891,
+   "tokens_out": 978,
+   "retrieved": [
+    "CL-C-2024-BARIATRIC",
+    "CL-C-2025-BARIATRIC",
+    "CL-C-2026-BARIATRIC",
+    "CS-HC-026",
+    "CS-HC-043",
+    "CS-HC-045",
+    "CL-C-2025-EXPERIMENTAL-EXCL",
+    "CL-C-2024-EXPERIMENTAL-EXCL"
+   ],
+   "llm_cached": true
+  },
+  "EV-T3-03": {
+   "reason": "CODING_ERROR",
+   "version": "V2026",
+   "accepted": [],
+   "precedent_cases": [],
+   "rejected": {},
+   "missing": [
+    "CORRECTED_CODING_SUBMISSION"
+   ],
+   "disposition": "APPEAL_NEEDS_EVIDENCE",
+   "items_total": 3,
+   "items_unsupported": 0,
+   "leaked_fields": 0,
+   "tokens_in": 2032,
+   "tokens_out": 1084,
+   "retrieved": [
+    "CL-C-2025-MRI-PREAUTH",
+    "CL-C-2024-MRI-PREAUTH",
+    "CL-C-2026-MRI-PREAUTH",
+    "CS-HC-036",
+    "CL-C-2025-CODING-CORRECTION",
+    "CL-C-2024-CODING-CORRECTION",
+    "CL-C-2025-OON-EMERGENCY",
+    "CL-C-2024-OON-EMERGENCY"
+   ],
+   "llm_cached": true
+  },
+  "EV-T4-01": {
+   "reason": "PREAUTH_MISSING",
+   "version": "V2025",
+   "accepted": [],
+   "precedent_cases": [],
+   "rejected": {},
+   "missing": [],
+   "disposition": "APPEAL_VIABLE",
+   "items_total": 1,
+   "items_unsupported": 0,
+   "leaked_fields": 0,
+   "tokens_in": 1877,
+   "tokens_out": 662,
+   "retrieved": [
+    "CL-C-2025-SLEEP-STUDY-PREAUTH",
+    "CL-C-2024-SLEEP-STUDY-PREAUTH",
+    "CL-C-2026-SLEEP-STUDY-PREAUTH",
+    "CL-C-2025-EXPERIMENTAL-EXCL",
+    "CL-C-2024-EXPERIMENTAL-EXCL",
+    "CL-C-2026-EXPERIMENTAL-EXCL",
+    "CL-C-2025-RETRO-AUTH",
+    "CS-HC-016"
+   ],
+   "llm_cached": true
+  },
+  "EV-T4-02": {
+   "reason": "PREAUTH_MISSING",
+   "version": "V2026",
+   "accepted": [],
+   "precedent_cases": [],
+   "rejected": {},
+   "missing": [
+    "RETRO_AUTH_REQUEST"
+   ],
+   "disposition": "APPEAL_NEEDS_EVIDENCE",
+   "items_total": 2,
+   "items_unsupported": 0,
+   "leaked_fields": 0,
+   "tokens_in": 1840,
+   "tokens_out": 651,
+   "retrieved": [
+    "CL-C-2025-SLEEP-STUDY-PREAUTH",
+    "CL-C-2024-SLEEP-STUDY-PREAUTH",
+    "CL-C-2026-SLEEP-STUDY-PREAUTH",
+    "CL-C-2024-EXPERIMENTAL-EXCL",
+    "CL-C-2025-EXPERIMENTAL-EXCL",
+    "CL-C-2026-EXPERIMENTAL-EXCL",
+    "CL-C-2026-MRI-PREAUTH",
+    "CL-C-2025-RETRO-AUTH"
+   ],
+   "llm_cached": true
+  },
+  "EV-T5-01": {
+   "reason": "OUT_OF_NETWORK",
+   "version": "V2025",
+   "accepted": [],
+   "precedent_cases": [],
+   "rejected": {},
+   "missing": [
+    "DISCHARGE_SUMMARY",
+    "EMERGENCY_ATTESTATION"
+   ],
+   "disposition": "APPEAL_NEEDS_EVIDENCE",
+   "items_total": 3,
+   "items_unsupported": 0,
+   "leaked_fields": 0,
+   "tokens_in": 1982,
+   "tokens_out": 1211,
+   "retrieved": [
+    "CL-C-2025-MRI-PREAUTH",
+    "CL-C-2024-MRI-PREAUTH",
+    "CL-C-2026-MRI-PREAUTH",
+    "CL-C-2025-OON-EMERGENCY",
+    "CL-C-2024-OON-EMERGENCY",
+    "CL-C-2026-OON-EMERGENCY",
+    "CL-C-2025-EXPERIMENTAL-EXCL",
+    "CL-C-2024-EXPERIMENTAL-EXCL"
+   ],
+   "llm_cached": true
+  },
+  "EV-T5-02": {
+   "reason": "OUT_OF_NETWORK",
+   "version": "V2025",
+   "accepted": [],
+   "precedent_cases": [],
+   "rejected": {},
+   "missing": [
+    "DISCHARGE_SUMMARY",
+    "EMERGENCY_ATTESTATION"
+   ],
+   "disposition": "NO_BASIS_ESCALATE",
+   "items_total": 3,
+   "items_unsupported": 0,
+   "leaked_fields": 0,
+   "tokens_in": 1943,
+   "tokens_out": 1160,
+   "retrieved": [
+    "CL-C-2026-PHYSIO-LIMIT",
+    "CL-C-2024-PHYSIO-LIMIT",
+    "CL-C-2025-PHYSIO-LIMIT",
+    "CL-C-2025-OON-EMERGENCY",
+    "CL-C-2024-OON-EMERGENCY",
+    "CL-C-2026-OON-EMERGENCY",
+    "CL-C-2025-NETWORK-DEF",
+    "CL-C-2024-NETWORK-DEF"
+   ],
+   "llm_cached": true
+  },
+  "EV-T6-01": {
+   "reason": "TIMELY_FILING",
+   "version": "V2026",
+   "accepted": [],
+   "precedent_cases": [],
+   "rejected": {},
+   "missing": [
+    "PROOF_OF_TIMELY_FILING"
+   ],
+   "disposition": "APPEAL_NEEDS_EVIDENCE",
+   "items_total": 2,
+   "items_unsupported": 0,
+   "leaked_fields": 0,
+   "tokens_in": 1968,
+   "tokens_out": 829,
+   "retrieved": [
+    "CS-HC-032",
+    "CL-C-2024-MRI-PREAUTH",
+    "CL-C-2025-MRI-PREAUTH",
+    "CL-C-2026-MRI-PREAUTH",
+    "CL-C-2025-TIMELY-FILING",
+    "CL-C-2024-TIMELY-FILING",
+    "CL-C-2026-TIMELY-FILING",
+    "CL-C-2024-OON-EMERGENCY"
+   ],
+   "llm_cached": true
+  },
+  "EV-T6-02": {
+   "reason": "EXCLUDED_SERVICE",
+   "version": "V2024",
+   "accepted": [],
+   "precedent_cases": [
+    "HC-044"
+   ],
+   "rejected": {},
+   "missing": [],
+   "disposition": "APPEAL_VIABLE",
+   "items_total": 2,
+   "items_unsupported": 0,
+   "leaked_fields": 0,
+   "tokens_in": 1833,
+   "tokens_out": 849,
+   "retrieved": [
+    "CS-HC-044",
+    "CL-C-2024-EXPERIMENTAL-EXCL",
+    "CL-C-2025-EXPERIMENTAL-EXCL",
+    "CL-C-2026-EXPERIMENTAL-EXCL",
+    "CL-C-2025-GENETIC-TEST",
+    "CL-C-2026-GENETIC-TEST",
+    "CS-HC-046",
+    "CL-C-2024-ENROLLMENT"
+   ],
+   "llm_cached": true
+  },
+  "EV-T6-03": {
+   "reason": "WAITING_PERIOD",
+   "version": "V2025",
+   "accepted": [],
+   "precedent_cases": [],
+   "rejected": {},
+   "missing": [],
+   "disposition": "APPEAL_VIABLE",
+   "items_total": 2,
+   "items_unsupported": 0,
+   "leaked_fields": 0,
+   "tokens_in": 1795,
+   "tokens_out": 850,
+   "retrieved": [
+    "CL-C-2024-MATERNITY-WAIT",
+    "CL-C-2025-MATERNITY-WAIT",
+    "CL-C-2026-MATERNITY-WAIT",
+    "CL-C-2025-ENROLLMENT",
+    "CL-C-2024-ENROLLMENT",
+    "CL-C-2024-APPEAL-WINDOW",
+    "CL-C-2025-APPEAL-WINDOW",
+    "CL-C-2024-TIMELY-FILING"
+   ],
+   "llm_cached": true
+  },
+  "EV-T7-01": {
+   "reason": "CODING_ERROR",
+   "version": "V2025",
+   "accepted": [],
+   "precedent_cases": [],
+   "rejected": {},
+   "missing": [],
+   "disposition": "APPEAL_VIABLE",
+   "items_total": 1,
+   "items_unsupported": 0,
+   "leaked_fields": 0,
+   "tokens_in": 1880,
+   "tokens_out": 913,
+   "retrieved": [
+    "CL-C-2024-DME-NECESSITY",
+    "CL-C-2025-DME-NECESSITY",
+    "CL-C-2026-DME-NECESSITY",
+    "CL-C-2024-TIMELY-FILING",
+    "CL-C-2025-TIMELY-FILING",
+    "CL-C-2025-CODING-CORRECTION",
+    "CL-C-2024-CODING-CORRECTION",
+    "CL-C-2026-TIMELY-FILING"
+   ],
+   "llm_cached": true
+  },
+  "EV-T7-02": {
+   "reason": "OUT_OF_NETWORK",
+   "version": "V2025",
+   "accepted": [],
+   "precedent_cases": [],
+   "rejected": {},
+   "missing": [],
+   "disposition": "APPEAL_VIABLE",
+   "items_total": 1,
+   "items_unsupported": 0,
+   "leaked_fields": 0,
+   "tokens_in": 1925,
+   "tokens_out": 587,
+   "retrieved": [
+    "CL-C-2024-OON-EMERGENCY",
+    "CL-C-2025-OON-EMERGENCY",
+    "CL-C-2026-OON-EMERGENCY",
+    "CL-C-2024-ER-COVERAGE",
+    "CL-C-2025-ER-COVERAGE",
+    "CL-C-2024-ER-NOTIFY",
+    "CL-C-2026-ER-COVERAGE",
+    "CL-C-2025-ER-NOTIFY"
+   ],
+   "llm_cached": true
+  },
+  "EV-N-01": {
+   "reason": "PREAUTH_MISSING",
+   "version": "V2025",
+   "accepted": [],
+   "precedent_cases": [],
+   "rejected": {},
+   "missing": [
+    "SPECIALIST_REFERRAL"
+   ],
+   "disposition": "APPEAL_NEEDS_EVIDENCE",
+   "items_total": 2,
+   "items_unsupported": 0,
+   "leaked_fields": 0,
+   "tokens_in": 1974,
+   "tokens_out": 730,
+   "retrieved": [
+    "CL-C-2025-MRI-PREAUTH",
+    "CL-C-2024-MRI-PREAUTH",
+    "CL-C-2026-MRI-PREAUTH",
+    "CL-C-2025-RETRO-AUTH",
+    "CL-C-2024-RETRO-AUTH",
+    "CL-C-2025-INPATIENT-PREAUTH",
+    "CL-C-2024-INPATIENT-PREAUTH",
+    "CS-HC-008"
+   ],
+   "llm_cached": true
+  },
+  "EV-N-02": {
+   "reason": "PREAUTH_MISSING",
+   "version": "V2024",
+   "accepted": [],
+   "precedent_cases": [],
+   "rejected": {},
+   "missing": [],
+   "disposition": "APPEAL_VIABLE",
+   "items_total": 1,
+   "items_unsupported": 0,
+   "leaked_fields": 0,
+   "tokens_in": 1963,
+   "tokens_out": 799,
+   "retrieved": [
+    "CL-C-2024-MRI-PREAUTH",
+    "CL-C-2025-MRI-PREAUTH",
+    "CL-C-2026-MRI-PREAUTH",
+    "CL-C-2024-INPATIENT-PREAUTH",
+    "CL-C-2025-INPATIENT-PREAUTH",
+    "CL-C-2026-INPATIENT-PREAUTH",
+    "CL-C-2024-RETRO-AUTH",
+    "CL-C-2025-RETRO-AUTH"
+   ],
+   "llm_cached": true
+  },
+  "EV-N-03": {
+   "reason": "PREAUTH_MISSING",
+   "version": "V2026",
+   "accepted": [],
+   "precedent_cases": [],
+   "rejected": {},
+   "missing": [],
+   "disposition": "APPEAL_VIABLE",
+   "items_total": 1,
+   "items_unsupported": 0,
+   "leaked_fields": 0,
+   "tokens_in": 1975,
+   "tokens_out": 641,
+   "retrieved": [
+    "CL-C-2025-INPATIENT-PREAUTH",
+    "CL-C-2024-INPATIENT-PREAUTH",
+    "CL-C-2026-INPATIENT-PREAUTH",
+    "CS-HC-052",
+    "CL-C-2025-RETRO-AUTH",
+    "CL-C-2024-RETRO-AUTH",
+    "CS-HC-023",
+    "CL-C-2026-RETRO-AUTH"
+   ],
+   "llm_cached": true
+  },
+  "EV-N-04": {
+   "reason": "NOT_MED_NECESSARY",
+   "version": "V2025",
+   "accepted": [],
+   "precedent_cases": [],
+   "rejected": {},
+   "missing": [],
+   "disposition": "APPEAL_VIABLE",
+   "items_total": 1,
+   "items_unsupported": 0,
+   "leaked_fields": 0,
+   "tokens_in": 1874,
+   "tokens_out": 524,
+   "retrieved": [
+    "CL-C-2025-ER-COVERAGE",
+    "CL-C-2024-ER-COVERAGE",
+    "CL-C-2026-ER-COVERAGE",
+    "CL-C-2025-ER-NOTIFY",
+    "CL-C-2024-ER-NOTIFY",
+    "CL-C-2026-ER-NOTIFY",
+    "CL-C-2025-OON-EMERGENCY",
+    "CL-C-2024-OON-EMERGENCY"
+   ],
+   "llm_cached": true
+  },
+  "EV-N-05": {
+   "reason": "INCOMPLETE_DOCS",
+   "version": "V2026",
+   "accepted": [],
+   "precedent_cases": [],
+   "rejected": {},
+   "missing": [
+    "DISCHARGE_SUMMARY",
+    "RETRO_AUTH_REQUEST"
+   ],
+   "disposition": "APPEAL_NEEDS_EVIDENCE",
+   "items_total": 4,
+   "items_unsupported": 1,
+   "leaked_fields": 0,
+   "tokens_in": 1940,
+   "tokens_out": 1316,
+   "retrieved": [
+    "CL-C-2025-INPATIENT-PREAUTH",
+    "CL-C-2024-INPATIENT-PREAUTH",
+    "CL-C-2026-INPATIENT-PREAUTH",
+    "CS-HC-045",
+    "CS-HC-013",
+    "CL-C-2025-DISCHARGE-DOCS",
+    "CS-HC-026",
+    "CL-C-2024-DISCHARGE-DOCS"
+   ],
+   "llm_cached": true
+  },
+  "EV-N-06": {
+   "reason": "DUPLICATE_CLAIM",
+   "version": "V2026",
+   "accepted": [],
+   "precedent_cases": [],
+   "rejected": {},
+   "missing": [],
+   "disposition": "APPEAL_VIABLE",
+   "items_total": 2,
+   "items_unsupported": 0,
+   "leaked_fields": 0,
+   "tokens_in": 1877,
+   "tokens_out": 1097,
+   "retrieved": [
+    "CL-C-2024-PHYSIO-LIMIT",
+    "CL-C-2025-PHYSIO-LIMIT",
+    "CL-C-2026-PHYSIO-LIMIT",
+    "CL-C-2025-DUPLICATE",
+    "CL-C-2024-DUPLICATE",
+    "CL-C-2024-ENROLLMENT",
+    "CL-C-2025-ENROLLMENT",
+    "CL-C-2024-TIMELY-FILING"
+   ],
+   "llm_cached": true
+  },
+  "EV-N-07": {
+   "reason": "EXCLUDED_SERVICE",
+   "version": "V2026",
+   "accepted": [],
+   "precedent_cases": [],
+   "rejected": {},
+   "missing": [],
+   "disposition": "APPEAL_VIABLE",
+   "items_total": 1,
+   "items_unsupported": 0,
+   "leaked_fields": 0,
+   "tokens_in": 1795,
+   "tokens_out": 664,
+   "retrieved": [
+    "CL-C-2024-BARIATRIC",
+    "CL-C-2025-BARIATRIC",
+    "CL-C-2026-BARIATRIC",
+    "CL-C-2024-COSMETIC-EXCL",
+    "CL-C-2025-COSMETIC-EXCL",
+    "CL-C-2024-EXPERIMENTAL-EXCL",
+    "CL-C-2025-EXPERIMENTAL-EXCL",
+    "CL-C-2026-EXPERIMENTAL-EXCL"
+   ],
+   "llm_cached": true
+  },
+  "EV-N-08": {
+   "reason": "EXCLUDED_SERVICE",
+   "version": "V2026",
+   "accepted": [],
+   "precedent_cases": [],
+   "rejected": {},
+   "missing": [],
+   "disposition": "APPEAL_VIABLE",
+   "items_total": 2,
+   "items_unsupported": 0,
+   "leaked_fields": 0,
+   "tokens_in": 1746,
+   "tokens_out": 1296,
+   "retrieved": [
+    "CL-C-2024-EXPERIMENTAL-EXCL",
+    "CL-C-2025-EXPERIMENTAL-EXCL",
+    "CL-C-2026-EXPERIMENTAL-EXCL",
+    "CL-C-2025-GENETIC-TEST",
+    "CL-C-2026-GENETIC-TEST",
+    "CL-C-2025-COSMETIC-EXCL",
+    "CL-C-2024-COSMETIC-EXCL",
+    "CL-C-2026-COSMETIC-EXCL"
+   ],
+   "llm_cached": true
+  },
+  "EV-N-09": {
+   "reason": "WAITING_PERIOD",
+   "version": "V2026",
+   "accepted": [],
+   "precedent_cases": [],
+   "rejected": {},
+   "missing": [
+    "ENROLLMENT_RECORD"
+   ],
+   "disposition": "APPEAL_NEEDS_EVIDENCE",
+   "items_total": 2,
+   "items_unsupported": 0,
+   "leaked_fields": 0,
+   "tokens_in": 1793,
+   "tokens_out": 1100,
+   "retrieved": [
+    "CL-C-2024-MATERNITY-WAIT",
+    "CL-C-2025-MATERNITY-WAIT",
+    "CL-C-2026-MATERNITY-WAIT",
+    "CL-C-2024-ENROLLMENT",
+    "CL-C-2025-ENROLLMENT",
+    "CL-C-2026-ENROLLMENT",
+    "CL-C-2024-EXPERIMENTAL-EXCL",
+    "CL-C-2024-ER-COVERAGE"
+   ],
+   "llm_cached": true
+  },
+  "EV-N-10": {
+   "reason": "TIMELY_FILING",
+   "version": "V2025",
+   "accepted": [],
+   "precedent_cases": [],
+   "rejected": {},
+   "missing": [],
+   "disposition": "APPEAL_VIABLE",
+   "items_total": 1,
+   "items_unsupported": 0,
+   "leaked_fields": 0,
+   "tokens_in": 1960,
+   "tokens_out": 824,
+   "retrieved": [
+    "CL-C-2025-MRI-PREAUTH",
+    "CL-C-2024-MRI-PREAUTH",
+    "CL-C-2026-MRI-PREAUTH",
+    "CL-C-2025-TIMELY-FILING",
+    "CL-C-2024-TIMELY-FILING",
+    "CL-C-2026-TIMELY-FILING",
+    "CS-HC-018",
+    "CL-C-2025-OON-EMERGENCY"
+   ],
+   "llm_cached": true
+  },
+  "EV-N-11": {
+   "reason": "CODING_ERROR",
+   "version": "V2025",
+   "accepted": [],
+   "precedent_cases": [
+    "HC-010"
+   ],
+   "rejected": {},
+   "missing": [
+    "RETRO_AUTH_REQUEST"
+   ],
+   "disposition": "APPEAL_NEEDS_EVIDENCE",
+   "items_total": 3,
+   "items_unsupported": 0,
+   "leaked_fields": 0,
+   "tokens_in": 1867,
+   "tokens_out": 1075,
+   "retrieved": [
+    "CS-HC-010",
+    "CL-C-2025-SLEEP-STUDY-PREAUTH",
+    "CL-C-2024-SLEEP-STUDY-PREAUTH",
+    "CL-C-2026-SLEEP-STUDY-PREAUTH",
+    "CL-C-2025-RETRO-AUTH",
+    "CL-C-2024-RETRO-AUTH",
+    "CL-C-2026-RETRO-AUTH",
+    "CL-C-2025-EXPERIMENTAL-EXCL"
+   ],
+   "llm_cached": true
+  },
+  "EV-N-12": {
+   "reason": "NOT_MED_NECESSARY",
+   "version": "V2026",
+   "accepted": [],
+   "precedent_cases": [],
+   "rejected": {},
+   "missing": [
+    "PHYSICIAN_NECESSITY_LETTER"
+   ],
+   "disposition": "APPEAL_NEEDS_EVIDENCE",
+   "items_total": 2,
+   "items_unsupported": 0,
+   "leaked_fields": 0,
+   "tokens_in": 1890,
+   "tokens_out": 927,
+   "retrieved": [
+    "CL-C-2024-DME-NECESSITY",
+    "CL-C-2025-DME-NECESSITY",
+    "CL-C-2026-DME-NECESSITY",
+    "CL-C-2025-MED-NECESSITY-DEF",
+    "CL-C-2024-MED-NECESSITY-DEF",
+    "CL-C-2026-MED-NECESSITY-DEF",
+    "CL-C-2024-TIMELY-FILING",
+    "CL-C-2025-TIMELY-FILING"
+   ],
+   "llm_cached": true
+  },
+  "EV-N-13": {
+   "reason": "OUT_OF_NETWORK",
+   "version": "V2024",
+   "accepted": [],
+   "precedent_cases": [],
+   "rejected": {},
+   "missing": [
+    "DISCHARGE_SUMMARY"
+   ],
+   "disposition": "APPEAL_NEEDS_EVIDENCE",
+   "items_total": 3,
+   "items_unsupported": 0,
+   "leaked_fields": 0,
+   "tokens_in": 1884,
+   "tokens_out": 1131,
+   "retrieved": [
+    "CL-C-2024-AMBULANCE",
+    "CL-C-2025-AMBULANCE",
+    "CL-C-2026-AMBULANCE",
+    "CL-C-2024-OON-EMERGENCY",
+    "CL-C-2025-OON-EMERGENCY",
+    "CL-C-2026-OON-EMERGENCY",
+    "CL-C-2024-ER-NOTIFY",
+    "CL-C-2025-ER-NOTIFY"
+   ],
+   "llm_cached": true
+  },
+  "EV-M-A": {
+   "reason": "NOT_MED_NECESSARY",
+   "version": "V2025",
+   "accepted": [],
+   "precedent_cases": [],
+   "rejected": {},
+   "missing": [],
+   "disposition": "APPEAL_VIABLE",
+   "items_total": 2,
+   "items_unsupported": 1,
+   "leaked_fields": 0,
+   "tokens_in": 1932,
+   "tokens_out": 1054,
+   "retrieved": [
+    "CL-C-2025-AMBULANCE",
+    "CL-C-2024-AMBULANCE",
+    "CL-C-2026-AMBULANCE",
+    "CL-C-2025-OON-EMERGENCY",
+    "CL-C-2024-OON-EMERGENCY",
+    "CL-C-2026-OON-EMERGENCY",
+    "CL-C-2025-ER-COVERAGE",
+    "CL-C-2024-ER-COVERAGE"
+   ],
+   "llm_cached": true
+  }
+ },
+ "memory_gain": null,
+ "not_run": [
+  "EV-M-B1"
+ ],
+ "errors": {
+  "EV-M-B1": {
+   "kind": "provider_rate_limit",
+   "message": "GroqProvider 429: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_\u2026` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198056, Requested 2253. Please try again in 2m13.488s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}"
+  },
+  "EV-M-B2": {
+   "kind": "provider_rate_limit",
+   "message": "GroqProvider 429: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_\u2026` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198053, Requested 2245. Please try again in 2m8.735999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}"
+  }
+ },
+ "answers": {
+  "EV-T1-01": {
+   "denial_reason": "PREAUTH_MISSING",
+   "policy_version": "V2026",
+   "cited_section": "4.2",
+   "required_evidence": [
+    "RETRO_AUTH_REQUEST",
+    "PHYSICIAN_NECESSITY_LETTER"
+   ],
+   "missing_evidence": [
+    "RETRO_AUTH_REQUEST",
+    "PHYSICIAN_NECESSITY_LETTER"
+   ],
+   "precedent_case_ids": [],
+   "disposition": "APPEAL_NEEDS_EVIDENCE",
+   "summary": "The claim was denied because prior authorization was not obtained. Under V2026, Section 4.2, a retroactive authorization request and a physician's medical necessity letter are required for appeal. Those items are missing, so an appeal can be pursued once they are submitted.",
+   "items": [
+    {
+     "kind": "EVIDENCE_NEEDED",
+     "text": "Retroactive authorization request (RETRO_AUTH_REQUEST) is required for appeal.",
+     "cite_ids": [
+      "CL-C-2026-MRI-PREAUTH"
+     ]
+    },
+    {
+     "kind": "EVIDENCE_NEEDED",
+     "text": "Physician letter of medical necessity (PHYSICIAN_NECESSITY_LETTER) is required for appeal.",
+     "cite_ids": [
+      "CL-C-2026-MRI-PREAUTH"
+     ]
+    },
+    {
+     "kind": "ACTION",
+     "text": "Submit a RETRO_AUTH_REQUEST and a PHYSICIAN_NECESSITY_LETTER to the Plan to support an appeal.",
+     "cite_ids": [
+      "CL-C-2026-MRI-PREAUTH"
+     ]
+    }
+   ]
+  },
+  "EV-T1-02": {
+   "denial_reason": "NOT_MED_NECESSARY",
+   "policy_version": "V2026",
+   "cited_section": "5.1",
+   "required_evidence": [
+    "PHYSICIAN_NECESSITY_LETTER",
+    "PROGRESS_NOTES"
+   ],
+   "missing_evidence": [
+    "PHYSICIAN_NECESSITY_LETTER"
+   ],
+   "precedent_case_ids": [],
+   "disposition": "APPEAL_NEEDS_EVIDENCE",
+   "summary": "The claim was denied because the member exceeded the V2026 physiotherapy session limit (12 per year) without a physician's medical necessity letter. The policy requires both a physician letter and progress notes; progress notes are on file, but the physician letter is missing.",
+   "items": [
+    {
+     "kind": "EVIDENCE_NEEDED",
+     "text": "Obtain a physician letter of medical necessity for the physiotherapy sessions beyond the 12th allowed by the V2026 policy.",
+     "cite_ids": [
+      "CL-C-2026-PHYSIO-LIMIT"
+     ]
+    },
+    {
+     "kind": "ACTION",
+     "text": "Submit an appeal that includes the physician letter of medical necessity together with the already provided clinical progress notes.",
+     "cite_ids": [
+      "CL-C-2026-PHYSIO-LIMIT"
+     ]
+    }
+   ]
+  },
+  "EV-T1-03": {
+   "denial_reason": "OUT_OF_NETWORK",
+   "policy_version": "V2026",
+   "cited_section": "6.3",
+   "required_evidence": [
+    "EMERGENCY_ATTESTATION",
+    "DISCHARGE_SUMMARY"
+   ],
+   "missing_evidence": [],
+   "precedent_case_ids": [],
+   "disposition": "APPEAL_VIABLE",
+   "summary": "The denial was based on out-of-network status. Under V2026 the plan covers out-of-network emergency visits if an emergency attestation and discharge summary are provided and the attestation is filed within 48\u202fhours. Both documents are on file, so an appeal is viable.",
+   "items": [
+    {
+     "kind": "ACTION",
+     "text": "File an appeal including the emergency attestation and discharge summary as required for out-of-network emergency services.",
+     "cite_ids": [
+      "CL-C-2026-OON-EMERGENCY"
+     ]
+    },
+    {
+     "kind": "ACTION",
+     "text": "Submit the appeal within 180 days of the denial notice.",
+     "cite_ids": [
+      "CL-C-2026-OON-EMERGENCY"
+     ]
+    },
+    {
+     "kind": "WARNING",
+     "text": "The emergency attestation must have been filed within 48\u202fhours of admission per Section\u202f6.3; verify the filing timestamp in case the insurer requests proof.",
+     "cite_ids": [
+      "CL-C-2026-OON-EMERGENCY"
+     ]
+    }
+   ]
+  },
+  "EV-T1-04": {
+   "denial_reason": "EXCLUDED_SERVICE",
+   "policy_version": "V2024",
+   "cited_section": "7.4",
+   "required_evidence": [],
+   "missing_evidence": [],
+   "precedent_case_ids": [],
+   "disposition": "APPEAL_VIABLE",
+   "summary": "Denial based on exclusion of bariatric surgery in policy version V2024 (Section 7.4). No evidence is required for appeal, making the appeal viable.",
+   "items": [
+    {
+     "kind": "ACTION",
+     "text": "File an appeal within 180 days; no additional evidence required.",
+     "cite_ids": [
+      "CL-C-2024-BARIATRIC"
+     ]
+    }
+   ]
+  },
+  "EV-T2-01": {
+   "denial_reason": "PREAUTH_MISSING",
+   "policy_version": "V2025",
+   "cited_section": "4.1",
+   "required_evidence": [
+    "RETRO_AUTH_REQUEST",
+    "DISCHARGE_SUMMARY"
+   ],
+   "missing_evidence": [
+    "RETRO_AUTH_REQUEST"
+   ],
+   "precedent_case_ids": [],
+   "disposition": "APPEAL_NEEDS_EVIDENCE",
+   "summary": "The claim was denied because prior authorization was not obtained for planned inpatient surgery. Under policy V2025 Section\u202f4.1, a retroactive authorization request plus the discharge summary are required for an appeal. The discharge summary is on file; the retroactive authorization request is missing.",
+   "items": [
+    {
+     "kind": "EVIDENCE_NEEDED",
+     "text": "Provide a retroactive authorization request (RETRO_AUTH_REQUEST) to accompany the existing discharge summary for the appeal.",
+     "cite_ids": [
+      "CL-C-2025-INPATIENT-PREAUTH"
+     ]
+    },
+    {
+     "kind": "ACTION",
+     "text": "Submit an appeal within 180 days of the denial notice, attaching the retroactive authorization request.",
+     "cite_ids": [
+      "CL-C-2025-INPATIENT-PREAUTH"
+     ]
+    },
+    {
+     "kind": "WARNING",
+     "text": "Without the retroactive authorization request, the appeal will be incomplete and the denial will likely be upheld.",
+     "cite_ids": [
+      "CL-C-2025-INPATIENT-PREAUTH"
+     ]
+    }
+   ]
+  },
+  "EV-T2-02": {
+   "denial_reason": "NOT_MED_NECESSARY",
+   "policy_version": "V2025",
+   "cited_section": "5.4",
+   "required_evidence": [
+    "PHYSICIAN_NECESSITY_LETTER"
+   ],
+   "missing_evidence": [],
+   "precedent_case_ids": [],
+   "disposition": "APPEAL_VIABLE",
+   "summary": "The claim was denied as not medically necessary under Section\u202f5.4 of the V2025 policy. The required physician letter of medical necessity is already on file, so an appeal is viable.",
+   "items": [
+    {
+     "kind": "ACTION",
+     "text": "File an appeal using the physician letter of medical necessity already on file.",
+     "cite_ids": [
+      "CL-C-2025-DME-NECESSITY"
+     ]
+    },
+    {
+     "kind": "WARNING",
+     "text": "Denial is based on the service exceeding medically necessary limits per Section 5.4.",
+     "cite_ids": [
+      "CL-C-2025-DME-NECESSITY"
+     ]
+    }
+   ]
+  },
+  "EV-T2-03": {
+   "denial_reason": "NOT_MED_NECESSARY",
+   "policy_version": "V2025",
+   "cited_section": "6.5",
+   "required_evidence": [
+    "EMERGENCY_ATTESTATION"
+   ],
+   "missing_evidence": [
+    "EMERGENCY_ATTESTATION"
+   ],
+   "precedent_case_ids": [],
+   "disposition": "APPEAL_NEEDS_EVIDENCE",
+   "summary": "The claim was denied for not being medically necessary under Section 6.5. Under the V2025 policy, ambulance transport requires an emergency attestation for appeal. The claim lacks this evidence, so an appeal can be made once the attestation is provided.",
+   "items": [
+    {
+     "kind": "ACTION",
+     "text": "Denial is based on lack of medical necessity under Section 6.5 (Ambulance transport).",
+     "cite_ids": [
+      "CL-C-2025-AMBULANCE"
+     ]
+    },
+    {
+     "kind": "EVIDENCE_NEEDED",
+     "text": "An emergency attestation is required for appeal per the policy.",
+     "cite_ids": [
+      "CL-C-2025-AMBULANCE"
+     ]
+    },
+    {
+     "kind": "EVIDENCE_NEEDED",
+     "text": "Missing evidence: Emergency attestation.",
+     "cite_ids": [
+      "CL-C-2025-AMBULANCE"
+     ]
+    }
+   ]
+  },
+  "EV-T3-01": {
+   "denial_reason": "NOT_MED_NECESSARY",
+   "policy_version": "V2026",
+   "cited_section": "5.1",
+   "required_evidence": [
+    "PHYSICIAN_NECESSITY_LETTER",
+    "PROGRESS_NOTES"
+   ],
+   "missing_evidence": [
+    "PHYSICIAN_NECESSITY_LETTER",
+    "PROGRESS_NOTES"
+   ],
+   "precedent_case_ids": [],
+   "disposition": "APPEAL_NEEDS_EVIDENCE",
+   "summary": "The claim exceeds the V2026 physiotherapy limit of 12 sessions and lacks the physician necessity letter and progress notes required for sessions beyond the limit, resulting in a NOT_MED_NECESSARY denial.",
+   "items": [
+    {
+     "kind": "EVIDENCE_NEEDED",
+     "text": "Provide a physician letter of medical necessity for physiotherapy sessions beyond the twelfth.",
+     "cite_ids": [
+      "CL-C-2026-PHYSIO-LIMIT"
+     ]
+    },
+    {
+     "kind": "EVIDENCE_NEEDED",
+     "text": "Submit clinical progress notes demonstrating functional improvement for each additional session.",
+     "cite_ids": [
+      "CL-C-2026-PHYSIO-LIMIT"
+     ]
+    },
+    {
+     "kind": "ACTION",
+     "text": "File an appeal within 180 days and attach the required physician letter and progress notes.",
+     "cite_ids": [
+      "CL-C-2026-PHYSIO-LIMIT"
+     ]
+    },
+    {
+     "kind": "WARNING",
+     "text": "The denial is based on exceeding the session limit and lack of required supporting documentation per Section 5.1.",
+     "cite_ids": [
+      "CL-C-2026-PHYSIO-LIMIT"
+     ]
+    }
+   ]
+  },
+  "EV-T3-02": {
+   "denial_reason": "EXCLUDED_SERVICE",
+   "policy_version": "V2025",
+   "cited_section": "7.4",
+   "required_evidence": [
+    "BMI_RECORD",
+    "SUPERVISED_PROGRAM_RECORD"
+   ],
+   "missing_evidence": [
+    "SUPERVISED_PROGRAM_RECORD"
+   ],
+   "precedent_case_ids": [],
+   "disposition": "APPEAL_NEEDS_EVIDENCE",
+   "summary": "The claim was denied because bariatric surgery is excluded under Section\u202f7.4 of the V2025 policy without the required supervised weight\u2011loss program record. The claimant has a BMI record, but the supervised program documentation is missing, so an appeal is possible once that evidence is provided.",
+   "items": [
+    {
+     "kind": "EVIDENCE_NEEDED",
+     "text": "Provide the supervised weight\u2011loss program record (SUPERVISED_PROGRAM_RECORD) required for bariatric surgery coverage under Section\u202f7.4.",
+     "cite_ids": [
+      "CL-C-2025-BARIATRIC"
+     ]
+    },
+    {
+     "kind": "ACTION",
+     "text": "File an appeal attaching the SUPERVISED_PROGRAM_RECORD; the existing BMI_RECORD already satisfies part of the evidence requirement.",
+     "cite_ids": [
+      "CL-C-2025-BARIATRIC"
+     ]
+    },
+    {
+     "kind": "WARNING",
+     "text": "The denial is based on the service being excluded under the policy (EXCLUDED_SERVICE) because the required program record is missing.",
+     "cite_ids": [
+      "CL-C-2025-BARIATRIC"
+     ]
+    }
+   ]
+  },
+  "EV-T3-03": {
+   "denial_reason": "CODING_ERROR",
+   "policy_version": "V2026",
+   "cited_section": "9.4",
+   "required_evidence": [
+    "ITEMIZED_BILL",
+    "CORRECTED_CODING_SUBMISSION"
+   ],
+   "missing_evidence": [
+    "CORRECTED_CODING_SUBMISSION"
+   ],
+   "precedent_case_ids": [],
+   "disposition": "APPEAL_NEEDS_EVIDENCE",
+   "summary": "The claim was denied for coding inconsistencies under Section 9.4. Under the policy, an appeal requires an itemized bill (already on file) and a corrected coding submission, which is missing.",
+   "items": [
+    {
+     "kind": "EVIDENCE_NEEDED",
+     "text": "Submit a corrected coding submission (CORRECTED_CODING_SUBMISSION) to address the coding inconsistency.",
+     "cite_ids": [
+      "CL-C-2025-CODING-CORRECTION"
+     ]
+    },
+    {
+     "kind": "ACTION",
+     "text": "Resubmit the claim with the corrected coding submission along with the existing itemized bill.",
+     "cite_ids": [
+      "CL-C-2025-CODING-CORRECTION"
+     ]
+    },
+    {
+     "kind": "WARNING",
+     "text": "Denial is based on coding errors per Section 9.4; ensure the corrected codes match the diagnosis and procedure codes.",
+     "cite_ids": [
+      "CL-C-2025-CODING-CORRECTION"
+     ]
+    }
+   ]
+  },
+  "EV-T4-01": {
+   "denial_reason": "PREAUTH_MISSING",
+   "policy_version": "V2025",
+   "cited_section": "4.4",
+   "required_evidence": [
+    "RETRO_AUTH_REQUEST"
+   ],
+   "missing_evidence": [],
+   "precedent_case_ids": [],
+   "disposition": "APPEAL_VIABLE",
+   "summary": "The claim was denied for lack of prior authorization (Section\u202f4.4). The policy version in effect is V2025, which allows a retroactive authorization request as the sole required appeal evidence. The claimant has already submitted a Retroactive Authorization Request, so no additional evidence is needed and an appeal can be filed.",
+   "items": [
+    {
+     "kind": "ACTION",
+     "text": "File the appeal using the existing Retroactive Authorization Request; no further documentation is required.",
+     "cite_ids": [
+      "CL-C-2025-SLEEP-STUDY-PREAUTH",
+      "CL-C-2025-RETRO-AUTH"
+     ]
+    }
+   ]
+  },
+  "EV-T4-02": {
+   "denial_reason": "PREAUTH_MISSING",
+   "policy_version": "V2026",
+   "cited_section": "4.4",
+   "required_evidence": [
+    "RETRO_AUTH_REQUEST"
+   ],
+   "missing_evidence": [
+    "RETRO_AUTH_REQUEST"
+   ],
+   "precedent_case_ids": [],
+   "disposition": "APPEAL_NEEDS_EVIDENCE",
+   "summary": "The claim was denied for lack of prior authorization. Under V2026, sleep studies require prior authorization; a retroactive request is permissible as appeal evidence. The claim currently lacks the required retroactive authorization request.",
+   "items": [
+    {
+     "kind": "EVIDENCE_NEEDED",
+     "text": "Submit a retroactive authorization request (RETRO_AUTH_REQUEST) for the sleep study performed on 2026-02-10.",
+     "cite_ids": [
+      "CL-C-2026-SLEEP-STUDY-PREAUTH"
+     ]
+    },
+    {
+     "kind": "ACTION",
+     "text": "File an appeal, attaching the retroactive authorization request, within the 180\u2011day appeal window.",
+     "cite_ids": [
+      "CL-C-2026-SLEEP-STUDY-PREAUTH"
+     ]
+    }
+   ]
+  },
+  "EV-T5-01": {
+   "denial_reason": "OUT_OF_NETWORK",
+   "policy_version": "V2025",
+   "cited_section": "6.3",
+   "required_evidence": [
+    "EMERGENCY_ATTESTATION",
+    "DISCHARGE_SUMMARY"
+   ],
+   "missing_evidence": [
+    "EMERGENCY_ATTESTATION",
+    "DISCHARGE_SUMMARY"
+   ],
+   "precedent_case_ids": [],
+   "disposition": "APPEAL_NEEDS_EVIDENCE",
+   "summary": "Denial based on out-of-network non-emergency service (Section 6.3) under V2025; appeal requires emergency attestation and discharge summary, which are missing, so an appeal can be filed only after providing them.",
+   "items": [
+    {
+     "kind": "EVIDENCE_NEEDED",
+     "text": "To appeal you must submit an emergency attestation and discharge summary as required by Section 6.3.",
+     "cite_ids": [
+      "CL-C-2025-OON-EMERGENCY"
+     ]
+    },
+    {
+     "kind": "ACTION",
+     "text": "Confirm policy version V2025 is in force; denial is based on out-of-network rule (Section 6.3).",
+     "cite_ids": [
+      "CL-C-2025-OON-EMERGENCY"
+     ]
+    },
+    {
+     "kind": "WARNING",
+     "text": "Because the service was non-emergency, the required evidence may not be applicable, making the appeal unlikely to succeed.",
+     "cite_ids": [
+      "CL-C-2025-OON-EMERGENCY"
+     ]
+    }
+   ]
+  },
+  "EV-T5-02": {
+   "denial_reason": "OUT_OF_NETWORK",
+   "policy_version": "V2025",
+   "cited_section": "6.3",
+   "required_evidence": [
+    "EMERGENCY_ATTESTATION",
+    "DISCHARGE_SUMMARY"
+   ],
+   "missing_evidence": [
+    "EMERGENCY_ATTESTATION",
+    "DISCHARGE_SUMMARY"
+   ],
+   "precedent_case_ids": [],
+   "disposition": "NO_BASIS_ESCALATE",
+   "summary": "The claim was denied because the provider was out-of-network and the service was not an emergency. Under V2025 Section 6.3, only emergency out-of-network services may be covered with an emergency attestation and discharge summary, which are absent and cannot be supplied for a non\u2011emergency claim.",
+   "items": [
+    {
+     "kind": "EVIDENCE_NEEDED",
+     "text": "Provide an emergency attestation and discharge summary to attempt an appeal under the out\u2011of\u2011network emergency exception.",
+     "cite_ids": [
+      "CL-C-2025-OON-EMERGENCY"
+     ]
+    },
+    {
+     "kind": "ACTION",
+     "text": "Verify whether the service qualifies as an emergency; if not, the claim cannot be appealed under the policy.",
+     "cite_ids": [
+      "CL-C-2025-OON-EMERGENCY"
+     ]
+    },
+    {
+     "kind": "WARNING",
+     "text": "Out\u2011of\u2011network, non\u2011emergency physiotherapy is excluded under the plan; the denial is consistent with policy.",
+     "cite_ids": [
+      "CL-C-2025-OON-EMERGENCY"
+     ]
+    }
+   ]
+  },
+  "EV-T6-01": {
+   "denial_reason": "TIMELY_FILING",
+   "policy_version": "V2026",
+   "cited_section": "9.1",
+   "required_evidence": [
+    "PROOF_OF_TIMELY_FILING"
+   ],
+   "missing_evidence": [
+    "PROOF_OF_TIMELY_FILING"
+   ],
+   "precedent_case_ids": [],
+   "disposition": "APPEAL_NEEDS_EVIDENCE",
+   "summary": "The claim was denied for filing beyond the 90\u2011day limit under V2026 Section 9.1; proof of timely filing must be submitted to appeal.",
+   "items": [
+    {
+     "kind": "EVIDENCE_NEEDED",
+     "text": "Submit proof of timely filing (e.g., receipt or acknowledgment) as required by Section 9.1 of the V2026 policy.",
+     "cite_ids": [
+      "CL-C-2026-TIMELY-FILING"
+     ]
+    },
+    {
+     "kind": "ACTION",
+     "text": "File an appeal within 180 days of the denial notice, attaching the required proof of timely filing.",
+     "cite_ids": [
+      "CL-C-2026-TIMELY-FILING"
+     ]
+    }
+   ]
+  },
+  "EV-T6-02": {
+   "denial_reason": "EXCLUDED_SERVICE",
+   "policy_version": "V2024",
+   "cited_section": "8.2",
+   "required_evidence": [],
+   "missing_evidence": [],
+   "precedent_case_ids": [
+    "HC-044"
+   ],
+   "disposition": "APPEAL_VIABLE",
+   "summary": "The claim was denied because genetic testing is classified as an experimental service excluded under section 8.2 of the V2024 policy. No additional evidence is required for an appeal, and past case HC-044 confirms the exclusion.",
+   "items": [
+    {
+     "kind": "ACTION",
+     "text": "File an appeal within 180 days; no additional evidence required as the policy excludes genetic testing as experimental.",
+     "cite_ids": [
+      "CL-C-2024-EXPERIMENTAL-EXCL"
+     ]
+    },
+    {
+     "kind": "REJECTED_PRECEDENT",
+     "text": "Past case HC-044 upheld the same exclusion; this supports the current denial.",
+     "cite_ids": [
+      "CS-HC-044"
+     ]
+    }
+   ]
+  },
+  "EV-T6-03": {
+   "denial_reason": "WAITING_PERIOD",
+   "policy_version": "V2025",
+   "cited_section": "3.2",
+   "required_evidence": [
+    "ENROLLMENT_RECORD"
+   ],
+   "missing_evidence": [],
+   "precedent_case_ids": [],
+   "disposition": "APPEAL_VIABLE",
+   "summary": "Denial is due to the member not meeting the 12\u2011month continuous enrollment waiting period for maternity benefits under version V2025; the required enrollment record is already on file, so an appeal is possible without additional evidence.",
+   "items": [
+    {
+     "kind": "WARNING",
+     "text": "Maternity benefit denied because the member has only 10 months of continuous enrollment, less than the 12 months required by Section 3.2.",
+     "cite_ids": [
+      "CL-C-2025-MATERNITY-WAIT"
+     ]
+    },
+    {
+     "kind": "ACTION",
+     "text": "Member may appeal the decision within 180 days; no additional evidence is needed because the enrollment record is already on file.",
+     "cite_ids": [
+      "CL-C-2025-APPEAL-WINDOW"
+     ]
+    }
+   ]
+  },
+  "EV-T7-01": {
+   "denial_reason": "CODING_ERROR",
+   "policy_version": "V2025",
+   "cited_section": "9.4",
+   "required_evidence": [
+    "ITEMIZED_BILL",
+    "CORRECTED_CODING_SUBMISSION"
+   ],
+   "missing_evidence": [],
+   "precedent_case_ids": [],
+   "disposition": "APPEAL_VIABLE",
+   "summary": "The claim was denied for coding inconsistency under Section\u202f9.4. Under policy version V2025 the required appeal evidence (itemized bill and corrected coding submission) is already on file, so an appeal is viable.",
+   "items": [
+    {
+     "kind": "ACTION",
+     "text": "Resubmit the claim with the corrected coding submission and include the itemized bill as required by Section\u202f9.4 (Coding corrections).",
+     "cite_ids": [
+      "CL-C-2025-CODING-CORRECTION"
+     ]
+    }
+   ]
+  },
+  "EV-T7-02": {
+   "denial_reason": "OUT_OF_NETWORK",
+   "policy_version": "V2025",
+   "cited_section": "6.3",
+   "required_evidence": [
+    "EMERGENCY_ATTESTATION",
+    "DISCHARGE_SUMMARY"
+   ],
+   "missing_evidence": [],
+   "precedent_case_ids": [],
+   "disposition": "APPEAL_VIABLE",
+   "summary": "The claim was denied as out-of-network, but policy V2025 covers emergency out-of-network services when an emergency attestation and discharge summary are provided within 72 hours. Both required documents are on file, so an appeal can be submitted.",
+   "items": [
+    {
+     "kind": "ACTION",
+     "text": "Submit appeal citing Section 6.3 of policy V2025, attaching the existing emergency attestation and discharge summary.",
+     "cite_ids": [
+      "CL-C-2025-OON-EMERGENCY"
+     ]
+    }
+   ]
+  },
+  "EV-N-01": {
+   "denial_reason": "PREAUTH_MISSING",
+   "policy_version": "V2025",
+   "cited_section": "4.2",
+   "required_evidence": [
+    "SPECIALIST_REFERRAL"
+   ],
+   "missing_evidence": [
+    "SPECIALIST_REFERRAL"
+   ],
+   "precedent_case_ids": [],
+   "disposition": "APPEAL_NEEDS_EVIDENCE",
+   "summary": "The claim was denied because prior authorization was not obtained for an outpatient MRI under Section\u202f4.2 of the V2025 policy, which requires a specialist referral for appeal. No referral has been submitted, so the appeal is not yet viable.",
+   "items": [
+    {
+     "kind": "EVIDENCE_NEEDED",
+     "text": "A written referral from a board\u2011certified specialist is required to support an appeal for this outpatient MRI.",
+     "cite_ids": [
+      "CL-C-2025-MRI-PREAUTH"
+     ]
+    },
+    {
+     "kind": "ACTION",
+     "text": "Obtain and submit the specialist referral within the 180\u2011day appeal window.",
+     "cite_ids": [
+      "CL-C-2025-MRI-PREAUTH"
+     ]
+    }
+   ]
+  },
+  "EV-N-02": {
+   "denial_reason": "PREAUTH_MISSING",
+   "policy_version": "V2024",
+   "cited_section": "4.2",
+   "required_evidence": [
+    "SPECIALIST_REFERRAL"
+   ],
+   "missing_evidence": [],
+   "precedent_case_ids": [],
+   "disposition": "APPEAL_VIABLE",
+   "summary": "The claim was denied for missing prior authorization, but under V2024 an MRI ordered by a board\u2011certified specialist is exempt when a specialist referral is provided, which is already on file.",
+   "items": [
+    {
+     "kind": "ACTION",
+     "text": "Submit an appeal citing the specialist referral as the required evidence under section 4.2 of the V2024 policy.",
+     "cite_ids": [
+      "CL-C-2024-MRI-PREAUTH"
+     ]
+    }
+   ]
+  },
+  "EV-N-03": {
+   "denial_reason": "PREAUTH_MISSING",
+   "policy_version": "V2026",
+   "cited_section": "4.1",
+   "required_evidence": [
+    "RETRO_AUTH_REQUEST",
+    "DISCHARGE_SUMMARY"
+   ],
+   "missing_evidence": [],
+   "precedent_case_ids": [],
+   "disposition": "APPEAL_VIABLE",
+   "summary": "The claim was denied for lack of prior authorization under Section 4.1; a retroactive authorization request and discharge summary are on file, meeting appeal requirements for policy version V2026.",
+   "items": [
+    {
+     "kind": "ACTION",
+     "text": "File an appeal submitting the retroactive authorization request and discharge summary as required under Section 4.1.",
+     "cite_ids": [
+      "CL-C-2026-INPATIENT-PREAUTH"
+     ]
+    }
+   ]
+  },
+  "EV-N-04": {
+   "denial_reason": "NOT_MED_NECESSARY",
+   "policy_version": "V2025",
+   "cited_section": "6.1",
+   "required_evidence": [
+    "DISCHARGE_SUMMARY"
+   ],
+   "missing_evidence": [],
+   "precedent_case_ids": [],
+   "disposition": "APPEAL_VIABLE",
+   "summary": "The denial is based on Section\u202f6.1 of the V2025 policy, which requires a discharge summary to demonstrate medical necessity for emergency room visits. The required discharge summary is already on file, so an appeal can be filed.",
+   "items": [
+    {
+     "kind": "ACTION",
+     "text": "File an appeal referencing Section\u202f6.1 and attach the existing discharge summary.",
+     "cite_ids": [
+      "CL-C-2025-ER-COVERAGE"
+     ]
+    }
+   ]
+  },
+  "EV-N-05": {
+   "denial_reason": "INCOMPLETE_DOCS",
+   "policy_version": "V2026",
+   "cited_section": "4.1",
+   "required_evidence": [
+    "RETRO_AUTH_REQUEST",
+    "DISCHARGE_SUMMARY"
+   ],
+   "missing_evidence": [
+    "RETRO_AUTH_REQUEST",
+    "DISCHARGE_SUMMARY"
+   ],
+   "precedent_case_ids": [],
+   "disposition": "APPEAL_NEEDS_EVIDENCE",
+   "summary": "The claim was denied for missing required documentation. Under policy V2026, inpatient surgery needs prior authorization; without it, a retroactive authorization request and discharge summary are required for appeal. These items are absent, so the appeal is possible once the evidence is provided.",
+   "items": [
+    {
+     "kind": "EVIDENCE_NEEDED",
+     "text": "Submit a retroactive authorization request (RETRO_AUTH_REQUEST) for the inpatient surgery.",
+     "cite_ids": [
+      "CL-C-2026-INPATIENT-PREAUTH"
+     ]
+    },
+    {
+     "kind": "EVIDENCE_NEEDED",
+     "text": "Provide the discharge summary (DISCHARGE_SUMMARY) for the inpatient stay.",
+     "cite_ids": [
+      "CL-C-2026-DISCHARGE-DOCS"
+     ]
+    },
+    {
+     "kind": "ACTION",
+     "text": "File the appeal within 180 days, attaching the missing documents.",
+     "cite_ids": [
+      "CL-C-2026-INPATIENT-PREAUTH"
+     ]
+    },
+    {
+     "kind": "WARNING",
+     "text": "Denial was based on incomplete documentation (INCOMPLETE_DOCS).",
+     "cite_ids": [
+      "CL-C-2026-INPATIENT-PREAUTH"
+     ]
+    }
+   ]
+  },
+  "EV-N-06": {
+   "denial_reason": "DUPLICATE_CLAIM",
+   "policy_version": "V2026",
+   "cited_section": "9.5",
+   "required_evidence": [
+    "ITEMIZED_BILL"
+   ],
+   "missing_evidence": [],
+   "precedent_case_ids": [],
+   "disposition": "APPEAL_VIABLE",
+   "summary": "The claim was denied as a duplicate under Section 9.5. The policy requires an itemized bill for appeal, which is already on file, so an appeal is viable.",
+   "items": [
+    {
+     "kind": "EVIDENCE_NEEDED",
+     "text": "Itemized bill already on file satisfies the required evidence for a duplicate\u2011claim appeal.",
+     "cite_ids": [
+      "CL-C-2025-DUPLICATE"
+     ]
+    },
+    {
+     "kind": "ACTION",
+     "text": "Submit an appeal within 180 days, attaching the itemized bill to demonstrate distinct services.",
+     "cite_ids": [
+      "CL-C-2025-DUPLICATE"
+     ]
+    }
+   ]
+  },
+  "EV-N-07": {
+   "denial_reason": "EXCLUDED_SERVICE",
+   "policy_version": "V2026",
+   "cited_section": "7.4",
+   "required_evidence": [
+    "BMI_RECORD",
+    "SUPERVISED_PROGRAM_RECORD"
+   ],
+   "missing_evidence": [],
+   "precedent_case_ids": [],
+   "disposition": "APPEAL_VIABLE",
+   "summary": "The claim was denied because bariatric surgery is excluded under the plan version in effect on the service date. Under V2026, bariatric surgery is covered if BMI\u202f\u2265\u202f40 and a six\u2011month supervised weight\u2011loss program are documented. Both required pieces of evidence are already on file, so an appeal can be filed immediately.",
+   "items": [
+    {
+     "kind": "ACTION",
+     "text": "File an appeal referencing Section\u202f7.4 and submit the existing BMI record and supervised weight\u2011loss program record as required evidence.",
+     "cite_ids": [
+      "CL-C-2026-BARIATRIC"
+     ]
+    }
+   ]
+  },
+  "EV-N-08": {
+   "denial_reason": "EXCLUDED_SERVICE",
+   "policy_version": "V2026",
+   "cited_section": "7.6",
+   "required_evidence": [
+    "GENETIC_COUNSELOR_REFERRAL"
+   ],
+   "missing_evidence": [],
+   "precedent_case_ids": [],
+   "disposition": "APPEAL_VIABLE",
+   "summary": "The claim was denied as an excluded service under Section 7.6. The V2026 policy covers diagnostic genetic testing when a genetic counselor referral is present, which the claim already has, making an appeal viable.",
+   "items": [
+    {
+     "kind": "ACTION",
+     "text": "Prepare and submit an appeal citing Section 7.6 of the V2026 policy, attaching the existing genetic counselor referral.",
+     "cite_ids": [
+      "CL-C-2026-GENETIC-TEST"
+     ]
+    },
+    {
+     "kind": "WARNING",
+     "text": "Section 8.2 also excludes experimental genetic testing, but because a referral is present the test may be considered diagnostic and thus covered under Section 7.6.",
+     "cite_ids": [
+      "CL-C-2026-EXPERIMENTAL-EXCL",
+      "CL-C-2026-GENETIC-TEST"
+     ]
+    }
+   ]
+  },
+  "EV-N-09": {
+   "denial_reason": "WAITING_PERIOD",
+   "policy_version": "V2026",
+   "cited_section": "3.2",
+   "required_evidence": [
+    "ENROLLMENT_RECORD"
+   ],
+   "missing_evidence": [
+    "ENROLLMENT_RECORD"
+   ],
+   "precedent_case_ids": [],
+   "disposition": "APPEAL_NEEDS_EVIDENCE",
+   "summary": "Denial is based on the maternity waiting period; under V2026 a member must have at least 9 months continuous enrollment, which the member likely meets (10 months) but the insurer requires an enrollment record to verify. An appeal is possible once the enrollment record is submitted.",
+   "items": [
+    {
+     "kind": "EVIDENCE_NEEDED",
+     "text": "Provide enrollment record to confirm continuous enrollment of at least 9 months prior to service.",
+     "cite_ids": [
+      "CL-C-2026-MATERNITY-WAIT",
+      "CL-C-2026-ENROLLMENT"
+     ]
+    },
+    {
+     "kind": "ACTION",
+     "text": "Submit appeal within 180 days with the enrollment record attached.",
+     "cite_ids": [
+      "CL-C-2026-MATERNITY-WAIT"
+     ]
+    }
+   ]
+  },
+  "EV-N-10": {
+   "denial_reason": "TIMELY_FILING",
+   "policy_version": "V2025",
+   "cited_section": "9.1",
+   "required_evidence": [
+    "PROOF_OF_TIMELY_FILING"
+   ],
+   "missing_evidence": [],
+   "precedent_case_ids": [],
+   "disposition": "APPEAL_VIABLE",
+   "summary": "The claim was denied for filing beyond the 180\u2011day limit. Under V2025 the only evidence needed for an appeal is proof of timely filing, which is already on record.",
+   "items": [
+    {
+     "kind": "ACTION",
+     "text": "Submit an appeal within 180 days of the denial notice, attaching the existing Proof of Timely Filing.",
+     "cite_ids": [
+      "CL-C-2025-TIMELY-FILING"
+     ]
+    }
+   ]
+  },
+  "EV-N-11": {
+   "denial_reason": "CODING_ERROR",
+   "policy_version": "V2025",
+   "cited_section": "4.4",
+   "required_evidence": [
+    "RETRO_AUTH_REQUEST"
+   ],
+   "missing_evidence": [
+    "RETRO_AUTH_REQUEST"
+   ],
+   "precedent_case_ids": [
+    "HC-010"
+   ],
+   "disposition": "APPEAL_NEEDS_EVIDENCE",
+   "summary": "The claim was denied for a coding error; the policy (V2025) requires a prior authorization for facility\u2011based sleep studies (Section\u202f4.4) and a retroactive authorization request for appeal. The claim lacks the required RETRO_AUTH_REQUEST evidence. A similar case (HC\u2011010) was upheld when the retro authorization was missing.",
+   "items": [
+    {
+     "kind": "EVIDENCE_NEEDED",
+     "text": "Obtain and submit a Retroactive Authorization Request (RETRO_AUTH_REQUEST) to satisfy the prior\u2011auth requirement for a sleep study.",
+     "cite_ids": [
+      "CL-C-2025-SLEEP-STUDY-PREAUTH",
+      "CL-C-2025-RETRO-AUTH"
+     ]
+    },
+    {
+     "kind": "ACTION",
+     "text": "File an appeal attaching the RETRO_AUTH_REQUEST and corrected coding documentation.",
+     "cite_ids": [
+      "CL-C-2025-SLEEP-STUDY-PREAUTH"
+     ]
+    },
+    {
+     "kind": "WARNING",
+     "text": "Past case HC\u2011010 (same service and policy version) was upheld when the retro authorization was missing, indicating the denial is likely to be sustained without it.",
+     "cite_ids": [
+      "CS-HC-010"
+     ]
+    }
+   ]
+  },
+  "EV-N-12": {
+   "denial_reason": "NOT_MED_NECESSARY",
+   "policy_version": "V2026",
+   "cited_section": "5.4",
+   "required_evidence": [
+    "PHYSICIAN_NECESSITY_LETTER"
+   ],
+   "missing_evidence": [
+    "PHYSICIAN_NECESSITY_LETTER"
+   ],
+   "precedent_case_ids": [],
+   "disposition": "APPEAL_NEEDS_EVIDENCE",
+   "summary": "The claim was denied because the insurer did not receive a physician letter of medical necessity for the durable medical equipment. Under the V2026 policy, Section\u202f5.4 requires that letter for an appeal. The claim was filed within the 180\u2011day timely filing window, so no filing issue exists. An appeal is possible once the required physician letter is submitted.",
+   "items": [
+    {
+     "kind": "EVIDENCE_NEEDED",
+     "text": "Obtain and submit a physician letter of medical necessity for the durable medical equipment.",
+     "cite_ids": [
+      "CL-C-2026-DME-NECESSITY"
+     ]
+    },
+    {
+     "kind": "ACTION",
+     "text": "Verify that the claim was filed within the 180\u2011day timely filing limit (33 days after service). No additional evidence needed for filing timeliness.",
+     "cite_ids": [
+      "CL-C-2025-TIMELY-FILING"
+     ]
+    }
+   ]
+  },
+  "EV-N-13": {
+   "denial_reason": "OUT_OF_NETWORK",
+   "policy_version": "V2024",
+   "cited_section": "6.3",
+   "required_evidence": [
+    "EMERGENCY_ATTESTATION",
+    "DISCHARGE_SUMMARY"
+   ],
+   "missing_evidence": [
+    "DISCHARGE_SUMMARY"
+   ],
+   "precedent_case_ids": [],
+   "disposition": "APPEAL_NEEDS_EVIDENCE",
+   "summary": "The claim was denied as out\u2011of\u2011network; emergency coverage is possible but requires a discharge summary in addition to the existing emergency attestation.",
+   "items": [
+    {
+     "kind": "EVIDENCE_NEEDED",
+     "text": "Submit the Discharge Summary for the emergency ambulance transport to meet out\u2011of\u2011network emergency coverage requirements.",
+     "cite_ids": [
+      "CL-C-2024-OON-EMERGENCY"
+     ]
+    },
+    {
+     "kind": "ACTION",
+     "text": "File an appeal that includes the missing discharge summary; the appeal must be lodged within the 180\u2011day window.",
+     "cite_ids": [
+      "CL-C-2024-OON-EMERGENCY"
+     ]
+    },
+    {
+     "kind": "WARNING",
+     "text": "The claim was filed 22 days after service, which is within the 72\u2011hour emergency attestation window; ensure the discharge summary is provided promptly to avoid further denial.",
+     "cite_ids": [
+      "CL-C-2024-OON-EMERGENCY",
+      "CL-C-2024-ER-NOTIFY"
+     ]
+    }
+   ]
+  },
+  "EV-M-A": {
+   "denial_reason": "NOT_MED_NECESSARY",
+   "policy_version": "V2025",
+   "cited_section": "6.5",
+   "required_evidence": [
+    "EMERGENCY_ATTESTATION"
+   ],
+   "missing_evidence": [],
+   "precedent_case_ids": [],
+   "disposition": "APPEAL_VIABLE",
+   "summary": "The claim was denied for lack of documented medical necessity. Under V2025 Section 6.5, ambulance transport for emergencies is covered when an Emergency Attestation is provided, which the claim already includes, making an appeal viable.",
+   "items": [
+    {
+     "kind": "ACTION",
+     "text": "File an appeal referencing Section 6.5 of the V2025 policy and attach the existing Emergency Attestation.",
+     "cite_ids": [
+      "CL-C-2025-AMBULANCE"
+     ]
+    },
+    {
+     "kind": "WARNING",
+     "text": "Appeal must be submitted within the 180\u2011day window indicated in the denial notice.",
+     "cite_ids": []
+    }
+   ]
+  }
+ },
+ "provenance": {
+  "run_id": "20261017T183219+0530-7dee90",
+  "step": "baseline_rag_strong",
+  "started_at": "2026-10-17T18:33:08+05:30",
+  "ended_at": "2026-10-17T18:34:39+05:30",
+  "source_sha256_at_save": "804f21182ab99b6915c22b8bf8d7cddd09967f6f398c7f823984316bb39fc0d3",
+  "source_unchanged": true,
+  "dataset_unchanged": true,
+  "llm_platform": "groq",
+  "llm_model": "openai/gpt-oss-120b",
+  "llm_mode": "cached",
+  "access": {
+   "policy_clauses": "all versions, as text passages",
+   "abstract_findings": "no",
+   "raw_cases": "own tenant only (filtered before prompting)",
+   "decided_by": "the LLM makes every decision; larger embedding model"
+  }
+ }
+}

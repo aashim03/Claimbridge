@@ -1,0 +1,1782 @@
+{
+ "generated_at": "2026-10-17T01:47:21",
+ "llm": "groq/openai/gpt-oss-120b",
+ "scored_claims": 34,
+ "total_claims": 34,
+ "not_scored": [],
+ "not_run": {
+  "claimbridge": [],
+  "no_memory": [],
+  "baseline_rag": [],
+  "baseline_rag_strong": []
+ },
+ "systems": {
+  "claimbridge": {
+   "label": "ClaimBridge",
+   "metrics": {
+    "claims": 34,
+    "M1_reason_accuracy": 1.0,
+    "M2_version_accuracy": 1.0,
+    "M3_precedent_precision": 1.0,
+    "M3_precedent_recall": 1.0,
+    "M4_wrong_precedent_rate": 0.0,
+    "M5_missing_evidence_f1": 1.0,
+    "M6_disposition_accuracy": 1.0,
+    "M7_unsupported_item_rate": 0.0,
+    "M8_stale_precedent_avoided": 1.0,
+    "M8_stale_precedent_explained": 1.0,
+    "M9_tenant_fields_leaked": 0,
+    "M12_tokens_per_claim": 2536,
+    "all_correct": 1.0
+   },
+   "per_claim": {
+    "EV-T1-01": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-T1-02": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-T1-03": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-T1-04": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true
+     }
+    },
+    "EV-T2-01": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-T2-02": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-T2-03": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-T3-01": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-T3-02": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-T3-03": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-T4-01": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-T4-02": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-T5-01": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true
+     }
+    },
+    "EV-T5-02": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true
+     }
+    },
+    "EV-T6-01": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true
+     }
+    },
+    "EV-T6-02": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true
+     }
+    },
+    "EV-T6-03": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true
+     }
+    },
+    "EV-T7-01": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-T7-02": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-N-01": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-N-02": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-N-03": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-N-04": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-N-05": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-N-06": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-N-07": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-N-08": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-N-09": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-N-10": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-N-11": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-N-12": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-N-13": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-M-A": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-M-B1": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true
+     }
+    }
+   },
+   "by_group": {
+    "T1": [
+     4,
+     4
+    ],
+    "T2": [
+     3,
+     3
+    ],
+    "T3": [
+     3,
+     3
+    ],
+    "T4": [
+     2,
+     2
+    ],
+    "T5": [
+     2,
+     2
+    ],
+    "T6": [
+     3,
+     3
+    ],
+    "T7": [
+     2,
+     2
+    ],
+    "M": [
+     2,
+     2
+    ],
+    "normal": [
+     13,
+     13
+    ]
+   },
+   "wrong_precedent_by_code": {},
+   "wall_seconds": 7.6,
+   "embedding_model": null,
+   "memory_gain": {
+    "learned": [
+     "F-L-AMBULANCE-1"
+    ],
+    "curator_action": "learned",
+    "before": {
+     "accepted": [],
+     "disposition": "APPEAL_VIABLE",
+     "confidence": 0.4,
+     "uncertainty": [
+      "No verified precedent applies to this claim."
+     ]
+    },
+    "after": {
+     "accepted": [
+      "F-L-AMBULANCE-1"
+     ],
+     "disposition": "APPEAL_VIABLE",
+     "confidence": 1.0,
+     "uncertainty": [
+      "Only 1 verified case(s) support F-L-AMBULANCE-1."
+     ]
+    }
+   }
+  },
+  "no_memory": {
+   "label": "No-memory ablation",
+   "metrics": {
+    "claims": 34,
+    "M1_reason_accuracy": 1.0,
+    "M2_version_accuracy": 1.0,
+    "M3_precedent_precision": null,
+    "M3_precedent_recall": 0.0,
+    "M4_wrong_precedent_rate": 0.0,
+    "M5_missing_evidence_f1": 1.0,
+    "M6_disposition_accuracy": 1.0,
+    "M7_unsupported_item_rate": 0.0,
+    "M8_stale_precedent_avoided": 1.0,
+    "M8_stale_precedent_explained": 0.0,
+    "M9_tenant_fields_leaked": 0,
+    "M12_tokens_per_claim": 1733,
+    "all_correct": 0.382
+   },
+   "per_claim": {
+    "EV-T1-01": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-T1-02": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-T1-03": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-T1-04": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true
+     }
+    },
+    "EV-T2-01": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-T2-02": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-T2-03": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-T3-01": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-T3-02": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-T3-03": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-T4-01": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-T4-02": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-T5-01": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true
+     }
+    },
+    "EV-T5-02": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true
+     }
+    },
+    "EV-T6-01": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true
+     }
+    },
+    "EV-T6-02": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true
+     }
+    },
+    "EV-T6-03": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true
+     }
+    },
+    "EV-T7-01": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-T7-02": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-N-01": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-N-02": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-N-03": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-N-04": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-N-05": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-N-06": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-N-07": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-N-08": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-N-09": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-N-10": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-N-11": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-N-12": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-N-13": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-M-A": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-M-B1": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true
+     }
+    }
+   },
+   "by_group": {
+    "T1": [
+     3,
+     4
+    ],
+    "T2": [
+     1,
+     3
+    ],
+    "T3": [
+     0,
+     3
+    ],
+    "T4": [
+     2,
+     2
+    ],
+    "T5": [
+     2,
+     2
+    ],
+    "T6": [
+     3,
+     3
+    ],
+    "T7": [
+     0,
+     2
+    ],
+    "M": [
+     2,
+     2
+    ],
+    "normal": [
+     0,
+     13
+    ]
+   },
+   "wrong_precedent_by_code": {},
+   "wall_seconds": 263.6,
+   "embedding_model": null,
+   "memory_gain": {
+    "learned": [
+     "F-L-AMBULANCE-1"
+    ],
+    "curator_action": "learned",
+    "before": {
+     "accepted": [],
+     "disposition": "APPEAL_VIABLE",
+     "confidence": 0.4,
+     "uncertainty": [
+      "No verified precedent applies to this claim."
+     ]
+    },
+    "after": {
+     "accepted": [],
+     "disposition": "APPEAL_VIABLE",
+     "confidence": 0.4,
+     "uncertainty": [
+      "No verified precedent applies to this claim."
+     ]
+    }
+   }
+  },
+  "baseline_rag": {
+   "label": "Baseline RAG",
+   "metrics": {
+    "claims": 34,
+    "M1_reason_accuracy": 1.0,
+    "M2_version_accuracy": 1.0,
+    "M3_precedent_precision": 0.773,
+    "M3_precedent_recall": 0.81,
+    "M4_wrong_precedent_rate": 0.147,
+    "M5_missing_evidence_f1": 0.933,
+    "M6_disposition_accuracy": 0.794,
+    "M7_unsupported_item_rate": 0.046,
+    "M8_stale_precedent_avoided": 0.556,
+    "M8_stale_precedent_explained": 0.0,
+    "M9_tenant_fields_leaked": 9,
+    "M12_tokens_per_claim": 3238,
+    "all_correct": 0.647
+   },
+   "per_claim": {
+    "EV-T1-01": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-T1-02": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-T1-03": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-T1-04": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": false
+     }
+    },
+    "EV-T2-01": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-T2-02": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-T2-03": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-T3-01": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-T3-02": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-T3-03": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-T4-01": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-T4-02": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-T5-01": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true
+     }
+    },
+    "EV-T5-02": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true
+     }
+    },
+    "EV-T6-01": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": false
+     }
+    },
+    "EV-T6-02": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": false
+     }
+    },
+    "EV-T6-03": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": false
+     }
+    },
+    "EV-T7-01": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-T7-02": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-N-01": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-N-02": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-N-03": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-N-04": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-N-05": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-N-06": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-N-07": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": false,
+      "missing": true
+     }
+    },
+    "EV-N-08": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-N-09": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-N-10": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-N-11": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": false,
+      "missing": false
+     }
+    },
+    "EV-N-12": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-N-13": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": false,
+      "missing": false
+     }
+    },
+    "EV-M-A": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-M-B1": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true
+     }
+    }
+   },
+   "by_group": {
+    "T1": [
+     2,
+     4
+    ],
+    "T2": [
+     3,
+     3
+    ],
+    "T3": [
+     3,
+     3
+    ],
+    "T4": [
+     0,
+     2
+    ],
+    "T5": [
+     2,
+     2
+    ],
+    "T6": [
+     0,
+     3
+    ],
+    "T7": [
+     1,
+     2
+    ],
+    "M": [
+     2,
+     2
+    ],
+    "normal": [
+     9,
+     13
+    ]
+   },
+   "wrong_precedent_by_code": {
+    "VERSION_DRIFT": 2,
+    "CONTRADICTED": 2,
+    "NOT_APPLICABLE": 1
+   },
+   "wall_seconds": 143.3,
+   "embedding_model": "BAAI/bge-small-en-v1.5",
+   "memory_gain": {
+    "before": {
+     "precedent_cases": [],
+     "disposition": "APPEAL_VIABLE"
+    },
+    "after": {
+     "precedent_cases": [
+      "EV-M-A"
+     ],
+     "disposition": "APPEAL_VIABLE",
+     "retrieved_new_case": true
+    }
+   }
+  },
+  "baseline_rag_strong": {
+   "label": "Baseline RAG (large embeddings)",
+   "metrics": {
+    "claims": 34,
+    "M1_reason_accuracy": 1.0,
+    "M2_version_accuracy": 1.0,
+    "M3_precedent_precision": 0.792,
+    "M3_precedent_recall": 0.905,
+    "M4_wrong_precedent_rate": 0.147,
+    "M5_missing_evidence_f1": 0.909,
+    "M6_disposition_accuracy": 0.765,
+    "M7_unsupported_item_rate": 0.088,
+    "M8_stale_precedent_avoided": 0.556,
+    "M8_stale_precedent_explained": 0.0,
+    "M9_tenant_fields_leaked": 15,
+    "M12_tokens_per_claim": 3205,
+    "all_correct": 0.647
+   },
+   "per_claim": {
+    "EV-T1-01": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-T1-02": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-T1-03": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": false,
+      "missing": false
+     }
+    },
+    "EV-T1-04": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": false
+     }
+    },
+    "EV-T2-01": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-T2-02": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-T2-03": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-T3-01": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-T3-02": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-T3-03": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-T4-01": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-T4-02": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-T5-01": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": false
+     }
+    },
+    "EV-T5-02": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": false
+     }
+    },
+    "EV-T6-01": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": false
+     }
+    },
+    "EV-T6-02": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": false
+     }
+    },
+    "EV-T6-03": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": false
+     }
+    },
+    "EV-T7-01": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-T7-02": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-N-01": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-N-02": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-N-03": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-N-04": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-N-05": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": false
+     }
+    },
+    "EV-N-06": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-N-07": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-N-08": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-N-09": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-N-10": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-N-11": {
+     "ok": false,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": false,
+      "disposition": false,
+      "missing": false
+     }
+    },
+    "EV-N-12": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-N-13": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-M-A": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true
+     }
+    },
+    "EV-M-B1": {
+     "ok": true,
+     "checks": {
+      "reason": true,
+      "version": true,
+      "precedents": true,
+      "disposition": true,
+      "missing": true
+     }
+    }
+   },
+   "by_group": {
+    "T1": [
+     2,
+     4
+    ],
+    "T2": [
+     3,
+     3
+    ],
+    "T3": [
+     3,
+     3
+    ],
+    "T4": [
+     0,
+     2
+    ],
+    "T5": [
+     0,
+     2
+    ],
+    "T6": [
+     0,
+     3
+    ],
+    "T7": [
+     2,
+     2
+    ],
+    "M": [
+     2,
+     2
+    ],
+    "normal": [
+     10,
+     13
+    ]
+   },
+   "wrong_precedent_by_code": {
+    "VERSION_DRIFT": 2,
+    "CONTRADICTED": 2,
+    "NOT_APPLICABLE": 1
+   },
+   "wall_seconds": 36.4,
+   "embedding_model": "mixedbread-ai/mxbai-embed-large-v1",
+   "memory_gain": {
+    "before": {
+     "precedent_cases": [],
+     "disposition": "APPEAL_VIABLE"
+    },
+    "after": {
+     "precedent_cases": [
+      "EV-M-A"
+     ],
+     "disposition": "APPEAL_VIABLE",
+     "retrieved_new_case": true
+    }
+   }
+  }
+ },
+ "chaos": {
+  "claims": 12,
+  "kills": 10,
+  "pool": "intake=2,retrieval=2,verifier=2,planner=2,curator=1",
+  "lease_ttl_s": 4,
+  "step_delay_s": 2,
+  "completed": 12,
+  "correct": 12,
+  "duplicate_step_outputs": 0,
+  "fenced_writes_rejected": 0,
+  "lease_expiries_recorded": 4,
+  "steps_interrupted": 7,
+  "takeovers": [
+   {
+    "claim": "EV-T1-01",
+    "killed": "planner-4",
+    "resumed_by": "planner-5"
+   },
+   {
+    "claim": "EV-T1-02",
+    "killed": "verifier-4",
+    "resumed_by": "verifier-3"
+   },
+   {
+    "claim": "EV-T1-02",
+    "killed": "planner-2",
+    "resumed_by": "planner-6"
+   },
+   {
+    "claim": "EV-T1-02",
+    "killed": "planner-6",
+    "resumed_by": "planner-5"
+   },
+   {
+    "claim": "EV-T1-04",
+    "killed": "intake-2",
+    "resumed_by": "intake-1"
+   },
+   {
+    "claim": "EV-T1-04",
+    "killed": "planner-3",
+    "resumed_by": "planner-4"
+   },
+   {
+    "claim": "EV-T3-02",
+    "killed": "verifier-2",
+    "resumed_by": "verifier-4"
+   }
+  ],
+  "recovery_seconds": [
+   6.65,
+   6.43,
+   11.7,
+   6.67,
+   11.52,
+   7.6,
+   7.42
+  ],
+  "mean_recovery_seconds": 8.28,
+  "wall_seconds": 47.6,
+  "killed": [
+   {
+    "agent": "intake-2",
+    "claim": "EV-T1-04"
+   },
+   {
+    "agent": "intake-1",
+    "claim": "EV-T4-01"
+   },
+   {
+    "agent": "verifier-1",
+    "claim": "EV-T2-03"
+   },
+   {
+    "agent": "verifier-2",
+    "claim": "EV-T3-02"
+   },
+   {
+    "agent": "planner-1",
+    "claim": "EV-T2-02"
+   },
+   {
+    "agent": "planner-3",
+    "claim": "EV-T1-04"
+   },
+   {
+    "agent": "verifier-4",
+    "claim": "EV-T1-02"
+   },
+   {
+    "agent": "planner-4",
+    "claim": "EV-T1-01"
+   },
+   {
+    "agent": "planner-2",
+    "claim": "EV-T1-02"
+   },
+   {
+    "agent": "planner-6",
+    "claim": "EV-T1-02"
+   }
+  ]
+ }
+}

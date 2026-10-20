@@ -1,0 +1,789 @@
+{
+ "system": "claimbridge",
+ "wall_seconds": 7.5,
+ "predictions": {
+  "EV-T1-01": {
+   "status": "AWAITING_REVIEW",
+   "reason": "PREAUTH_MISSING",
+   "version": "V2026",
+   "accepted": [],
+   "rejected": {
+    "F-INPATIENT-RETRO": "LINEAGE_MISMATCH",
+    "F-MRI-REFERRAL": "VERSION_DRIFT",
+    "F-SLEEP-RETRO": "LINEAGE_MISMATCH"
+   },
+   "missing": [
+    "PHYSICIAN_NECESSITY_LETTER",
+    "RETRO_AUTH_REQUEST"
+   ],
+   "disposition": "APPEAL_NEEDS_EVIDENCE",
+   "items_total": 6,
+   "items_unsupported": 0,
+   "guard_dropped": 0,
+   "guard_added": 6,
+   "confidence": 0.0,
+   "leaked_fields": 0,
+   "tokens_in": 0,
+   "tokens_out": 0
+  },
+  "EV-T1-02": {
+   "status": "AWAITING_REVIEW",
+   "reason": "NOT_MED_NECESSARY",
+   "version": "V2026",
+   "accepted": [
+    "F-PHYSIO-NECESSITY"
+   ],
+   "rejected": {
+    "F-DME-NECESSITY": "LINEAGE_MISMATCH",
+    "F-ER-NECESSITY": "LINEAGE_MISMATCH",
+    "F-PHYSIO-NOTES": "VERSION_DRIFT"
+   },
+   "missing": [
+    "PHYSICIAN_NECESSITY_LETTER"
+   ],
+   "disposition": "APPEAL_NEEDS_EVIDENCE",
+   "items_total": 8,
+   "items_unsupported": 0,
+   "guard_dropped": 0,
+   "guard_added": 8,
+   "confidence": 0.75,
+   "leaked_fields": 0,
+   "tokens_in": 820,
+   "tokens_out": 126
+  },
+  "EV-T1-03": {
+   "status": "AWAITING_REVIEW",
+   "reason": "OUT_OF_NETWORK",
+   "version": "V2026",
+   "accepted": [],
+   "rejected": {
+    "F-OON-ER": "VERSION_DRIFT"
+   },
+   "missing": [],
+   "disposition": "APPEAL_VIABLE",
+   "items_total": 2,
+   "items_unsupported": 0,
+   "guard_dropped": 0,
+   "guard_added": 2,
+   "confidence": 0.0,
+   "leaked_fields": 0,
+   "tokens_in": 0,
+   "tokens_out": 0
+  },
+  "EV-T1-04": {
+   "status": "AWAITING_REVIEW",
+   "reason": "EXCLUDED_SERVICE",
+   "version": "V2024",
+   "accepted": [],
+   "rejected": {
+    "F-BARIATRIC": "VERSION_DRIFT",
+    "F-GENETIC": "LINEAGE_MISMATCH"
+   },
+   "missing": [],
+   "disposition": "NO_BASIS_ESCALATE",
+   "items_total": 4,
+   "items_unsupported": 0,
+   "guard_dropped": 0,
+   "guard_added": 4,
+   "confidence": 0.0,
+   "leaked_fields": 0,
+   "tokens_in": 0,
+   "tokens_out": 0
+  },
+  "EV-T2-01": {
+   "status": "AWAITING_REVIEW",
+   "reason": "PREAUTH_MISSING",
+   "version": "V2025",
+   "accepted": [
+    "F-INPATIENT-RETRO"
+   ],
+   "rejected": {
+    "F-MRI-REFERRAL": "LINEAGE_MISMATCH",
+    "F-SLEEP-RETRO": "LINEAGE_MISMATCH"
+   },
+   "missing": [
+    "RETRO_AUTH_REQUEST"
+   ],
+   "disposition": "APPEAL_NEEDS_EVIDENCE",
+   "items_total": 7,
+   "items_unsupported": 0,
+   "guard_dropped": 0,
+   "guard_added": 7,
+   "confidence": 0.8,
+   "leaked_fields": 0,
+   "tokens_in": 815,
+   "tokens_out": 118
+  },
+  "EV-T2-02": {
+   "status": "AWAITING_REVIEW",
+   "reason": "NOT_MED_NECESSARY",
+   "version": "V2025",
+   "accepted": [
+    "F-DME-NECESSITY"
+   ],
+   "rejected": {
+    "F-ER-NECESSITY": "LINEAGE_MISMATCH",
+    "F-PHYSIO-NECESSITY": "LINEAGE_MISMATCH",
+    "F-PHYSIO-NOTES": "LINEAGE_MISMATCH"
+   },
+   "missing": [],
+   "disposition": "APPEAL_VIABLE",
+   "items_total": 7,
+   "items_unsupported": 0,
+   "guard_dropped": 0,
+   "guard_added": 7,
+   "confidence": 0.75,
+   "leaked_fields": 0,
+   "tokens_in": 820,
+   "tokens_out": 104
+  },
+  "EV-T2-03": {
+   "status": "AWAITING_REVIEW",
+   "reason": "NOT_MED_NECESSARY",
+   "version": "V2025",
+   "accepted": [],
+   "rejected": {
+    "F-DME-NECESSITY": "LINEAGE_MISMATCH",
+    "F-ER-NECESSITY": "LINEAGE_MISMATCH",
+    "F-PHYSIO-NECESSITY": "LINEAGE_MISMATCH",
+    "F-PHYSIO-NOTES": "LINEAGE_MISMATCH"
+   },
+   "missing": [
+    "EMERGENCY_ATTESTATION"
+   ],
+   "disposition": "APPEAL_NEEDS_EVIDENCE",
+   "items_total": 6,
+   "items_unsupported": 0,
+   "guard_dropped": 0,
+   "guard_added": 6,
+   "confidence": 0.0,
+   "leaked_fields": 0,
+   "tokens_in": 0,
+   "tokens_out": 0
+  },
+  "EV-T3-01": {
+   "status": "AWAITING_REVIEW",
+   "reason": "NOT_MED_NECESSARY",
+   "version": "V2026",
+   "accepted": [
+    "F-PHYSIO-NECESSITY"
+   ],
+   "rejected": {
+    "F-DME-NECESSITY": "LINEAGE_MISMATCH",
+    "F-ER-NECESSITY": "LINEAGE_MISMATCH",
+    "F-PHYSIO-NOTES": "VERSION_DRIFT"
+   },
+   "missing": [
+    "PHYSICIAN_NECESSITY_LETTER",
+    "PROGRESS_NOTES"
+   ],
+   "disposition": "APPEAL_NEEDS_EVIDENCE",
+   "items_total": 9,
+   "items_unsupported": 0,
+   "guard_dropped": 0,
+   "guard_added": 9,
+   "confidence": 0.75,
+   "leaked_fields": 0,
+   "tokens_in": 0,
+   "tokens_out": 0
+  },
+  "EV-T3-02": {
+   "status": "AWAITING_REVIEW",
+   "reason": "EXCLUDED_SERVICE",
+   "version": "V2025",
+   "accepted": [
+    "F-BARIATRIC"
+   ],
+   "rejected": {
+    "F-GENETIC": "LINEAGE_MISMATCH"
+   },
+   "missing": [
+    "SUPERVISED_PROGRAM_RECORD"
+   ],
+   "disposition": "APPEAL_NEEDS_EVIDENCE",
+   "items_total": 5,
+   "items_unsupported": 0,
+   "guard_dropped": 0,
+   "guard_added": 5,
+   "confidence": 0.75,
+   "leaked_fields": 0,
+   "tokens_in": 817,
+   "tokens_out": 103
+  },
+  "EV-T3-03": {
+   "status": "AWAITING_REVIEW",
+   "reason": "CODING_ERROR",
+   "version": "V2026",
+   "accepted": [
+    "F-CODING"
+   ],
+   "rejected": {},
+   "missing": [
+    "CORRECTED_CODING_SUBMISSION"
+   ],
+   "disposition": "APPEAL_NEEDS_EVIDENCE",
+   "items_total": 4,
+   "items_unsupported": 0,
+   "guard_dropped": 0,
+   "guard_added": 4,
+   "confidence": 0.8,
+   "leaked_fields": 0,
+   "tokens_in": 0,
+   "tokens_out": 0
+  },
+  "EV-T4-01": {
+   "status": "AWAITING_REVIEW",
+   "reason": "PREAUTH_MISSING",
+   "version": "V2025",
+   "accepted": [],
+   "rejected": {
+    "F-INPATIENT-RETRO": "LINEAGE_MISMATCH",
+    "F-MRI-REFERRAL": "LINEAGE_MISMATCH",
+    "F-SLEEP-RETRO": "CONTRADICTED"
+   },
+   "missing": [],
+   "disposition": "APPEAL_VIABLE",
+   "items_total": 4,
+   "items_unsupported": 0,
+   "guard_dropped": 0,
+   "guard_added": 4,
+   "confidence": 0.0,
+   "leaked_fields": 0,
+   "tokens_in": 0,
+   "tokens_out": 0
+  },
+  "EV-T4-02": {
+   "status": "AWAITING_REVIEW",
+   "reason": "PREAUTH_MISSING",
+   "version": "V2026",
+   "accepted": [],
+   "rejected": {
+    "F-INPATIENT-RETRO": "LINEAGE_MISMATCH",
+    "F-MRI-REFERRAL": "LINEAGE_MISMATCH",
+    "F-SLEEP-RETRO": "CONTRADICTED"
+   },
+   "missing": [
+    "RETRO_AUTH_REQUEST"
+   ],
+   "disposition": "APPEAL_NEEDS_EVIDENCE",
+   "items_total": 5,
+   "items_unsupported": 0,
+   "guard_dropped": 0,
+   "guard_added": 5,
+   "confidence": 0.0,
+   "leaked_fields": 0,
+   "tokens_in": 814,
+   "tokens_out": 118
+  },
+  "EV-T5-01": {
+   "status": "AWAITING_REVIEW",
+   "reason": "OUT_OF_NETWORK",
+   "version": "V2025",
+   "accepted": [],
+   "rejected": {
+    "F-OON-ER": "CONDITION_UNMET"
+   },
+   "missing": [
+    "DISCHARGE_SUMMARY",
+    "EMERGENCY_ATTESTATION"
+   ],
+   "disposition": "NO_BASIS_ESCALATE",
+   "items_total": 3,
+   "items_unsupported": 0,
+   "guard_dropped": 0,
+   "guard_added": 3,
+   "confidence": 0.0,
+   "leaked_fields": 0,
+   "tokens_in": 0,
+   "tokens_out": 0
+  },
+  "EV-T5-02": {
+   "status": "AWAITING_REVIEW",
+   "reason": "OUT_OF_NETWORK",
+   "version": "V2025",
+   "accepted": [],
+   "rejected": {
+    "F-OON-ER": "CONDITION_UNMET"
+   },
+   "missing": [
+    "DISCHARGE_SUMMARY",
+    "EMERGENCY_ATTESTATION"
+   ],
+   "disposition": "NO_BASIS_ESCALATE",
+   "items_total": 3,
+   "items_unsupported": 0,
+   "guard_dropped": 0,
+   "guard_added": 3,
+   "confidence": 0.0,
+   "leaked_fields": 0,
+   "tokens_in": 820,
+   "tokens_out": 121
+  },
+  "EV-T6-01": {
+   "status": "AWAITING_REVIEW",
+   "reason": "TIMELY_FILING",
+   "version": "V2026",
+   "accepted": [],
+   "rejected": {
+    "F-TIMELY-180": "VERSION_DRIFT"
+   },
+   "missing": [
+    "PROOF_OF_TIMELY_FILING"
+   ],
+   "disposition": "NO_BASIS_ESCALATE",
+   "items_total": 3,
+   "items_unsupported": 0,
+   "guard_dropped": 0,
+   "guard_added": 3,
+   "confidence": 0.0,
+   "leaked_fields": 0,
+   "tokens_in": 0,
+   "tokens_out": 0
+  },
+  "EV-T6-02": {
+   "status": "AWAITING_REVIEW",
+   "reason": "EXCLUDED_SERVICE",
+   "version": "V2024",
+   "accepted": [],
+   "rejected": {
+    "F-BARIATRIC": "LINEAGE_MISMATCH",
+    "F-GENETIC": "LINEAGE_MISMATCH"
+   },
+   "missing": [],
+   "disposition": "NO_BASIS_ESCALATE",
+   "items_total": 4,
+   "items_unsupported": 0,
+   "guard_dropped": 0,
+   "guard_added": 4,
+   "confidence": 0.0,
+   "leaked_fields": 0,
+   "tokens_in": 818,
+   "tokens_out": 123
+  },
+  "EV-T6-03": {
+   "status": "AWAITING_REVIEW",
+   "reason": "WAITING_PERIOD",
+   "version": "V2025",
+   "accepted": [],
+   "rejected": {
+    "F-MATERNITY-9M": "VERSION_DRIFT"
+   },
+   "missing": [],
+   "disposition": "NO_BASIS_ESCALATE",
+   "items_total": 3,
+   "items_unsupported": 0,
+   "guard_dropped": 0,
+   "guard_added": 3,
+   "confidence": 0.0,
+   "leaked_fields": 0,
+   "tokens_in": 0,
+   "tokens_out": 0
+  },
+  "EV-T7-01": {
+   "status": "AWAITING_REVIEW",
+   "reason": "CODING_ERROR",
+   "version": "V2025",
+   "accepted": [
+    "F-CODING"
+   ],
+   "rejected": {},
+   "missing": [],
+   "disposition": "APPEAL_VIABLE",
+   "items_total": 3,
+   "items_unsupported": 0,
+   "guard_dropped": 0,
+   "guard_added": 3,
+   "confidence": 0.8,
+   "leaked_fields": 0,
+   "tokens_in": 0,
+   "tokens_out": 0
+  },
+  "EV-T7-02": {
+   "status": "AWAITING_REVIEW",
+   "reason": "OUT_OF_NETWORK",
+   "version": "V2025",
+   "accepted": [
+    "F-OON-ER"
+   ],
+   "rejected": {},
+   "missing": [],
+   "disposition": "APPEAL_VIABLE",
+   "items_total": 4,
+   "items_unsupported": 0,
+   "guard_dropped": 0,
+   "guard_added": 4,
+   "confidence": 0.8,
+   "leaked_fields": 0,
+   "tokens_in": 822,
+   "tokens_out": 186
+  },
+  "EV-N-01": {
+   "status": "AWAITING_REVIEW",
+   "reason": "PREAUTH_MISSING",
+   "version": "V2025",
+   "accepted": [
+    "F-MRI-REFERRAL"
+   ],
+   "rejected": {
+    "F-INPATIENT-RETRO": "LINEAGE_MISMATCH",
+    "F-SLEEP-RETRO": "LINEAGE_MISMATCH"
+   },
+   "missing": [
+    "SPECIALIST_REFERRAL"
+   ],
+   "disposition": "APPEAL_NEEDS_EVIDENCE",
+   "items_total": 6,
+   "items_unsupported": 0,
+   "guard_dropped": 0,
+   "guard_added": 6,
+   "confidence": 0.833,
+   "leaked_fields": 0,
+   "tokens_in": 0,
+   "tokens_out": 0
+  },
+  "EV-N-02": {
+   "status": "AWAITING_REVIEW",
+   "reason": "PREAUTH_MISSING",
+   "version": "V2024",
+   "accepted": [
+    "F-MRI-REFERRAL"
+   ],
+   "rejected": {
+    "F-INPATIENT-RETRO": "LINEAGE_MISMATCH",
+    "F-SLEEP-RETRO": "LINEAGE_MISMATCH"
+   },
+   "missing": [],
+   "disposition": "APPEAL_VIABLE",
+   "items_total": 5,
+   "items_unsupported": 0,
+   "guard_dropped": 0,
+   "guard_added": 5,
+   "confidence": 0.833,
+   "leaked_fields": 0,
+   "tokens_in": 823,
+   "tokens_out": 123
+  },
+  "EV-N-03": {
+   "status": "AWAITING_REVIEW",
+   "reason": "PREAUTH_MISSING",
+   "version": "V2026",
+   "accepted": [
+    "F-INPATIENT-RETRO"
+   ],
+   "rejected": {
+    "F-MRI-REFERRAL": "LINEAGE_MISMATCH",
+    "F-SLEEP-RETRO": "LINEAGE_MISMATCH"
+   },
+   "missing": [],
+   "disposition": "APPEAL_VIABLE",
+   "items_total": 6,
+   "items_unsupported": 0,
+   "guard_dropped": 0,
+   "guard_added": 6,
+   "confidence": 0.8,
+   "leaked_fields": 0,
+   "tokens_in": 0,
+   "tokens_out": 0
+  },
+  "EV-N-04": {
+   "status": "AWAITING_REVIEW",
+   "reason": "NOT_MED_NECESSARY",
+   "version": "V2025",
+   "accepted": [
+    "F-ER-NECESSITY"
+   ],
+   "rejected": {
+    "F-DME-NECESSITY": "LINEAGE_MISMATCH",
+    "F-PHYSIO-NECESSITY": "LINEAGE_MISMATCH",
+    "F-PHYSIO-NOTES": "LINEAGE_MISMATCH"
+   },
+   "missing": [],
+   "disposition": "APPEAL_VIABLE",
+   "items_total": 7,
+   "items_unsupported": 0,
+   "guard_dropped": 0,
+   "guard_added": 7,
+   "confidence": 0.75,
+   "leaked_fields": 0,
+   "tokens_in": 0,
+   "tokens_out": 0
+  },
+  "EV-N-05": {
+   "status": "AWAITING_REVIEW",
+   "reason": "INCOMPLETE_DOCS",
+   "version": "V2026",
+   "accepted": [
+    "F-DOCS"
+   ],
+   "rejected": {},
+   "missing": [
+    "DISCHARGE_SUMMARY"
+   ],
+   "disposition": "APPEAL_NEEDS_EVIDENCE",
+   "items_total": 5,
+   "items_unsupported": 0,
+   "guard_dropped": 0,
+   "guard_added": 5,
+   "confidence": 0.75,
+   "leaked_fields": 0,
+   "tokens_in": 807,
+   "tokens_out": 122
+  },
+  "EV-N-06": {
+   "status": "AWAITING_REVIEW",
+   "reason": "DUPLICATE_CLAIM",
+   "version": "V2026",
+   "accepted": [
+    "F-DUPLICATE"
+   ],
+   "rejected": {},
+   "missing": [],
+   "disposition": "APPEAL_VIABLE",
+   "items_total": 3,
+   "items_unsupported": 0,
+   "guard_dropped": 0,
+   "guard_added": 3,
+   "confidence": 0.75,
+   "leaked_fields": 0,
+   "tokens_in": 0,
+   "tokens_out": 0
+  },
+  "EV-N-07": {
+   "status": "AWAITING_REVIEW",
+   "reason": "EXCLUDED_SERVICE",
+   "version": "V2026",
+   "accepted": [
+    "F-BARIATRIC"
+   ],
+   "rejected": {
+    "F-GENETIC": "LINEAGE_MISMATCH"
+   },
+   "missing": [],
+   "disposition": "APPEAL_VIABLE",
+   "items_total": 4,
+   "items_unsupported": 0,
+   "guard_dropped": 0,
+   "guard_added": 4,
+   "confidence": 0.75,
+   "leaked_fields": 0,
+   "tokens_in": 0,
+   "tokens_out": 0
+  },
+  "EV-N-08": {
+   "status": "AWAITING_REVIEW",
+   "reason": "EXCLUDED_SERVICE",
+   "version": "V2026",
+   "accepted": [
+    "F-GENETIC"
+   ],
+   "rejected": {
+    "F-BARIATRIC": "LINEAGE_MISMATCH"
+   },
+   "missing": [],
+   "disposition": "APPEAL_VIABLE",
+   "items_total": 4,
+   "items_unsupported": 0,
+   "guard_dropped": 0,
+   "guard_added": 4,
+   "confidence": 0.75,
+   "leaked_fields": 0,
+   "tokens_in": 0,
+   "tokens_out": 0
+  },
+  "EV-N-09": {
+   "status": "AWAITING_REVIEW",
+   "reason": "WAITING_PERIOD",
+   "version": "V2026",
+   "accepted": [
+    "F-MATERNITY-9M"
+   ],
+   "rejected": {},
+   "missing": [
+    "ENROLLMENT_RECORD"
+   ],
+   "disposition": "APPEAL_NEEDS_EVIDENCE",
+   "items_total": 4,
+   "items_unsupported": 0,
+   "guard_dropped": 0,
+   "guard_added": 4,
+   "confidence": 0.75,
+   "leaked_fields": 0,
+   "tokens_in": 819,
+   "tokens_out": 107
+  },
+  "EV-N-10": {
+   "status": "AWAITING_REVIEW",
+   "reason": "TIMELY_FILING",
+   "version": "V2025",
+   "accepted": [
+    "F-TIMELY-180"
+   ],
+   "rejected": {},
+   "missing": [],
+   "disposition": "APPEAL_VIABLE",
+   "items_total": 3,
+   "items_unsupported": 0,
+   "guard_dropped": 0,
+   "guard_added": 3,
+   "confidence": 0.75,
+   "leaked_fields": 0,
+   "tokens_in": 0,
+   "tokens_out": 0
+  },
+  "EV-N-11": {
+   "status": "AWAITING_REVIEW",
+   "reason": "CODING_ERROR",
+   "version": "V2025",
+   "accepted": [
+    "F-CODING"
+   ],
+   "rejected": {},
+   "missing": [],
+   "disposition": "APPEAL_VIABLE",
+   "items_total": 3,
+   "items_unsupported": 0,
+   "guard_dropped": 0,
+   "guard_added": 3,
+   "confidence": 0.8,
+   "leaked_fields": 0,
+   "tokens_in": 820,
+   "tokens_out": 125
+  },
+  "EV-N-12": {
+   "status": "AWAITING_REVIEW",
+   "reason": "NOT_MED_NECESSARY",
+   "version": "V2026",
+   "accepted": [
+    "F-DME-NECESSITY"
+   ],
+   "rejected": {
+    "F-ER-NECESSITY": "LINEAGE_MISMATCH",
+    "F-PHYSIO-NECESSITY": "LINEAGE_MISMATCH",
+    "F-PHYSIO-NOTES": "LINEAGE_MISMATCH"
+   },
+   "missing": [
+    "PHYSICIAN_NECESSITY_LETTER"
+   ],
+   "disposition": "APPEAL_NEEDS_EVIDENCE",
+   "items_total": 8,
+   "items_unsupported": 0,
+   "guard_dropped": 0,
+   "guard_added": 8,
+   "confidence": 0.75,
+   "leaked_fields": 0,
+   "tokens_in": 0,
+   "tokens_out": 0
+  },
+  "EV-N-13": {
+   "status": "AWAITING_REVIEW",
+   "reason": "OUT_OF_NETWORK",
+   "version": "V2024",
+   "accepted": [
+    "F-OON-ER"
+   ],
+   "rejected": {},
+   "missing": [
+    "DISCHARGE_SUMMARY"
+   ],
+   "disposition": "APPEAL_NEEDS_EVIDENCE",
+   "items_total": 5,
+   "items_unsupported": 0,
+   "guard_dropped": 0,
+   "guard_added": 5,
+   "confidence": 0.8,
+   "leaked_fields": 0,
+   "tokens_in": 0,
+   "tokens_out": 0
+  },
+  "EV-M-A": {
+   "status": "AWAITING_REVIEW",
+   "reason": "NOT_MED_NECESSARY",
+   "version": "V2025",
+   "accepted": [],
+   "rejected": {
+    "F-DME-NECESSITY": "LINEAGE_MISMATCH",
+    "F-ER-NECESSITY": "LINEAGE_MISMATCH",
+    "F-PHYSIO-NECESSITY": "LINEAGE_MISMATCH",
+    "F-PHYSIO-NOTES": "LINEAGE_MISMATCH"
+   },
+   "missing": [],
+   "disposition": "APPEAL_VIABLE",
+   "items_total": 5,
+   "items_unsupported": 0,
+   "guard_dropped": 0,
+   "guard_added": 5,
+   "confidence": 0.0,
+   "leaked_fields": 0,
+   "tokens_in": 0,
+   "tokens_out": 0
+  },
+  "EV-M-B1": {
+   "status": "AWAITING_REVIEW",
+   "reason": "NOT_MED_NECESSARY",
+   "version": "V2026",
+   "accepted": [],
+   "rejected": {
+    "F-DME-NECESSITY": "LINEAGE_MISMATCH",
+    "F-ER-NECESSITY": "LINEAGE_MISMATCH",
+    "F-PHYSIO-NECESSITY": "LINEAGE_MISMATCH",
+    "F-PHYSIO-NOTES": "LINEAGE_MISMATCH"
+   },
+   "missing": [],
+   "disposition": "APPEAL_VIABLE",
+   "items_total": 5,
+   "items_unsupported": 0,
+   "guard_dropped": 0,
+   "guard_added": 5,
+   "confidence": 0.0,
+   "leaked_fields": 0,
+   "tokens_in": 0,
+   "tokens_out": 0
+  }
+ },
+ "memory_gain": {
+  "learned": [
+   "F-L-AMBULANCE-3fc5cd595b568ee3"
+  ],
+  "curator_action": "learned",
+  "before": {
+   "accepted": [],
+   "disposition": "APPEAL_VIABLE",
+   "confidence": 0.0,
+   "uncertainty": [
+    "No verified precedent applies to this claim."
+   ],
+   "missing": []
+  },
+  "after": {
+   "accepted": [
+    "F-L-AMBULANCE-3fc5cd595b568ee3"
+   ],
+   "disposition": "APPEAL_NEEDS_EVIDENCE",
+   "confidence": 0.667,
+   "uncertainty": [
+    "Only 1 verified case(s) support F-L-AMBULANCE-3fc5cd595b568ee3."
+   ],
+   "missing": [
+    "ITEMIZED_BILL"
+   ]
+  }
+ },
+ "provenance": {
+  "run_id": "20261017T183219+0530-7dee90",
+  "step": "claimbridge",
+  "started_at": "2026-10-17T18:32:19+05:30",
+  "ended_at": "2026-10-17T18:32:39+05:30",
+  "source_sha256_at_save": "804f21182ab99b6915c22b8bf8d7cddd09967f6f398c7f823984316bb39fc0d3",
+  "source_unchanged": true,
+  "dataset_unchanged": true,
+  "llm_platform": "groq",
+  "llm_model": "openai/gpt-oss-120b",
+  "llm_mode": "cached",
+  "access": {
+   "policy_clauses": "all versions, as graph nodes with lineage and content fingerprints",
+   "abstract_findings": "yes: the shared memory (statement, versions valid in, status, evidence needs, conditions)",
+   "raw_cases": "own tenant only; other tenants' cases are redacted",
+   "decided_by": "deterministic Cypher for version, applicability, gates and evidence; the LLM only reads notices that cite no section"
+  }
+ }
+}
